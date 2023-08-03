@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from '../components/Header';
 import Section from '../components/Section';
+import SearchBar from '../components/SearchBar';
 import Footer from '../components/Footer';
 import { Element } from 'react-scroll';
 
@@ -15,7 +16,7 @@ const IndexPage = () => {
     <MainContainer>
       <Header />
       <Element name="section1">
-        <Section height={488.14} />
+        <SearchBar height={488.14} />
       </Element>
       <Element name="section2">
         <Section height={427} />

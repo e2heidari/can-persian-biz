@@ -9,6 +9,10 @@ const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0px 21px;
+
+  @media (max-width: 768px) {
+    padding: 0px 8px;
+  }
 `;
 
 const LogoBox = styled.div`
@@ -25,6 +29,10 @@ const TextBox = styled.div`
   display: flex;
   align-items: center;
   margin-right: 11px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const SignUpBox = styled.div`
@@ -34,6 +42,7 @@ const SignUpBox = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 12.8px;
+  cursor: pointer; /* Add a pointer cursor to indicate clickability */
 `;
 
 const LogInBox = styled.div`
@@ -43,9 +52,20 @@ const LogInBox = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 12.8px;
+  cursor: pointer; /* Add a pointer cursor to indicate clickability */
 `;
 
 const Header = () => {
+  const handleSignUpClick = () => {
+    console.log('SIGN UP button clicked');
+    // Add your desired functionality for the SIGN UP button click here
+  };
+
+  const handleLogInClick = () => {
+    console.log('LOG IN button clicked');
+    // Add your desired functionality for the LOG IN button click here
+  };
+
   return (
     <HeaderContainer>
       <LogoBox>
@@ -53,8 +73,8 @@ const Header = () => {
         <TextBox>Text Box</TextBox>
       </LogoBox>
       <div style={{ display: 'flex' }}>
-        <SignUpBox>SIGN UP</SignUpBox>
-        <LogInBox>LOG IN</LogInBox>
+        <SignUpBox onClick={handleSignUpClick}>SIGN UP</SignUpBox>
+        <LogInBox onClick={handleLogInClick}>LOG IN</LogInBox>
       </div>
     </HeaderContainer>
   );
