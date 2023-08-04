@@ -63,7 +63,7 @@ const SearchBar = () => {
       onSelect={onSelect}
       onSearch={handleSearch}
     >
-      <Input.Search size="large" placeholder="Search for Persian businesses..." enterButton />
+      <Input.Search size="large" placeholder="Find  Ex. Mechanic, Beauty Salon, etc" enterButton />
     </AutoComplete>
   );
 };
