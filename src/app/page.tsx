@@ -7,9 +7,7 @@ import SearchBox from '../components/section1/SearchBox';
 import Footer from '../components/Footer';
 import { Element } from 'react-scroll';
 
-interface container {
-  height: number;
-}
+
 
 const MainContainer = styled.div`
   overflow: hidden;
@@ -20,7 +18,7 @@ const IndexPage = () => {
     <MainContainer>
       <Header />
       <Element name="SearchBox">
-        <SearchBox height={488.14} />
+        <SearchBox  />
       </Element>
       <Element name="section2">
         <Section height={427} />
