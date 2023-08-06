@@ -49,26 +49,41 @@ const options = [
   },
 ];
 
-const SearchBarContainer = styled(AutoComplete)`
+const SearchBarContainer = styled.div`
   .ant-input-search-button {
     background-color: #1677ff;
     border-color: white;
   }
+
+  /* Default styles */
+  position: relative;
+  width: 800px; 
+  height: 60px;
+  padding: 13px 46px 13px 11px;
+
+  @media (max-width: 768px) {
+    /* Mobile size styles */
+    position: relative;
+    width: 100%;
+    height: 58px;
+    padding: 11px 13px;
+  }
+`;
+
+const StyledAutoComplete = styled(AutoComplete)`
+  width: 100%;
+  height: 100%;
 `;
 
 const SearchBar: React.FC = () => (
-  <SearchBarContainer
-    popupClassName="certain-category-search-dropdown"
-    dropdownMatchSelectWidth={500}
-    style={{
-      width: 938.98, // Set the desired width
-      height: 60, // Set the desired height
-      padding: '13px 46px 13px 11px', // Set the desired padding
-      
-    }}
-    options={options}
-  >
-    <Input.Search size="large" placeholder="Find  Ex. Mechanic, Beauty Salon, etc" />
+  <SearchBarContainer>
+    <StyledAutoComplete
+      popupClassName="certain-category-search-dropdown"
+      dropdownMatchSelectWidth={500}
+      options={options}
+    >
+      <Input.Search size="large" placeholder="Find Ex. Mechanic, Beauty Salon, etc" />
+    </StyledAutoComplete>
   </SearchBarContainer>
 );
 
