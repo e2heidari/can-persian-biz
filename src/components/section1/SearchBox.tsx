@@ -12,7 +12,7 @@ const SearchBoxContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 488.14px;
+  height: 65vh;
 
   @media (max-width: 768px) {
     /* Mobile size styles */
@@ -36,7 +36,7 @@ const TopBox = styled.div`
     /* Mobile size styles */
     height: 56px;
     font-size: 23.52px;
-    margin: 0px 0px 25px;
+    margin: 0 auto 7%;
   }
 `;
 
