@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Category from './Category';
 
 const CategoriesBoxContainer = styled.div`
   height: 427px;
@@ -17,55 +18,27 @@ const TextTopBox = styled.div`
 const CategoriesContainer = styled.div`
   height: 232px;
   margin: 30px auto;
-  padding: 0 5%;
+  padding: 0 12%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center the boxes horizontally */
   align-items: center; /* Center the boxes vertically */
 `;
 
-const CategoryBox = styled.div`
-  text-align: center;
-  vertical-align: top;
-  display: inline-block;
-  height: 106px;
-  width: 62px;
-  font-weight: 300;
-  color: #fff;
-  margin: 0 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const CategoryIcon = styled.div`
-font-size: 20px;
-width: 100%;
-line-height: 60px;
-`;
-
-const CategoryText = styled.div`
-  width: 160%;
-  height: 2.2em;
-  line-height: 1.2em;
-  line-height: 1.2em;
-  text-overflow: ellipsis;
-  text-align: center;
-  right: 0;
-  font-size: 13px;
-  margin: 0.5em 0 0;
-`;
+const categoriesData = [
+  // Replace 'icon1.png', 'icon2.png', ..., 'icon15.png' with the actual file names
+  'icon1.png', 'icon2.png', 'icon3.png', 'icon4.png', 'icon5.png',
+  'icon6.png', 'icon7.png', 'icon8.png', 'icon9.png', 'icon10.png',
+  'icon11.png', 'icon12.png', 'icon13.png', 'icon14.png', 'icon15.png',
+];
 
 const CategoriesBox: React.FC = () => {
   return (
     <CategoriesBoxContainer>
       <TextTopBox>Categories</TextTopBox>
       <CategoriesContainer>
-        {Array.from({ length: 15 }).map((_, index) => (
-          <CategoryBox key={index}>
-            <CategoryIcon>icon</CategoryIcon>
-            <CategoryText>Category {index + 1}</CategoryText>
-          </CategoryBox>
+        {categoriesData.map((icon, index) => (
+          <Category key={index} index={index} icon={icon} />
         ))}
       </CategoriesContainer>
     </CategoriesBoxContainer>
