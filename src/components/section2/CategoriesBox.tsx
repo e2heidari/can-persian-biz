@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Category from './Category';
 
 const CategoriesBoxContainer = styled.div`
+background-color: white;
   height: 427px;
   padding: 50px 0;
 `;
