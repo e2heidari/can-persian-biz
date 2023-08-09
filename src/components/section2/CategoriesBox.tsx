@@ -12,7 +12,7 @@ const TextTopBox = styled.div`
   margin: 10px 0 40px 0;
   font-size: 21px;
   display: flex;
-  justify-content: center
+  justify-content: center;
 `;
 
 const CategoriesContainer = styled.div`
@@ -26,10 +26,23 @@ const CategoriesContainer = styled.div`
 `;
 
 const categoriesData = [
-  // Replace 'icon1.png', 'icon2.png', ..., 'icon15.png' with the actual file names
-  'icon1.png', 'icon2.png', 'icon3.png', 'icon4.png', 'icon5.png',
-  'icon6.png', 'icon7.png', 'icon8.png', 'icon9.png', 'icon10.png',
-  'icon11.png', 'icon12.png', 'icon13.png', 'icon14.png', 'icon15.png',
+  { icon: 'icon1.png', text: 'Fast Food' },
+  { icon: 'icon2.png', text: 'Restaurant' },
+  { icon: 'icon3.png', text: 'Real Estate' },
+  { icon: 'icon4.png', text: 'Sim Card & Mobile' },
+  { icon: 'icon5.png', text: 'Market' },
+  { icon: 'icon6.png', text: 'Beauty Salon' },
+  { icon: 'icon7.png', text: 'Hookah Lounge' },
+  { icon: 'icon8.png', text: 'Dentist' },
+  { icon: 'icon9.png', text: 'Pharmacy' },
+  { icon: 'icon10.png', text: 'Bakery' },
+  { icon: 'icon11.png', text: 'Daycare' },
+  { icon: 'icon12.png', text: 'Lowyer' },
+  { icon: 'icon13.png', text: 'Electrician' },
+  { icon: 'icon14.png', text: 'Plumber' },
+  { icon: 'icon15.png', text: 'Cleaning' },
+  { icon: 'icon16.png', text: 'Painting' },
+  { icon: 'icon17.png', text: 'Trainer' },
 ];
 
 const CategoriesBox: React.FC = () => {
@@ -37,8 +50,8 @@ const CategoriesBox: React.FC = () => {
     <CategoriesBoxContainer>
       <TextTopBox>Categories</TextTopBox>
       <CategoriesContainer>
-        {categoriesData.map((icon, index) => (
-          <Category key={index} index={index} icon={icon} />
+        {categoriesData.map((data, index) => (
+          <Category key={index} index={index} icon={data.icon} text={data.text} />
         ))}
       </CategoriesContainer>
     </CategoriesBoxContainer>

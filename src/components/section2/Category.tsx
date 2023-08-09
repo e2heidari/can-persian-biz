@@ -22,9 +22,9 @@ const CategoryIcon = styled.img`
 `;
 
 const CategoryText = styled.div`
+  color: black;
   width: 160%;
   height: 2.2em;
-  line-height: 1.2em;
   line-height: 1.2em;
   text-overflow: ellipsis;
   text-align: center;
@@ -36,13 +36,14 @@ const CategoryText = styled.div`
 interface CategoryProps {
   index: number;
   icon: string; // Icon file name
+  text: string; // Text for the category
 }
 
-const Category: React.FC<CategoryProps> = ({ index, icon }) => {
+const Category: React.FC<CategoryProps> = ({ index, icon, text }) => {
   return (
     <CategoryBox>
-      <CategoryIcon src= {`/${icon}`}  alt={`Icon ${index + 1}`} />
-      <CategoryText>Category {index + 1}</CategoryText>
+      <CategoryIcon src={`/${icon}`} alt={`Icon ${index + 1}`} />
+      <CategoryText>{text}</CategoryText>
     </CategoryBox>
   );
 };
