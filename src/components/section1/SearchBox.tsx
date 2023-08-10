@@ -42,19 +42,23 @@ const TopBox = styled.div`
 
 const FindTheText = styled.div`
   font-size: 40.663px;
+  backdrop-filter: blur(5px);
 
   @media (max-width: 768px) {
     /* Mobile size styles */
     font-size: 23.52px;
+    backdrop-filter: blur(5px);
   }
 `;
 
 const BestPersianText = styled.div`
   font-size: 72.534px;
+  backdrop-filter: blur(5px);
 
   @media (max-width: 768px) {
     /* Mobile size styles */
     font-size: 23.52px;
+    backdrop-filter: blur(5px);
   }
 `;
 

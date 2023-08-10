@@ -3,9 +3,15 @@ import styled from 'styled-components';
 import Category from './Category';
 
 const CategoriesBoxContainer = styled.div`
-background-color: white;
+  background-color: white;
   height: 427px;
   padding: 50px 0;
+
+  @media (max-width: 768px) {
+    /* Mobile size styles */
+    height: 410px;
+    padding: 5% 0;
+  }
 `;
 
 const TextTopBox = styled.div`
@@ -14,17 +20,76 @@ const TextTopBox = styled.div`
   font-size: 21px;
   display: flex;
   justify-content: center;
+  color: #747474;
+  font-weight: 300;
+
+  @media (max-width: 768px) {
+    /* Mobile size styles */
+    font-size: 18px;
+    margin: 10px 0px 20px 0px;
+  }
 `;
 
 const CategoriesContainer = styled.div`
-  height: 232px;
+  height: 282px;
   margin: 30px auto;
   padding: 0 12%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center the boxes horizontally */
-  align-items: center; /* Center the boxes vertically */
+  align-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
+const CategoriesContainerMobile = styled.div`
+display: none;
+
+  @media (max-width: 768px) {
+    /* Mobile size styles */
+  height: 290px;
+  margin: 30px auto;  
+    padding: 0 5%;
+    display: flex;
+    flex-direction:column ;
+  justify-content: center; /* Center the boxes horizontally */
+  align-items: center;
+  }
+`;
+const CategoriesIcons = styled.div`
+display: none;
+
+  @media (max-width: 768px) {
+    /* Mobile size styles */
+  height: 232px;
+  margin: 30px auto;  
+    padding: 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+  justify-content: center; /* Center the boxes horizontally */
+  align-items: center;
+  }
+`;
+
+const MoreButton = styled.button`
+  display: none;
+
+  @media (max-width: 768px) {
+    /* Mobile size styles */
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1677ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0px;
+  }
+`;
+
 
 const categoriesData = [
   { icon: 'icon1.png', text: 'Fast Food' },
@@ -50,6 +115,14 @@ const CategoriesBox: React.FC = () => {
   return (
     <CategoriesBoxContainer>
       <TextTopBox>Categories</TextTopBox>
+      <CategoriesContainerMobile>
+        <CategoriesIcons>
+        {categoriesData.slice(0, 6).map((data, index) => (
+          <Category key={index} index={index} icon={data.icon} text={data.text} />
+        ))}
+          </CategoriesIcons>
+        <MoreButton>More</MoreButton>
+      </CategoriesContainerMobile>
       <CategoriesContainer>
         {categoriesData.map((data, index) => (
           <Category key={index} index={index} icon={data.icon} text={data.text} />
