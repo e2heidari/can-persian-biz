@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Button } from 'antd';
 import Category from './Category';
 
 const CategoriesBoxContainer = styled.div`
@@ -63,7 +64,7 @@ display: none;
   @media (max-width: 768px) {
     /* Mobile size styles */
   height: 232px;
-  margin: 30px auto;  
+  margin: 25px auto;  
     padding: 0 5%;
     display: flex;
     flex-wrap: wrap;
@@ -72,7 +73,7 @@ display: none;
   }
 `;
 
-const MoreButton = styled.button`
+const MoreButton = styled(Button)`
   display: none;
 
   @media (max-width: 768px) {
@@ -121,7 +122,9 @@ const CategoriesBox: React.FC = () => {
           <Category key={index} index={index} icon={data.icon} text={data.text} />
         ))}
           </CategoriesIcons>
-        <MoreButton>More</MoreButton>
+          <MoreButton type="primary" shape="round"  size="large">
+        More
+      </MoreButton>
       </CategoriesContainerMobile>
       <CategoriesContainer>
         {categoriesData.map((data, index) => (
