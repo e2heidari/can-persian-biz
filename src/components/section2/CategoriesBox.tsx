@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Button } from 'antd';
 import Category from './Category';
@@ -14,7 +14,6 @@ const CategoriesBoxContainer = styled.div`
     padding: 5% 0;
   }
 `;
-
 const TextTopBox = styled.div`
   height: 25px;
   margin: 10px 0 40px 0;
@@ -49,48 +48,69 @@ display: none;
 
   @media (max-width: 768px) {
     /* Mobile size styles */
-  height: 290px;
-  margin: 30px auto;  
-    padding: 0 5%;
     display: flex;
-    flex-direction:column ;
-  justify-content: center; /* Center the boxes horizontally */
-  align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 30px auto;
+    padding: 0 5%;
   }
 `;
-const CategoriesIcons = styled.div`
+// const CategoriesIcons = styled.div`
+// display: none;
+
+//   @media (max-width: 768px) {
+//     /* Mobile size styles */
+//   height: 232px;
+//   margin: 25px auto;  
+//     padding: 0 5%;
+//     display: flex;
+//     flex-wrap: wrap;
+//   justify-content: center; /* Center the boxes horizontally */
+//   align-items: center;
+//   }
+// `;
+
+const MoreButtonContainer = styled.div`
 display: none;
 
   @media (max-width: 768px) {
     /* Mobile size styles */
-  height: 232px;
-  margin: 25px auto;  
-    padding: 0 5%;
     display: flex;
-    flex-wrap: wrap;
-  justify-content: center; /* Center the boxes horizontally */
-  align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
   }
 `;
 
-const MoreButton = styled(Button)`
-  display: none;
+const StyledButton = styled(Button)`
+  && {
+    @media (max-width: 768px) {
+      /* Mobile size styles */
+      width: 200px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      background-color: #1677ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin: 10px 0px;
+      border-radius: 20px;
+    }
+  }
+`;
+
+const BackgroundContainer = styled.div`
+  background-color: white;
 
   @media (max-width: 768px) {
-    /* Mobile size styles */
-    width: 200px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1677ff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin: 10px 0px;
+    background-color: ${(props: { showAllIcons: boolean }) =>
+      props.showAllIcons ? 'white' : 'transparent'};
   }
 `;
-
 
 const categoriesData = [
   { icon: 'icon1.png', text: 'Fast Food' },
@@ -113,25 +133,36 @@ const categoriesData = [
 ];
 
 const CategoriesBox: React.FC = () => {
+  const [showAllIcons, setShowAllIcons] = useState(false);
+  const [moreButtonText, setMoreButtonText] = useState('More');
+
+  const handleMoreClick = () => {
+    setShowAllIcons(!showAllIcons);
+    setMoreButtonText(showAllIcons ? 'More' : 'Less');
+  };
+
   return (
-    <CategoriesBoxContainer>
-      <TextTopBox>Categories</TextTopBox>
-      <CategoriesContainerMobile>
-        <CategoriesIcons>
-        {categoriesData.slice(0, 6).map((data, index) => (
-          <Category key={index} index={index} icon={data.icon} text={data.text} />
-        ))}
-          </CategoriesIcons>
-          <MoreButton type="primary" shape="round"  size="large">
-        More
-      </MoreButton>
-      </CategoriesContainerMobile>
+    <BackgroundContainer showAllIcons={showAllIcons}>
+      <CategoriesBoxContainer>
+        <TextTopBox>Categories</TextTopBox>
+        <CategoriesContainerMobile>
+          {categoriesData.slice(0, showAllIcons ? categoriesData.length : 6).map((data, index) => (
+            <Category key={index} index={index} icon={data.icon} text={data.text} />
+          ))}
+        </CategoriesContainerMobile>
+        <MoreButtonContainer >
+          <StyledButton type="primary" size="large" onClick={handleMoreClick}>
+            {moreButtonText}
+          </StyledButton>
+        </MoreButtonContainer>
       <CategoriesContainer>
         {categoriesData.map((data, index) => (
           <Category key={index} index={index} icon={data.icon} text={data.text} />
         ))}
       </CategoriesContainer>
-    </CategoriesBoxContainer>
+      </CategoriesBoxContainer>
+    </BackgroundContainer>
+
   );
 };
 
