@@ -73,7 +73,7 @@ display: none;
 // `;
 
 const MoreButtonContainer = styled.div`
-display: none;
+  display: none;
 
   @media (max-width: 768px) {
     /* Mobile size styles */
@@ -135,34 +135,35 @@ const categoriesData = [
 const CategoriesBox: React.FC = () => {
   const [showAllIcons, setShowAllIcons] = useState(false);
   const [moreButtonText, setMoreButtonText] = useState('More');
+  const [categoryBoxHeight, setCategoryBoxHeight] = useState(427);
 
   const handleMoreClick = () => {
     setShowAllIcons(!showAllIcons);
     setMoreButtonText(showAllIcons ? 'More' : 'Less');
+    setCategoryBoxHeight(showAllIcons ? 427 : 850);
   };
 
   return (
     <BackgroundContainer showAllIcons={showAllIcons}>
-      <CategoriesBoxContainer>
+      <CategoriesBoxContainer style={{ height: categoryBoxHeight + 'px' }}>
         <TextTopBox>Categories</TextTopBox>
         <CategoriesContainerMobile>
           {categoriesData.slice(0, showAllIcons ? categoriesData.length : 6).map((data, index) => (
             <Category key={index} index={index} icon={data.icon} text={data.text} />
           ))}
         </CategoriesContainerMobile>
-        <MoreButtonContainer >
+        <MoreButtonContainer>
           <StyledButton type="primary" size="large" onClick={handleMoreClick}>
             {moreButtonText}
           </StyledButton>
         </MoreButtonContainer>
-      <CategoriesContainer>
-        {categoriesData.map((data, index) => (
-          <Category key={index} index={index} icon={data.icon} text={data.text} />
-        ))}
-      </CategoriesContainer>
+        <CategoriesContainer>
+          {categoriesData.map((data, index) => (
+            <Category key={index} index={index} icon={data.icon} text={data.text} />
+          ))}
+        </CategoriesContainer>
       </CategoriesBoxContainer>
     </BackgroundContainer>
-
   );
 };
 
