@@ -1,13 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import SearchBar from './SearchBar';
+import Image from 'next/image';
 
 const SearchBoxContainer = styled.section`
   position: relative;
-  background-image: url('${process.env.PUBLIC_URL}/section1background.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,6 +17,15 @@ const SearchBoxContainer = styled.section`
     padding: 0px 16px;
   }
 `;
+const BackgroundImage = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
 
 const TopBox = styled.div`
   font-size: 40.663px;
@@ -65,6 +71,11 @@ const BestPersianText = styled.div`
 const SearchBox = () => {
   return (
     <SearchBoxContainer>
+       <BackgroundImage
+        src="/section1background.jpg"
+        alt="Search Background"
+        layout="fill"
+      />
       <TopBox>
         <FindTheText>FIND THE</FindTheText>
         <BestPersianText>BEST PERSIAN BUSINESSES</BestPersianText>
