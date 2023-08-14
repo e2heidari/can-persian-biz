@@ -124,7 +124,7 @@ const categoriesData = [
   { icon: 'icon9.png', text: 'Pharmacy' },
   { icon: 'icon10.png', text: 'Bakery' },
   { icon: 'icon11.png', text: 'Daycare' },
-  { icon: 'icon12.png', text: 'Lowyer' },
+  { icon: 'icon12.png', text: 'Lawyer' },
   { icon: 'icon13.png', text: 'Electrician' },
   { icon: 'icon14.png', text: 'Plumber' },
   { icon: 'icon15.png', text: 'Cleaning' },
