@@ -7,6 +7,8 @@ import SearchBox from '../components/section1/SearchBox';
 import Footer from '../components/Footer';
 import { Element } from 'react-scroll';
 import CategoriesBox from '@/components/section2/CategoriesBox';
+import BulletinBox from '@/components/section3/BulletinBox';
+
 
 
 
@@ -25,7 +27,7 @@ const IndexPage = () => {
         <CategoriesBox />
       </Element>
       <Element name="section3">
-        <Section height={386.66} />
+      <BulletinBox />
       </Element>
       <Footer />
     </MainContainer>
