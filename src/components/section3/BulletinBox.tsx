@@ -2,33 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BulletinBoxContainer = styled.div`
-  background-color: #f5f5f5;
-  height: 430px;
-  padding: 8% 0;
-  width: 100%;
-  margin: 0 auto;
-
-  @media (max-width: 1024px) {
-    height: 290px;
-  }
-`;
-
-const BulletinRow = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
+   align-items: flex-start;
+  background-color: #f5f5f5;
+  height: 426px;
+  padding: 8% 0;
+  width: 100%;
+  margin: 0 auto; 
 
   @media (max-width: 1024px) {
-    flex-direction: column;
-    align-items: center;
+    height: 274px;
+
   }
 `;
+
+// const BulletinRow = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-start;
+
+
 
 const BulletinBox = styled.div`
   width: 33.33%;
   background-color: white;
   text-align: center;
+  height: 214px;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -37,13 +37,14 @@ const BulletinBox = styled.div`
 `;
 
 const BulletinIconContainer = styled.div`
-  height: 136px;
+width: auto;
+    height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   @media (max-width: 1024px) {
-    height: 80px;
+    height: 78px;
   }
 `;
 
@@ -57,53 +58,54 @@ const BulletinIcon = styled.img`
   }
 `;
 
-const BulletinText = styled.h3`
-  height: 84px;
-  font-size: 18px;
+const BulletinText = styled.div`
+  height: 54px;
+  font-size: 45px;
   font-weight: 600;
   text-align: center;
   @media (max-width: 1024px) {
-    height: 59px;
+    height: 42px;
+    font-size: 35px;
   }
 `;
 
 const BulletinBottomBox = styled.div`
   height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: 300;
+    font-size: 25px;
+
 
   @media (max-width: 1024px) {
     height: 17px;
+    font-weight: 300;
+    font-size: 14px;
   }
 `;
 
 const BulletinBoxComponent: React.FC = () => {
   return (
     <BulletinBoxContainer>
-      <BulletinRow>
         <BulletinBox>
           <BulletinIconContainer>
-            <BulletinIcon src="/path/to/icon1.png" alt="Icon 1" />
+            <BulletinIcon src="/bulletin-icon1.png" alt="Icon 1" />
           </BulletinIconContainer>
-          <BulletinText>Text 1</BulletinText>
-          <BulletinBottomBox></BulletinBottomBox>
+          <BulletinText>Text 1A</BulletinText>
+          <BulletinBottomBox>Text 1B</BulletinBottomBox>
         </BulletinBox>
         <BulletinBox>
           <BulletinIconContainer>
-            <BulletinIcon src="/path/to/icon2.png" alt="Icon 2" />
+            <BulletinIcon src="/bulletin-icon2.png" alt="Icon 2" />
           </BulletinIconContainer>
-          <BulletinText>Text 2</BulletinText>
-          <BulletinBottomBox></BulletinBottomBox>
+          <BulletinText>Text 2A</BulletinText>
+          <BulletinBottomBox>Text 2B</BulletinBottomBox>
         </BulletinBox>
         <BulletinBox>
           <BulletinIconContainer>
-            <BulletinIcon src="/path/to/icon3.png" alt="Icon 3" />
+            <BulletinIcon src="/bulletin-icon3.png" alt="Icon 3" />
           </BulletinIconContainer>
-          <BulletinText>Text 3</BulletinText>
-          <BulletinBottomBox></BulletinBottomBox>
+          <BulletinText>Text 3A</BulletinText>
+          <BulletinBottomBox>Text 3B</BulletinBottomBox>
         </BulletinBox>
-      </BulletinRow>
     </BulletinBoxContainer>
   );
 };
