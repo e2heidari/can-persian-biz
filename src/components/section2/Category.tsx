@@ -5,7 +5,6 @@ const CategoryBox = styled.button`
   text-align: center;
   vertical-align: top;
   display: inline-block;
-  height: 106px;
   width: 62px;
   font-weight: 300;
   color: #fff;

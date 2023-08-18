@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
-  height: 61px;
   background-color: #333;
   color: #fff;
   display: flex;

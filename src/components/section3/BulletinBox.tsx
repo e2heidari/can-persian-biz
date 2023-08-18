@@ -6,15 +6,10 @@ const BulletinBoxContainer = styled.div`
   justify-content: space-between;
    align-items: flex-start;
   background-color: #f5f5f5;
-  height: 426px;
   padding: 8% 0;
   width: 100%;
   margin: 0 auto; 
 
-  @media (max-width: 1024px) {
-    height: 274px;
-
-  }
 `;
 
 // const BulletinRow = styled.div`

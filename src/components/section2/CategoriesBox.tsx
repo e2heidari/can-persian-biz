@@ -5,7 +5,6 @@ import Category from './Category';
 
 const CategoriesBoxContainer = styled.div`
   background-color: white;
-  height: 427px;
   padding: 50px 0;
 
   @media (max-width: 768px) {
