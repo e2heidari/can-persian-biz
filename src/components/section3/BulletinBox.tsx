@@ -55,8 +55,8 @@ const BulletinIcon = styled.img`
 
 const BulletinText = styled.div`
   height: 54px;
-  font-size: 45px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 650;
   text-align: center;
   @media (max-width: 1024px) {
     height: 42px;
@@ -66,7 +66,7 @@ const BulletinText = styled.div`
 
 const BulletinBottomBox = styled.div`
   height: 30px;
-  font-weight: 300;
+  font-weight: 250;
     font-size: 25px;
 
 
@@ -84,22 +84,22 @@ const BulletinBoxComponent: React.FC = () => {
           <BulletinIconContainer>
             <BulletinIcon src="/bulletin-icon1.png" alt="Icon 1" />
           </BulletinIconContainer>
-          <BulletinText>Text 1A</BulletinText>
-          <BulletinBottomBox>Text 1B</BulletinBottomBox>
+          <BulletinText>MANY WAYS</BulletinText>
+          <BulletinBottomBox>TO GROW YOUR BUSINESS</BulletinBottomBox>
         </BulletinBox>
         <BulletinBox>
           <BulletinIconContainer>
             <BulletinIcon src="/bulletin-icon2.png" alt="Icon 2" />
           </BulletinIconContainer>
-          <BulletinText>Text 2A</BulletinText>
-          <BulletinBottomBox>Text 2B</BulletinBottomBox>
+          <BulletinText>200 THOUSAND</BulletinText>
+          <BulletinBottomBox>CONSUMERS</BulletinBottomBox>
         </BulletinBox>
         <BulletinBox>
           <BulletinIconContainer>
             <BulletinIcon src="/bulletin-icon3.png" alt="Icon 3" />
           </BulletinIconContainer>
-          <BulletinText>Text 3A</BulletinText>
-          <BulletinBottomBox>Text 3B</BulletinBottomBox>
+          <BulletinText>4 THOUSAND</BulletinText>
+          <BulletinBottomBox>MERCHANTS</BulletinBottomBox>
         </BulletinBox>
     </BulletinBoxContainer>
   );
