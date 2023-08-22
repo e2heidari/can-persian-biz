@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
-  background-color: #333;
+  background-color: white;
   color: #fff;
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@ const LogoBox = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 166px;
+  width: 30px;
   margin-right: 12px;
 `;
 
@@ -28,6 +28,7 @@ const TextBox = styled.div`
   display: flex;
   align-items: center;
   margin-right: 11px;
+  color:black;
 
   @media (max-width: 768px) {
     display: none;
@@ -37,6 +38,7 @@ const TextBox = styled.div`
 const SignUpBox = styled.div`
   width: 68.86px;
   height: 40px;
+  color:black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,6 +53,7 @@ const LogInBox = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 12.8px;
+  color:black;
   cursor: pointer; /* Add a pointer cursor to indicate clickability */
 `;
 
@@ -68,8 +71,8 @@ const Header = () => {
   return (
     <HeaderContainer>
       <LogoBox>
-        <Logo src="/path/to/your/logo.png" alt="Logo" />
-        <TextBox>Text Box</TextBox>
+        <Logo src="/logo.png" alt="Logo" />
+        <TextBox>PerNet</TextBox>
       </LogoBox>
       <div style={{ display: 'flex' }}>
         <SignUpBox onClick={handleSignUpClick}>SIGN UP</SignUpBox>
