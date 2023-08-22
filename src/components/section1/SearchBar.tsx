@@ -57,7 +57,7 @@ const SearchBarContainer = styled.div`
 
   /* Default styles */
   position: relative;
-  width: 800px; 
+  width: 80%; 
   padding: 13px 46px 13px 11px;
 
   @media (max-width: 768px) {

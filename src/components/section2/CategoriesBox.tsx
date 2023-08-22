@@ -4,15 +4,23 @@ import { Button } from 'antd';
 import Category from './Category';
 
 const CategoriesBoxContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  padding: 50px 0;
+  padding: 5% 0;
+  margin: 0 auto;
+
+  @media (max-width: 1280px) {
+    padding: 3% 0;
+  }
 
   @media (max-width: 768px) {
-    /* Mobile size styles */
-    height: 410px;
     padding: 5% 0;
   }
 `;
+
+
+
 const TextTopBox = styled.div`
   height: 25px;
   margin: 10px 0 40px 0;
@@ -30,13 +38,16 @@ const TextTopBox = styled.div`
 `;
 
 const CategoriesContainer = styled.div`
-  height: 282px;
   margin: 30px auto;
   padding: 0 12%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center the boxes horizontally */
   align-items: center;
+  @media (max-width: 1024px) {
+  padding: 0 12%;
+
+  }
 
   @media (max-width: 768px) {
     display: none;
@@ -134,17 +145,15 @@ const categoriesData = [
 const CategoriesBox: React.FC = () => {
   const [showAllIcons, setShowAllIcons] = useState(false);
   const [moreButtonText, setMoreButtonText] = useState('More');
-  const [categoryBoxHeight, setCategoryBoxHeight] = useState(427);
 
   const handleMoreClick = () => {
     setShowAllIcons(!showAllIcons);
     setMoreButtonText(showAllIcons ? 'More' : 'Less');
-    setCategoryBoxHeight(showAllIcons ? 427 : 850);
   };
 
   return (
     <BackgroundContainer showAllIcons={showAllIcons}>
-      <CategoriesBoxContainer style={{ height: categoryBoxHeight + 'px' }}>
+      <CategoriesBoxContainer >
         <TextTopBox>Categories</TextTopBox>
         <CategoriesContainerMobile>
           {categoriesData.slice(0, showAllIcons ? categoriesData.length : 6).map((data, index) => (
