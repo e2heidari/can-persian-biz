@@ -7,6 +7,7 @@ const BulletinBoxContainer = styled.div`
   align-items: flex-start;  
   background-image: url('/section-bulletin.jpg');
   background-size: cover;
+  background-position: center center;
   background-attachment: fixed; /* This creates the parallax effect */
   &.parallax {
     transform: translateY(0);
@@ -15,6 +16,9 @@ const BulletinBoxContainer = styled.div`
   padding: 8% 0;
   width: 100%;
   margin: 0 auto; 
+  @media (max-width: 768px) {
+    height:239px;
+  }
 
 `;
 
@@ -33,6 +37,9 @@ const BulletinBox = styled.div`
   @media (max-width: 1024px) {
     width: 100%;
     height: 137px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 
@@ -69,6 +76,10 @@ const BulletinText = styled.div`
     height: 42px;
     font-size: 35px;
   }
+  @media (max-width: 768px) {
+    height: 25px;
+    font-size: 17px;
+  }
 `;
 
 const BulletinBottomBox = styled.div`
@@ -80,6 +91,9 @@ const BulletinBottomBox = styled.div`
     height: 17px;
     font-weight: 300;
     font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    font-size: 13px;
   }
 `;
 
