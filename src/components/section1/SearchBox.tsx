@@ -50,20 +50,31 @@ const FindTheText = styled.div`
   font-size: 40.663px;
   backdrop-filter: blur(5px);
 
-  @media (max-width: 768px) {
-    /* Mobile size styles */
-    font-size: 23.52px;
+  @media (max-width: 1280px) {
+    font-size: 30.52px;
     backdrop-filter: blur(5px);
   }
+
+  @media (max-width: 768px) {
+    /* Mobile size styles */
+    font-size: 20.52px;
+    backdrop-filter: blur(5px);
+  }
+  
 `;
 
 const BestPersianText = styled.div`
   font-size: 72.534px;
   backdrop-filter: blur(5px);
 
+  @media (max-width: 1080px) {
+    font-size: 50.52px;
+    backdrop-filter: blur(5px);
+  }
+
   @media (max-width: 768px) {
     /* Mobile size styles */
-    font-size: 23.52px;
+    font-size: 28.52px;
     backdrop-filter: blur(5px);
   }
 `;

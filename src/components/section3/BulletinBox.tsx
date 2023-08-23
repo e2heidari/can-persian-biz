@@ -13,12 +13,13 @@ const BulletinBoxContainer = styled.div`
     transform: translateY(0);
     transition: transform 0.3s ease-in-out;
   }
-  padding: 8% 0;
+  padding: 10% 0;
   width: 100%;
   margin: 0 auto; 
 
   @media (max-width: 768px) {
-    height: auto; /* Adjust the height for mobile layout */
+  padding: 20% 0;
+
   }
 `;
 
@@ -34,22 +35,18 @@ const BulletinBoxContainer = styled.div`
 const BulletinBox = styled.div`
   width: 33.33%;
   text-align: center;
-  height: 214px;
 
   @media (max-width: 1280px) {
     width: 50%;
-    height: 180px;
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    height: auto;
   }
 `;
 
 const BulletinIconContainer = styled.div`
 width: auto;
-    height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
