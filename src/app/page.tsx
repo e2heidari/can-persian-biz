@@ -2,7 +2,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../components/Header';
-import Section from '../components/Section';
 import SearchBox from '../components/section1/SearchBox';
 import Footer from '../components/Footer';
 import { Element } from 'react-scroll';
