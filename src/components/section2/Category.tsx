@@ -1,5 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+
+interface CategoryProps {
+  icon: string;
+  text: string;
+}
 
 const CategoryBox = styled.button`
   text-align: center;
@@ -40,10 +46,12 @@ interface CategoryProps {
 
 const Category: React.FC<CategoryProps> = ({ index, icon, text }) => {
   return (
+    <Link href={`/category/${text.toLowerCase().replace(' ', '-')}`}>
     <CategoryBox>
       <CategoryIcon src={`/${icon}`} alt={`Icon ${index + 1}`} />
       <CategoryText>{text}</CategoryText>
     </CategoryBox>
+    </Link>
   );
 };
 

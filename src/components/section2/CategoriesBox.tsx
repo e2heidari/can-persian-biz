@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Button } from 'antd';
 import Category from './Category';
+import Link from 'next/link'; 
+
 
 const CategoriesBoxContainer = styled.div`
   display: flex;
@@ -142,6 +144,7 @@ const categoriesData = [
   { icon: 'category-icon17.png', text: 'Trainer' },
 ];
 
+
 const CategoriesBox: React.FC = () => {
   const [showAllIcons, setShowAllIcons] = useState(false);
   const [moreButtonText, setMoreButtonText] = useState('More');
@@ -157,7 +160,7 @@ const CategoriesBox: React.FC = () => {
         <TextTopBox>Categories</TextTopBox>
         <CategoriesContainerMobile>
           {categoriesData.slice(0, showAllIcons ? categoriesData.length : 6).map((data, index) => (
-            <Category key={index} index={index} icon={data.icon} text={data.text} />
+          <Category key={index} index={index} icon={data.icon} text={data.text} />
           ))}
         </CategoriesContainerMobile>
         <MoreButtonContainer>
