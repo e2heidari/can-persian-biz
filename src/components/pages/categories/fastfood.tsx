@@ -1,7 +1,6 @@
 import React from 'react';
-import { useRouter } from 'next/router';
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../../Header';
+import Footer from '../../Footer';
 import styled from 'styled-components';
 
 const CategoryPageContainer = styled.div`
@@ -38,9 +37,7 @@ const RightBox = styled.div`
   justify-content: center;
 `;
 
-const innercategory: React.FC = () => {
-  const router = useRouter();
-  const { categoryName } = router.query;
+const fastfood: React.FC = () => {
   
   // Placeholder content for the left and right boxes
   const leftBoxContent = <p>Content for the left box</p>;
@@ -62,4 +59,4 @@ const innercategory: React.FC = () => {
   );
 };
 
-export default innercategory;
+export default fastfood;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Button } from 'antd';
 import Category from './Category';
-import Link from 'next/link'; 
+import Link from 'next/link';
 
 
 const CategoriesBoxContainer = styled.div`
@@ -160,7 +160,9 @@ const CategoriesBox: React.FC = () => {
         <TextTopBox>Categories</TextTopBox>
         <CategoriesContainerMobile>
           {categoriesData.slice(0, showAllIcons ? categoriesData.length : 6).map((data, index) => (
-          <Category key={index} index={index} icon={data.icon} text={data.text} />
+           <Link key={data.text} href={`/categories/${data.text.toLowerCase().replace(' ', '')}`}>
+            <Category key={index} index={index} icon={data.icon} text={data.text} />
+           </Link>
           ))}
         </CategoriesContainerMobile>
         <MoreButtonContainer>
@@ -170,7 +172,9 @@ const CategoriesBox: React.FC = () => {
         </MoreButtonContainer>
         <CategoriesContainer>
           {categoriesData.map((data, index) => (
+           <Link key={data.text} href={`/categories/${data.text.toLowerCase().replace(' ', '')}`}>
             <Category key={index} index={index} icon={data.icon} text={data.text} />
+           </Link>
           ))}
         </CategoriesContainer>
       </CategoriesBoxContainer>
