@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import SearchBox from '../components/section1/SearchBox';
 import Footer from '../components/Footer';
 import { Element } from 'react-scroll';
-import CategoriesBox from '../components/pages/CategoriesBox';
+import CategoriesBox from './categories';
 import BulletinBox from '../components/section3/BulletinBox';
 
 
