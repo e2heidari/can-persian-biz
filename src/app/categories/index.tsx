@@ -128,7 +128,7 @@ const categoriesData = [
   { icon: 'category-icon1.png', text: 'Fast Food' },
   { icon: 'category-icon2.png', text: 'Restaurant' },
   { icon: 'category-icon3.png', text: 'Real Estate' },
-  { icon: 'category-icon4.png', text: 'Sim Card & Mobile' },
+  { icon: 'category-icon4.png', text: 'Sim Card' },
   { icon: 'category-icon5.png', text: 'Market' },
   { icon: 'category-icon6.png', text: 'Beauty Salon' },
   { icon: 'category-icon7.png', text: 'Hookah Lounge' },
@@ -160,7 +160,7 @@ const CategoriesBox: React.FC = () => {
         <TextTopBox>Categories</TextTopBox>
         <CategoriesContainerMobile>
           {categoriesData.slice(0, showAllIcons ? categoriesData.length : 6).map((data, index) => (
-           <Link key={data.text} href={`/categories/${data.text.toLowerCase().replace(' ', '')}`}>
+           <Link key={data.text} href={`/categories/${data.text.toLowerCase().replace(' ', '-')}`}>
             <Category key={index} index={index} icon={data.icon} text={data.text} />
            </Link>
           ))}
@@ -172,7 +172,7 @@ const CategoriesBox: React.FC = () => {
         </MoreButtonContainer>
         <CategoriesContainer>
           {categoriesData.map((data, index) => (
-           <Link key={data.text} href={`/categories/${data.text.toLowerCase().replace(' ', '')}`}>
+           <Link key={data.text} href={`/categories/${data.text.toLowerCase().replace(' ', '-')}`}>
             <Category key={index} index={index} icon={data.icon} text={data.text} />
            </Link>
           ))}
