@@ -48,7 +48,7 @@ const RightBox = styled.div`
 const MiddleBox = styled.div`
   width: 70%; /* 70% of the RightBox's width */
   height: 140px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,12 +56,10 @@ const MiddleBox = styled.div`
   padding: 2em;
 `;
 
-const TextBox = styled.input`
+const TextBox = styled.h3`
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   font-size: 16px;
 `;
 
@@ -86,6 +84,17 @@ const SearchButton = styled.button`
   cursor: pointer;
 `;
 
+const cityOptions = [
+  "Select a city",
+  "Vancouver",
+  "Burnaby",
+  "Surrey",
+  "Richmond",
+  "Coquitlam",
+  "Port Coquitlam",
+  "Port Moody",
+];
+
 const fastfood: React.FC = () => {
   return (
     <CategoryPageContainer>
@@ -102,11 +111,13 @@ const fastfood: React.FC = () => {
         </LeftBox>
         <RightBox>
           <MiddleBox>
-            <TextBox type="text" placeholder="Enter text..." />
+            <TextBox>CHOOSE YOUR CITY</TextBox>
             <Dropdown>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+              {cityOptions.map((city, index) => (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              ))}
             </Dropdown>
           </MiddleBox>
           <SearchButton>Search</SearchButton>
