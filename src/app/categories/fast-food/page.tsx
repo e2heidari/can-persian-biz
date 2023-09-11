@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import Header from '../../../components/Header'; // Assuming Header has its own styles
+import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import styled from 'styled-components';
 import Image from 'next/image';
@@ -21,7 +21,6 @@ const BackgroundImage = styled(Image)`
 `;
 
 const ContentSection = styled.div`
-  padding: 0 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,18 +39,57 @@ const RightBox = styled.div`
   width: 40%;
   height: 90vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+`;
+
+const MiddleBox = styled.div`
+  width: 70%; /* 70% of the RightBox's width */
+  height: 140px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+`;
+
+const TextBox = styled.input`
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+`;
+
+const Dropdown = styled.select`
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px; /* Add margin to create space between the input and dropdown */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+`;
+
+const SearchButton = styled.button`
+  width: 70%; /* Make the button 70% wide */
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
 `;
 
 const fastfood: React.FC = () => {
-  // Placeholder content for the left and right boxes
-  const leftBoxContent = <p>Content for the left box</p>;
-  const rightBoxContent = <p>Content for the right box</p>;
-
   return (
     <CategoryPageContainer>
-      <Header /> {/* Render the Header component as it is */}
+      <Header />
       <ContentSection>
         <BackgroundImage
           src="/fastfoodbackground.jpg"
@@ -59,10 +97,19 @@ const fastfood: React.FC = () => {
           layout="fill"
         />
         <LeftBox>
-          {leftBoxContent}
+          <h1>Welcome to our fast food page!</h1>
+          <p>Explore our delicious menu items.</p>
         </LeftBox>
         <RightBox>
-          {rightBoxContent}
+          <MiddleBox>
+            <TextBox type="text" placeholder="Enter text..." />
+            <Dropdown>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </Dropdown>
+          </MiddleBox>
+          <SearchButton>Search</SearchButton>
         </RightBox>
       </ContentSection>
       <Footer />
