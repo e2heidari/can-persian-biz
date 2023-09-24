@@ -85,7 +85,6 @@ const SearchButton = styled.button`
 `;
 
 const cityOptions = [
-  "Select a city",
   "Vancouver",
   "Burnaby",
   "Surrey",

@@ -72,7 +72,7 @@ const Header = () => {
     <HeaderContainer>
       <LogoBox>
         <Logo src="/logo.png" alt="Logo" />
-        <TextBox>PerNet</TextBox>
+        <TextBox>Dram</TextBox>
       </LogoBox>
       <div style={{ display: 'flex' }}>
         <SignUpBox onClick={handleSignUpClick}>SIGN UP</SignUpBox>
