@@ -1,9 +1,11 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import styled from 'styled-components';
 import Image from 'next/image';
+import Location from '../locations.json'
+import GooglePlacesMap from '../../../components/GooglePlacesMap';
 
 const CategoryPageContainer = styled.div`
   display: flex;
@@ -24,30 +26,32 @@ const ContentSection = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* Add this style to make it a reference point for the header */
+  position: relative;
+`;
+
+
+const RightBox = styled.div`
+width: 40%;
+height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+backdrop-filter: blur(4px);
 `;
 
 const LeftBox = styled.div`
-  width: 60%;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+width: 80%;
+height: 90vh;
+display: flex;
+justify-content: center;
+align-items: center;
 `;
 
-const RightBox = styled.div`
-  width: 40%;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(10px);
-`;
 
-const MiddleBox = styled.div`
-  width: 70%; /* 70% of the RightBox's width */
-  height: 140px;
+const RightMiddleBox = styled.div`
+  width: 70%;
+  height: 200px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -66,14 +70,14 @@ const TextBox = styled.h3`
 const Dropdown = styled.select`
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px; /* Add margin to create space between the input and dropdown */
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
 `;
 
 const SearchButton = styled.button`
-  width: 70%; /* Make the button 70% wide */
+  width: 70%;
   padding: 10px;
   margin-top: 15px;
   background-color: #007bff;
@@ -84,17 +88,20 @@ const SearchButton = styled.button`
   cursor: pointer;
 `;
 
-const cityOptions = [
-  "Vancouver",
-  "Burnaby",
-  "Surrey",
-  "Richmond",
-  "Coquitlam",
-  "Port Coquitlam",
-  "Port Moody",
-];
 
-const fastfood: React.FC = () => {
+const Fastfood: React.FC = () => {
+  const [selectedCity, setSelectedCity] = useState(""); // State to store the selected city
+
+  // Event handler for when a city is selected
+  const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCity(e.target.value);
+  };
+
+  // Event handler for when the "Search" button is clicked
+  const handleSearchClick = () => {
+    
+  };
+
   return (
     <CategoryPageContainer>
       <Header />
@@ -105,21 +112,21 @@ const fastfood: React.FC = () => {
           layout="fill"
         />
         <LeftBox>
-          <h1>Welcome to our fast food page!</h1>
-          <p>Explore our delicious menu items.</p>
+        <GooglePlacesMap />
         </LeftBox>
         <RightBox>
-          <MiddleBox>
+        <RightMiddleBox>
             <TextBox>CHOOSE YOUR CITY</TextBox>
-            <Dropdown>
-              {cityOptions.map((city, index) => (
-                <option key={index} value={city}>
-                  {city}
-                </option>
-              ))}
+            <Dropdown onChange={handleCityChange}>
+             <option value="">Select a city</option>
+              {Location.map((city, index) => (
+             <option key={index} value={city.name}> {/* Use city.name as the value */}
+             {city.name}
+             </option>
+             ))}
             </Dropdown>
-          </MiddleBox>
-          <SearchButton>Search</SearchButton>
+            <SearchButton onClick={handleSearchClick}>Search</SearchButton>
+          </RightMiddleBox>
         </RightBox>
       </ContentSection>
       <Footer />
@@ -127,4 +134,5 @@ const fastfood: React.FC = () => {
   );
 };
 
-export default fastfood;
+export default Fastfood;
+
