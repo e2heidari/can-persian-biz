@@ -42,16 +42,25 @@ const GooglePlacesMap: React.FC = () => {
         const response = await axios.get(
           `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=5000&type=restaurant&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY}`
         );
-        setRestaurants(response.data.results);
+  
+        console.log('API Response:', response.data);
+  
+        // Check if the response has the expected structure
+        if (response.data && response.data.results) {
+          setRestaurants(response.data.results);
+        } else {
+          console.error('Unexpected API response structure:', response.data);
+        }
       } catch (error) {
         console.error('Error fetching restaurants:', error);
       }
     };
-    console.log(restaurants)
+  
     if (isLoaded) {
       fetchRestaurants();
     }
   }, [isLoaded, lat, lng]);
+  
 
   if (!isLoaded) {
     return <p>Loading...</p>;
