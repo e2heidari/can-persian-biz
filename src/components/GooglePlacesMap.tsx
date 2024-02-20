@@ -1,9 +1,10 @@
-import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api';
-import { useMemo, useState, useEffect } from 'react';
-import axios from 'axios';
+import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api";
+import { useMemo, useState, useEffect } from "react";
 
 interface Restaurant {
-  place_id: string;
+  place_id?: string;
+  name?: string;
+  formatted_address?: string;
   geometry: {
     location: {
       lat: number;
@@ -13,21 +14,7 @@ interface Restaurant {
 }
 
 const GooglePlacesMap: React.FC = () => {
-  const [lat, setLat] = useState(49.2827); // Vancouver latitude
-  const [lng, setLng] = useState(-123.1207); // Vancouver longitude
-
-  const libraries = useMemo(() => ['places'], []);
-  const mapCenter = useMemo(() => ({ lat, lng }), [lat, lng]);
-
-  const mapOptions = useMemo<google.maps.MapOptions>(
-    () => ({
-      disableDefaultUI: true,
-      clickableIcons: true,
-      scrollwheel: false,
-    }),
-    []
-  );
-
+  const libraries = useMemo(() => ["places"], []);
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
     libraries: libraries as any,
@@ -36,31 +23,73 @@ const GooglePlacesMap: React.FC = () => {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
   useEffect(() => {
-    // Fetch restaurants in Vancouver using Google Places API
-    const fetchRestaurants = async () => {
+    const fetchRestaurantDetails = async () => {
       try {
-        const response = await axios.get(
-          `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=5000&type=restaurant&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY}`
+        const placeIds = ["ChIJhd_AaSpzhlQRR0HKIE5tj_w", "ChIJMYMDpChyhlQRu37tlv6qDUI"];
+
+        const placesService = new google.maps.places.PlacesService(
+          document.createElement("div")
         );
-  
-        console.log('API Response:', response.data);
-  
-        // Check if the response has the expected structure
-        if (response.data && response.data.results) {
-          setRestaurants(response.data.results);
-        } else {
-          console.error('Unexpected API response structure:', response.data);
+
+        const detailedRestaurants: Restaurant[] = [];
+
+        const fetchDetailsForPlace = (placeId: string) => {
+          return new Promise<Restaurant>((resolve, reject) => {
+            const request = {
+              placeId,
+              fields: ["name", "formatted_address", "geometry", "opening_hours", "rating"], // Add additional fields here
+            };
+
+            placesService.getDetails(request, (place, status) => {
+              if (
+                status === google.maps.places.PlacesServiceStatus.OK &&
+                place &&
+                place.geometry &&
+                place.geometry.location
+              ) {
+                const restaurant: Restaurant = {
+                  place_id: place.place_id,
+                  name: place.name,
+                  formatted_address: place.formatted_address,
+                  geometry: {
+                    location: {
+                      lat: place.geometry.location.lat(),
+                      lng: place.geometry.location.lng(),
+                    },
+                  },
+                  // Add additional fields here
+                  opening_hours: place.opening_hours,
+                  rating: place.rating,
+                };
+                console.log("Restaurant details:", restaurant); // Log details here
+                resolve(restaurant);
+              } else {
+                console.error("Error fetching details for place:", status);
+                reject(status);
+              }
+            });
+          });
+        };
+
+        for (const placeId of placeIds) {
+          try {
+            const restaurant = await fetchDetailsForPlace(placeId);
+            detailedRestaurants.push(restaurant);
+          } catch (error) {
+            console.error(`Error fetching details for place ${placeId}:`, error);
+          }
         }
+
+        setRestaurants(detailedRestaurants);
       } catch (error) {
-        console.error('Error fetching restaurants:', error);
+        console.error("Error fetching restaurant details:", error);
       }
     };
-  
+
     if (isLoaded) {
-      fetchRestaurants();
+      fetchRestaurantDetails();
     }
-  }, [isLoaded, lat, lng]);
-  
+  }, [isLoaded]);
 
   if (!isLoaded) {
     return <p>Loading...</p>;
@@ -69,14 +98,12 @@ const GooglePlacesMap: React.FC = () => {
   return (
     <div>
       <GoogleMap
-        options={mapOptions}
         zoom={14}
-        center={mapCenter}
+        center={{ lat: 49.2827, lng: -123.1207 }} // Default to Vancouver
         mapTypeId={google.maps.MapTypeId.ROADMAP}
-        mapContainerStyle={{ width: '800px', height: '600px' }}
-        onLoad={(map) => console.log('Map Loaded')}
+        mapContainerStyle={{ width: "800px", height: "600px" }}
+        onLoad={(map) => console.log("Map Loaded")}
       >
-        {/* Display markers for each restaurant */}
         {restaurants.map((restaurant) => (
           <Marker
             key={restaurant.place_id}
@@ -84,7 +111,7 @@ const GooglePlacesMap: React.FC = () => {
               lat: restaurant.geometry.location.lat,
               lng: restaurant.geometry.location.lng,
             }}
-            onLoad={() => console.log('Restaurant Marker Loaded')}
+            onLoad={() => console.log("Restaurant Marker Loaded")}
           />
         ))}
       </GoogleMap>
