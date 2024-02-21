@@ -1,7 +1,9 @@
 import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api";
 import { useMemo, useState, useEffect } from "react";
+import Location from '../app/categories/locations.json'
 
 interface Restaurant {
+  opening_hours?: string;
   place_id?: string;
   name?: string;
   formatted_address?: string;
@@ -13,7 +15,7 @@ interface Restaurant {
   };
 }
 
-const GooglePlacesMap: React.FC = () => {
+const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) => {
   const libraries = useMemo(() => ["places"], []);
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
@@ -37,7 +39,7 @@ const GooglePlacesMap: React.FC = () => {
           return new Promise<Restaurant>((resolve, reject) => {
             const request = {
               placeId,
-              fields: ["name", "formatted_address", "geometry", "opening_hours", "rating"], // Add additional fields here
+              fields: ["name", "formatted_address", "geometry", "opening_hours", "rating", "user_ratings_total", "price_level", "website"], // Add additional fields here
             };
 
             placesService.getDetails(request, (place, status) => {
@@ -60,6 +62,9 @@ const GooglePlacesMap: React.FC = () => {
                   // Add additional fields here
                   opening_hours: place.opening_hours,
                   rating: place.rating,
+                  user_ratings_total:place.user_ratings_total,
+                  price_level:place.price_level,
+                  website:place.website
                 };
                 console.log("Restaurant details:", restaurant); // Log details here
                 resolve(restaurant);
@@ -99,7 +104,7 @@ const GooglePlacesMap: React.FC = () => {
     <div>
       <GoogleMap
         zoom={14}
-        center={{ lat: 49.2827, lng: -123.1207 }} // Default to Vancouver
+        center={{ lat, lng }} // Default to Vancouver
         mapTypeId={google.maps.MapTypeId.ROADMAP}
         mapContainerStyle={{ width: "800px", height: "600px" }}
         onLoad={(map) => console.log("Map Loaded")}

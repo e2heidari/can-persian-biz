@@ -91,10 +91,19 @@ const SearchButton = styled.button`
 
 const Fastfood: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState(""); // State to store the selected city
+  const [selectedCityCoords, setSelectedCityCoords] = useState({ lat: 49.2827, lng: -123.1207 }); // Default to Vancouver coordinates
 
   // Event handler for when a city is selected
   const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCity(e.target.value);
+    const cityName = e.target.value;
+    setSelectedCity(cityName);
+    // Find the selected city's coordinates from the Location JSON
+    const city = Location.find((city) => city.name === cityName);
+    if (city) {
+      setSelectedCityCoords({ lat: city.lat, lng: city.lng });
+    } else {
+      setSelectedCityCoords({ lat: 49.2827, lng: -123.1207 }); // Default to Vancouver coordinates if city not found
+    }
   };
 
   // Event handler for when the "Search" button is clicked
@@ -112,18 +121,18 @@ const Fastfood: React.FC = () => {
           layout="fill"
         />
         <LeftBox>
-        <GooglePlacesMap />
+          <GooglePlacesMap lat={selectedCityCoords.lat} lng={selectedCityCoords.lng} />
         </LeftBox>
         <RightBox>
-        <RightMiddleBox>
+          <RightMiddleBox>
             <TextBox>CHOOSE YOUR CITY</TextBox>
             <Dropdown onChange={handleCityChange}>
-             <option value="">Select a city</option>
+              <option value="">Select a city</option>
               {Location.map((city, index) => (
-             <option key={index} value={city.name}> {/* Use city.name as the value */}
-             {city.name}
-             </option>
-             ))}
+                <option key={index} value={city.name}>
+                  {city.name}
+                </option>
+              ))}
             </Dropdown>
             <SearchButton onClick={handleSearchClick}>Search</SearchButton>
           </RightMiddleBox>
