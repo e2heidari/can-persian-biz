@@ -2,7 +2,7 @@ import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api";
 import { useMemo, useState, useEffect } from "react";
 
 interface Restaurant {
-  opening_hours?: string;
+  opening_hours?: google.maps.places.PlaceOpeningHours;
   place_id?: string;
   name?: string;
   formatted_address?: string;
@@ -12,7 +12,12 @@ interface Restaurant {
       lng: number;
     };
   };
+  rating?: number; // Define rating property
+  user_ratings_total?: number; // Define user_ratings_total property
+  price_level?: number; // Define price_level property
+  website?: string; // Define website property
 }
+
 
 const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) => {
   const libraries = useMemo(() => ["places"], []);
@@ -61,9 +66,9 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
                   // Add additional fields here
                   opening_hours: place.opening_hours,
                   rating: place.rating,
-                  user_ratings_total:place.user_ratings_total,
-                  price_level:place.price_level,
-                  website:place.website
+                  user_ratings_total: place.user_ratings_total,
+                  price_level: place.price_level,
+                  website: place.website,
                 };
                 console.log("Restaurant details:", restaurant); // Log details here
                 resolve(restaurant);
