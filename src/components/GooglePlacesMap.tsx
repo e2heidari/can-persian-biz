@@ -1,6 +1,5 @@
 import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api";
 import { useMemo, useState, useEffect } from "react";
-import Location from '../app/categories/locations.json'
 
 interface Restaurant {
   opening_hours?: string;

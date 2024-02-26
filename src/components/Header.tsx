@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const HeaderContainer = styled.header`
   background-color: white;
@@ -70,10 +71,12 @@ const Header = () => {
 
   return (
     <HeaderContainer>
+       <Link href="/">
       <LogoBox>
-        <Logo src="/logo.png" alt="Logo" />
+         <Logo src="/logo.png" alt="Logo" />
         <TextBox>Dram</TextBox>
       </LogoBox>
+       </Link>
       <div style={{ display: 'flex' }}>
         <SignUpBox onClick={handleSignUpClick}>SIGN UP</SignUpBox>
         <LogInBox onClick={handleLogInClick}>LOG IN</LogInBox>
