@@ -1,11 +1,11 @@
-import React, { useEffect }  from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 const BulletinBoxContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;  
-  background-image: url('/section-bulletin.jpg');
+  align-items: flex-start;
+  background-image: url('/section-bulletin.jpg'); /* Default background image */
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -15,22 +15,13 @@ const BulletinBoxContainer = styled.div`
   }
   padding: 10% 0;
   width: 100%;
-  margin: 0 auto; 
+  margin: 0 auto;
 
   @media (max-width: 768px) {
-  padding: 20% 0;
-
+    background-image: url('/mobilesizeBulletinBackground.jpg'); /* Mobile background image */
+    padding: 20% 0;
   }
 `;
-
-
-
-// const BulletinRow = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-start;
-
-
 
 const BulletinBox = styled.div`
   width: 33.33%;
@@ -46,7 +37,7 @@ const BulletinBox = styled.div`
 `;
 
 const BulletinIconContainer = styled.div`
-width: auto;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +50,6 @@ width: auto;
 const BulletinIcon = styled.img`
   width: 90px;
   height: 90px;
-  
 
   @media (max-width: 1024px) {
     width: 75px;
@@ -72,7 +62,8 @@ const BulletinText = styled.div`
   font-size: 40px;
   font-weight: 650;
   text-align: center;
-  color:white;
+  color: white;
+
   @media (max-width: 1024px) {
     height: 42px;
     font-size: 31px;
@@ -87,7 +78,8 @@ const BulletinBottomBox = styled.div`
   height: 30px;
   font-weight: 250;
   font-size: 25px;
-  color:white;
+  color: white;
+
   @media (max-width: 1024px) {
     height: 17px;
     font-weight: 300;
@@ -116,29 +108,30 @@ const BulletinBoxComponent: React.FC = () => {
       window.removeEventListener('scroll', parallaxEffect);
     };
   }, []);
+
   return (
     <BulletinBoxContainer>
-        <BulletinBox>
-          <BulletinIconContainer>
-            <BulletinIcon src="/bulletin-icon1.png" alt="Icon 1" />
-          </BulletinIconContainer>
-          <BulletinText>MANY WAYS</BulletinText>
-          <BulletinBottomBox>TO GROW YOUR BUSINESS</BulletinBottomBox>
-        </BulletinBox>
-        <BulletinBox>
-          <BulletinIconContainer>
-            <BulletinIcon src="/bulletin-icon2.png" alt="Icon 2" />
-          </BulletinIconContainer>
-          <BulletinText>200 THOUSAND</BulletinText>
-          <BulletinBottomBox>CONSUMERS</BulletinBottomBox>
-        </BulletinBox>
-        <BulletinBox>
-          <BulletinIconContainer>
-            <BulletinIcon src="/bulletin-icon3.png" alt="Icon 3" />
-          </BulletinIconContainer>
-          <BulletinText>4 THOUSAND</BulletinText>
-          <BulletinBottomBox>MERCHANTS</BulletinBottomBox>
-        </BulletinBox>
+      <BulletinBox>
+        <BulletinIconContainer>
+          <BulletinIcon src="/bulletin-icon1.png" alt="Icon 1" />
+        </BulletinIconContainer>
+        <BulletinText>MANY WAYS</BulletinText>
+        <BulletinBottomBox>TO GROW YOUR BUSINESS</BulletinBottomBox>
+      </BulletinBox>
+      <BulletinBox>
+        <BulletinIconContainer>
+          <BulletinIcon src="/bulletin-icon2.png" alt="Icon 2" />
+        </BulletinIconContainer>
+        <BulletinText>200 THOUSAND</BulletinText>
+        <BulletinBottomBox>CONSUMERS</BulletinBottomBox>
+      </BulletinBox>
+      <BulletinBox>
+        <BulletinIconContainer>
+          <BulletinIcon src="/bulletin-icon3.png" alt="Icon 3" />
+        </BulletinIconContainer>
+        <BulletinText>4 THOUSAND</BulletinText>
+        <BulletinBottomBox>MERCHANTS</BulletinBottomBox>
+      </BulletinBox>
     </BulletinBoxContainer>
   );
 };
