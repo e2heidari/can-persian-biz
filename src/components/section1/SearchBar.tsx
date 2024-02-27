@@ -78,7 +78,7 @@ const SearchBar: React.FC = () => (
   <SearchBarContainer>
     <StyledAutoComplete
       popupClassName="certain-category-search-dropdown"
-      dropdownMatchSelectWidth={500}
+      dropdownMatchSelectWidth={300}
       options={options}
     >
       <Input.Search size="large" placeholder="Find Ex. Mechanic, Beauty Salon, etc" />

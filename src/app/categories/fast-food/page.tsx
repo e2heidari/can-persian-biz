@@ -76,27 +76,13 @@ const Dropdown = styled.select`
   font-size: 16px;
 `;
 
-const SearchButton = styled.button`
-  width: 70%;
-  padding: 10px;
-  margin-top: 15px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-`;
-
 
 const Fastfood: React.FC = () => {
-  const [selectedCity, setSelectedCity] = useState(""); // State to store the selected city
   const [selectedCityCoords, setSelectedCityCoords] = useState({ lat: 49.2827, lng: -123.1207 }); // Default to Vancouver coordinates
 
   // Event handler for when a city is selected
   const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const cityName = e.target.value;
-    setSelectedCity(cityName);
     // Find the selected city's coordinates from the Location JSON
     const city = Location.find((city) => city.name === cityName);
     if (city) {
@@ -106,10 +92,6 @@ const Fastfood: React.FC = () => {
     }
   };
 
-  // Event handler for when the "Search" button is clicked
-  const handleSearchClick = () => {
-    
-  };
 
   return (
     <CategoryPageContainer>
@@ -127,14 +109,13 @@ const Fastfood: React.FC = () => {
           <RightMiddleBox>
             <TextBox>CHOOSE YOUR CITY</TextBox>
             <Dropdown onChange={handleCityChange}>
-              <option value="">Select a city</option>
+              <option value="">Vancouver</option>
               {Location.map((city, index) => (
                 <option key={index} value={city.name}>
                   {city.name}
                 </option>
               ))}
             </Dropdown>
-            <SearchButton onClick={handleSearchClick}>Search</SearchButton>
           </RightMiddleBox>
         </RightBox>
       </ContentSection>

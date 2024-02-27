@@ -15,11 +15,14 @@ const BulletinBoxContainer = styled.div`
   }
   padding: 10% 0;
   width: 100%;
+  height: 73vh;
   margin: 0 auto;
 
   @media (max-width: 768px) {
     background-image: url('/mobilesizeBulletinBackground.jpg'); /* Mobile background image */
     padding: 20% 0;
+    height: 55vh;
+
   }
 `;
 
