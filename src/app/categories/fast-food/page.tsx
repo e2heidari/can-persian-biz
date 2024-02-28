@@ -19,14 +19,14 @@ const ContentSection = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 1180px) {
-  flex-direction: column-reverse;
-  justify-content:stretch;
-  align-items: stretch;
+    flex-direction: column-reverse;
+    justify-content: stretch;
+    align-items: stretch;
   }
 `;
 
 const RightBox = styled.div`
-  width: 100%;
+  width: 40%;
   height: 90vh;
   display: flex;
   flex-direction: column;
@@ -35,35 +35,40 @@ const RightBox = styled.div`
   backdrop-filter: blur(4px);
 
   @media (max-width: 1180px) {
-  flex-direction: row;
-    height: 30vh;
+    background-color: #007bff;
     width: 100%;
+    height: auto;
   }
 `;
 
 const LeftBox = styled.div`
-  width: 80%;
+  width: 60%; /* Adjust the width as needed */
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   object-fit: cover;
 
-
   @media (max-width: 1180px) {
     width: 100%;
+    height: auto;
   }
 `;
 
 const RightMiddleBox = styled.div`
   width: 70%;
-  height: 200px;
-  background-color: #fff;
+  height: auto;
+  background-color: gray;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2em;
+  @media (max-width: 1180px) {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
 `;
 
 const TextBox = styled.h3`
@@ -72,6 +77,9 @@ const TextBox = styled.h3`
   margin-bottom: 10px;
   font-size: 16px;
   font-family: 'Alcubierre', sans-serif;
+  @media (max-width: 1180px) {
+    display: none;
+  }
 `;
 
 const Dropdown = styled.select`
@@ -81,9 +89,12 @@ const Dropdown = styled.select`
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  @media (max-width: 1180px) {
+  margin-top: 15px;
+  }
 `;
 
-const SearchButton = styled.button`
+const NearMeButton = styled.button`
   font-family: 'Alcubierre', sans-serif;
   width: 100%;
   padding: 10px;
@@ -94,6 +105,9 @@ const SearchButton = styled.button`
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+  @media (max-width: 1180px) {
+  margin-bottom: 10px;
+  }
 `;
 
 const BackgroundImage = styled(Image)<{ mobileHide?: boolean }>`
@@ -156,7 +170,7 @@ const Fastfood: React.FC = () => {
                 </option>
               ))}
             </Dropdown>
-            <SearchButton onClick={handleNearMeClick}>Near Me</SearchButton>
+            <NearMeButton onClick={handleNearMeClick}>Near Me</NearMeButton>
           </RightMiddleBox>
         </RightBox>
       </ContentSection>
