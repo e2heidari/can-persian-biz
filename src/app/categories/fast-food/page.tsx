@@ -10,7 +10,7 @@ import '../../../style/fonts.css';
 
 const CategoryPageContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   min-height: 100vh;
 `;
 
@@ -18,10 +18,9 @@ const ContentSection = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   @media (max-width: 1180px) {
     flex-direction: column-reverse;
-    justify-content: stretch;
-    align-items: stretch;
   }
 `;
 
@@ -57,7 +56,6 @@ const LeftBox = styled.div`
 
 const RightMiddleBox = styled.div`
   width: 70%;
-  height: auto;
   background-color: white;
   display: flex;
   flex-direction: column;
