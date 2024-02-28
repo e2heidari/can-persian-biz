@@ -58,15 +58,15 @@ const LeftBox = styled.div`
 const RightMiddleBox = styled.div`
   width: 70%;
   height: auto;
-  background-color: gray;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2em;
   @media (max-width: 1180px) {
+    background-color: gray;
     flex-direction: row;
-    justify-content: space-around;
     width: 100%;
   }
 `;
