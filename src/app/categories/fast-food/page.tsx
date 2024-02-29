@@ -105,6 +105,7 @@ const NearMeButton = styled.button`
   cursor: pointer;
   @media (max-width: 1180px) {
   margin-bottom: 10px;
+
   }
 `;
 

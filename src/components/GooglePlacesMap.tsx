@@ -18,7 +18,6 @@ interface Restaurant {
   website?: string; // Define website property
 }
 
-
 const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) => {
   const libraries = useMemo(() => ["places"], []);
   const { isLoaded } = useLoadScript({
@@ -27,25 +26,27 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
   });
 
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const [map, setMap] = useState<google.maps.Map | null>(null);
+  const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(null);
 
   useEffect(() => {
     const fetchRestaurantDetails = async () => {
       try {
         const placeIds = ["ChIJhd_AaSpzhlQRR0HKIE5tj_w", "ChIJMYMDpChyhlQRu37tlv6qDUI"];
-
+  
         const placesService = new google.maps.places.PlacesService(
           document.createElement("div")
         );
-
+  
         const detailedRestaurants: Restaurant[] = [];
-
+  
         const fetchDetailsForPlace = (placeId: string) => {
           return new Promise<Restaurant>((resolve, reject) => {
             const request = {
               placeId,
               fields: ["name", "formatted_address", "geometry", "opening_hours", "rating", "user_ratings_total", "price_level", "website"], // Add additional fields here
             };
-
+  
             placesService.getDetails(request, (place, status) => {
               if (
                 status === google.maps.places.PlacesServiceStatus.OK &&
@@ -79,7 +80,7 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
             });
           });
         };
-
+  
         for (const placeId of placeIds) {
           try {
             const restaurant = await fetchDetailsForPlace(placeId);
@@ -88,17 +89,72 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
             console.error(`Error fetching details for place ${placeId}:`, error);
           }
         }
-
+  
         setRestaurants(detailedRestaurants);
       } catch (error) {
         console.error("Error fetching restaurant details:", error);
       }
     };
+  
 
     if (isLoaded) {
       fetchRestaurantDetails();
     }
   }, [isLoaded]);
+
+  useEffect(() => {
+    if (isLoaded) {
+      console.log("Map Loaded");
+    }
+  }, [isLoaded]);
+
+  const onMapLoad = (map: google.maps.Map) => {
+    setMap(map);
+    const infowindow = new google.maps.InfoWindow();
+    setInfoWindow(infowindow);
+
+    const locationButton = document.createElement("button");
+    locationButton.textContent = "Pan to Current Location";
+    locationButton.classList.add("custom-map-control-button");
+
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+
+    locationButton.addEventListener("click", () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            };
+
+            infowindow.setPosition(pos);
+            infowindow.setContent("Your Location");
+            infowindow.open(map);
+            map.setCenter(pos);
+          },
+          () => {
+            handleLocationError(true);
+          }
+        );
+      } else {
+        handleLocationError(false);
+      }
+    });
+  };
+
+  const handleLocationError = (browserHasGeolocation: boolean) => {
+    if (infoWindow && map) {
+      const center = map.getCenter();
+      infoWindow.setPosition(center!);
+      infoWindow.setContent(
+        browserHasGeolocation
+          ? "Error: The Geolocation service failed."
+          : "Error: Your browser doesn't support geolocation."
+      );
+      infoWindow.open(map);
+    }
+  };
 
   if (!isLoaded) {
     return <p>Loading...</p>;
@@ -111,7 +167,7 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
         center={{ lat, lng }} // Default to Vancouver
         mapTypeId={google.maps.MapTypeId.ROADMAP}
         mapContainerStyle={{ width: "800px", height: "600px" }}
-        onLoad={(map) => console.log("Map Loaded")}
+        onLoad={onMapLoad}
       >
         {restaurants.map((restaurant) => (
           <Marker
