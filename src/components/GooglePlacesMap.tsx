@@ -176,6 +176,10 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
               lat: restaurant.geometry.location.lat,
               lng: restaurant.geometry.location.lng,
             }}
+            icon={{
+              url: "/location-marker.png", // Use the custom icon URL
+              scaledSize: new window.google.maps.Size(50, 50), // Adjust size as needed
+            }}
             onLoad={() => console.log("Restaurant Marker Loaded")}
           />
         ))}
