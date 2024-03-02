@@ -1,4 +1,4 @@
-import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api";
+import { useLoadScript, GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import { useMemo, useState, useEffect } from "react";
 
 interface Restaurant {
@@ -28,6 +28,7 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(null);
+  const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
 
   useEffect(() => {
     const fetchRestaurantDetails = async () => {
@@ -156,6 +157,10 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
     }
   };
 
+  const handleMarkerClick = (restaurant: Restaurant) => {
+    setSelectedRestaurant(restaurant);
+  };
+
   if (!isLoaded) {
     return <p>Loading...</p>;
   }
@@ -177,12 +182,26 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
               lng: restaurant.geometry.location.lng,
             }}
             icon={{
-              url: "/location-marker.png", // Use the custom icon URL
+              url: "/Untitled Design_1-12.png", // Use the custom icon URL
               scaledSize: new window.google.maps.Size(50, 50), // Adjust size as needed
             }}
+            onClick={() => handleMarkerClick(restaurant)}
             onLoad={() => console.log("Restaurant Marker Loaded")}
           />
         ))}
+        {selectedRestaurant && (
+          <InfoWindow
+            position={{
+              lat: selectedRestaurant.geometry.location.lat,
+              lng: selectedRestaurant.geometry.location.lng,
+            }}
+            onCloseClick={() => setSelectedRestaurant(null)}
+          >
+            <div>
+              <h2>{selectedRestaurant.name}</h2>
+            </div>
+          </InfoWindow>
+        )}
       </GoogleMap>
     </div>
   );
