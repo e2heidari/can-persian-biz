@@ -167,42 +167,44 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
 
   return (
     <div>
-      <GoogleMap
-        zoom={14}
-        center={{ lat, lng }} // Default to Vancouver
-        mapTypeId={google.maps.MapTypeId.ROADMAP}
-        mapContainerStyle={{ width: "800px", height: "600px" }}
-        onLoad={onMapLoad}
-      >
-        {restaurants.map((restaurant) => (
-          <Marker
-            key={restaurant.place_id}
-            position={{
-              lat: restaurant.geometry.location.lat,
-              lng: restaurant.geometry.location.lng,
-            }}
-            icon={{
-              url: "/Untitled Design_1-12.png", // Use the custom icon URL
-              scaledSize: new window.google.maps.Size(50, 50), // Adjust size as needed
-            }}
-            onClick={() => handleMarkerClick(restaurant)}
-            onLoad={() => console.log("Restaurant Marker Loaded")}
-          />
-        ))}
-        {selectedRestaurant && (
-          <InfoWindow
-            position={{
-              lat: selectedRestaurant.geometry.location.lat,
-              lng: selectedRestaurant.geometry.location.lng,
-            }}
-            onCloseClick={() => setSelectedRestaurant(null)}
-          >
-            <div>
-              <h2>{selectedRestaurant.name}</h2>
-            </div>
-          </InfoWindow>
-        )}
-      </GoogleMap>
+     <GoogleMap
+  zoom={14}
+  center={{ lat, lng }} // Default to Vancouver
+  mapTypeId={google.maps.MapTypeId.ROADMAP}
+  mapContainerStyle={{ width: "800px", height: "600px" }}
+  onLoad={onMapLoad}
+>
+  {restaurants.map((restaurant) => (
+    <Marker
+      key={restaurant.place_id}
+      position={{
+        lat: restaurant.geometry.location.lat,
+        lng: restaurant.geometry.location.lng,
+      }}
+      icon={{
+        url: "/Untitled Design_1-12.png", // Use the custom icon URL
+        scaledSize: new window.google.maps.Size(50, 50), // Adjust size as needed
+      }}
+      onClick={() => handleMarkerClick(restaurant)}
+      onLoad={() => console.log("Restaurant Marker Loaded")}
+    >
+      {selectedRestaurant === restaurant && (
+        <InfoWindow
+          position={{
+            lat: restaurant.geometry.location.lat,
+            lng: restaurant.geometry.location.lng,
+          }}
+          onCloseClick={() => setSelectedRestaurant(null)}
+        >
+          <div>
+            <h2>{selectedRestaurant.name}</h2>
+          </div>
+        </InfoWindow>
+      )}
+    </Marker>
+  ))}
+</GoogleMap>
+
     </div>
   );
 };
