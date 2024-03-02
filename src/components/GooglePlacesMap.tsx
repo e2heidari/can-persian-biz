@@ -166,7 +166,6 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
   }
 
   return (
-    <div>
      <GoogleMap
   zoom={14}
   center={{ lat, lng }} // Default to Vancouver
@@ -181,6 +180,7 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
         lat: restaurant.geometry.location.lat,
         lng: restaurant.geometry.location.lng,
       }}
+      title={restaurant.name}
       icon={{
         url: "/Untitled Design_1-12.png", // Use the custom icon URL
         scaledSize: new window.google.maps.Size(50, 50), // Adjust size as needed
@@ -190,22 +190,38 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
     >
       {selectedRestaurant === restaurant && (
         <InfoWindow
-          position={{
-            lat: restaurant.geometry.location.lat,
-            lng: restaurant.geometry.location.lng,
-          }}
-          onCloseClick={() => setSelectedRestaurant(null)}
-        >
+        position={{
+          lat: restaurant.geometry.location.lat,
+          lng: restaurant.geometry.location.lng,
+        }}
+        onCloseClick={() => setSelectedRestaurant(null)}
+      >
+        <div>
+          <h2>{selectedRestaurant.name}</h2>
           <div>
-            <h2>{selectedRestaurant.name}</h2>
+            <div>
+              {selectedRestaurant.rating.toFixed(1)}{' '}
+              {Array.from({ length: Math.floor(selectedRestaurant.rating) }, (_, index) => (
+                <span key={index} style={{ color: '#FFD700', fontSize: '1.2em' }}>&#9733;</span> 
+              ))}
+              {selectedRestaurant.rating % 1 !== 0 && (
+                <span style={{ color: '#FFD700', fontSize: '1.2em' }}>&#9734;</span> 
+              )}
+              {Array.from({ length: Math.floor(5 - Math.ceil(selectedRestaurant.rating)) }, (_, index) => (
+                <span key={index} style={{ color: 'grey', fontSize: '1.2em', padding: '0.05em 0.1em' }}>&#9734;</span> 
+              ))}
+              ({selectedRestaurant.user_ratings_total})
+            </div>
           </div>
-        </InfoWindow>
+        </div>
+      </InfoWindow>
+      
+      
       )}
     </Marker>
   ))}
 </GoogleMap>
 
-    </div>
   );
 };
 
