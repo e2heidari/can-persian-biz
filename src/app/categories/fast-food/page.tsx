@@ -156,13 +156,16 @@ const Fastfood: React.FC = () => {
           mobileHide // Add this prop to hide background on mobile
         />
         <LeftBox>
-          <GooglePlacesMap lat={selectedCityCoords.lat} lng={selectedCityCoords.lng} />
+          <GooglePlacesMap 
+           lat={selectedCityCoords.lat}
+           lng={selectedCityCoords.lng}
+            />
         </LeftBox>
         <RightBox>
           <RightMiddleBox>
             <TextBox>CHOOSE YOUR CITY</TextBox>
             <Dropdown onChange={handleCityChange}>
-              <option value="">Vancouver</option>
+              <option value="">Slect your city</option>
               {Location.map((city, index) => (
                 <option key={index} value={city.name}>
                   {city.name}

@@ -1,5 +1,5 @@
-import { useLoadScript, GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
-import { useMemo, useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from 'react';
+import { useLoadScript, GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
 
 interface Restaurant {
   opening_hours?: google.maps.places.PlaceOpeningHours;
@@ -19,16 +19,18 @@ interface Restaurant {
 }
 
 const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) => {
-  const libraries = useMemo(() => ["places"], []);
+  const libraries = useMemo(() => ['places'], []);
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
     libraries: libraries as any,
   });
 
+  const [zoom, setZoom] = useState(14); // State to track the zoom level
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(null);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
+
 
   useEffect(() => {
     const fetchRestaurantDetails = async () => {
@@ -171,6 +173,7 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
   center={{ lat, lng }} // Default to Vancouver
   mapTypeId={google.maps.MapTypeId.ROADMAP}
   mapContainerStyle={{ width: "800px", height: "600px" }}
+  onClick={() => setSelectedRestaurant(null)}
   onLoad={onMapLoad}
 >
   {restaurants.map((restaurant) => (
@@ -200,14 +203,14 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
           <h2>{selectedRestaurant.name}</h2>
           <div>
             <div>
-              {selectedRestaurant.rating.toFixed(1)}{' '}
-              {Array.from({ length: Math.floor(selectedRestaurant.rating) }, (_, index) => (
+              {selectedRestaurant.rating?.toFixed(1)}{' '}
+              {Array.from({ length: Math.floor(selectedRestaurant.rating || 0) }, (_, index) => (
                 <span key={index} style={{ color: '#FFD700', fontSize: '1.2em' }}>&#9733;</span> 
               ))}
-              {selectedRestaurant.rating % 1 !== 0 && (
+              {selectedRestaurant.rating && selectedRestaurant.rating % 1 !== 0 && (
                 <span style={{ color: '#FFD700', fontSize: '1.2em' }}>&#9734;</span> 
               )}
-              {Array.from({ length: Math.floor(5 - Math.ceil(selectedRestaurant.rating)) }, (_, index) => (
+              {Array.from({ length: Math.floor(5 - Math.ceil(selectedRestaurant.rating || 0)) }, (_, index) => (
                 <span key={index} style={{ color: 'grey', fontSize: '1.2em', padding: '0.05em 0.1em' }}>&#9734;</span> 
               ))}
               ({selectedRestaurant.user_ratings_total})
