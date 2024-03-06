@@ -128,10 +128,10 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng}) => {
     setInfoWindow(infowindow);
 
     const locationButton = document.createElement("button");
-    locationButton.textContent = "Pan to Current Location";
+    locationButton.innerHTML = '<img src="/current-location-icon.png" alt="Icon" style="width: 30px; height: 30px; margin: 15px;" />';
     locationButton.classList.add("custom-map-control-button");
 
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(locationButton);
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(locationButton);
 
     locationButton.addEventListener("click", () => {
       if (navigator.geolocation) {
@@ -143,7 +143,7 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng}) => {
             };
 
             infowindow.setPosition(pos);
-            infowindow.setContent("Your Location");
+            infowindow.setContent(`<img src="/icons8-monarch-96 (2).png" alt="Your Location Icon" style="width: 40px; height: 40px;" />`);
             infowindow.open(map);
             map.setCenter(pos);
           },
