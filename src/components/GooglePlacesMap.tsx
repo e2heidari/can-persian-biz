@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useLoadScript, GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
 
 interface Restaurant {
@@ -18,7 +18,12 @@ interface Restaurant {
   website?: string; // Define website property
 }
 
-const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) => {
+interface Props {
+  lat: number;
+  lng: number;
+}
+
+const GooglePlacesMap: React.FC<Props> = ({ lat, lng}) => {
   const libraries = useMemo(() => ['places'], []);
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
@@ -31,6 +36,12 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
   const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(null);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
 
+  useEffect(() => {
+  console.log(zoom)
+    // Update the zoom level based on your requirements
+    // For example, you can set the zoom level to 14 when lat and lng change
+    setZoom(14);
+  }, [lat, lng]);
 
   useEffect(() => {
     const fetchRestaurantDetails = async () => {
@@ -108,7 +119,7 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
   useEffect(() => {
     if (isLoaded) {
       console.log("Map Loaded");
-    }
+    }    
   }, [isLoaded]);
 
   const onMapLoad = (map: google.maps.Map) => {
@@ -120,7 +131,7 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
     locationButton.textContent = "Pan to Current Location";
     locationButton.classList.add("custom-map-control-button");
 
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(locationButton);
 
     locationButton.addEventListener("click", () => {
       if (navigator.geolocation) {
@@ -169,62 +180,59 @@ const GooglePlacesMap: React.FC<{ lat: number; lng: number }> = ({ lat, lng }) =
 
   return (
      <GoogleMap
-  zoom={14}
-  center={{ lat, lng }} // Default to Vancouver
-  mapTypeId={google.maps.MapTypeId.ROADMAP}
-  mapContainerStyle={{ width: "800px", height: "600px" }}
-  onClick={() => setSelectedRestaurant(null)}
-  onLoad={onMapLoad}
->
-  {restaurants.map((restaurant) => (
-    <Marker
-      key={restaurant.place_id}
-      position={{
-        lat: restaurant.geometry.location.lat,
-        lng: restaurant.geometry.location.lng,
-      }}
-      title={restaurant.name}
-      icon={{
-        url: "/Untitled Design_1-12.png", // Use the custom icon URL
-        scaledSize: new window.google.maps.Size(50, 50), // Adjust size as needed
-      }}
-      onClick={() => handleMarkerClick(restaurant)}
-      onLoad={() => console.log("Restaurant Marker Loaded")}
+      zoom={zoom} // Use the zoom state instead of a fixed value
+      center={{ lat, lng }} // Default to Vancouver
+      mapTypeId={google.maps.MapTypeId.ROADMAP}
+      mapContainerStyle={{ width: "800px", height: "600px" }}
+      onClick={() => setSelectedRestaurant(null)}
+      onLoad={onMapLoad}
     >
-      {selectedRestaurant === restaurant && (
-        <InfoWindow
-        position={{
-          lat: restaurant.geometry.location.lat,
-          lng: restaurant.geometry.location.lng,
-        }}
-        onCloseClick={() => setSelectedRestaurant(null)}
-      >
-        <div>
-          <h2>{selectedRestaurant.name}</h2>
-          <div>
-            <div>
-              {selectedRestaurant.rating?.toFixed(1)}{' '}
-              {Array.from({ length: Math.floor(selectedRestaurant.rating || 0) }, (_, index) => (
-                <span key={index} style={{ color: '#FFD700', fontSize: '1.2em' }}>&#9733;</span> 
-              ))}
-              {selectedRestaurant.rating && selectedRestaurant.rating % 1 !== 0 && (
-                <span style={{ color: '#FFD700', fontSize: '1.2em' }}>&#9734;</span> 
-              )}
-              {Array.from({ length: Math.floor(5 - Math.ceil(selectedRestaurant.rating || 0)) }, (_, index) => (
-                <span key={index} style={{ color: 'grey', fontSize: '1.2em', padding: '0.05em 0.1em' }}>&#9734;</span> 
-              ))}
-              ({selectedRestaurant.user_ratings_total})
-            </div>
-          </div>
-        </div>
-      </InfoWindow>
-      
-      
-      )}
-    </Marker>
-  ))}
-</GoogleMap>
-
+      {restaurants.map((restaurant) => (
+        <Marker
+          key={restaurant.place_id}
+          position={{
+            lat: restaurant.geometry.location.lat,
+            lng: restaurant.geometry.location.lng,
+          }}
+          title={restaurant.name}
+          icon={{
+            url: "/Untitled Design_1-9.png", // Use the custom icon URL
+            scaledSize: new window.google.maps.Size(50, 50), // Adjust size as needed
+          }}
+          onClick={() => handleMarkerClick(restaurant)}
+          onLoad={() => console.log("Restaurant Marker Loaded")}
+        >
+          {selectedRestaurant === restaurant && (
+            <InfoWindow
+              position={{
+                lat: restaurant.geometry.location.lat,
+                lng: restaurant.geometry.location.lng,
+              }}
+              onCloseClick={() => setSelectedRestaurant(null)}
+            >
+              <div>
+                <h2>{selectedRestaurant.name}</h2>
+                <div>
+                  <div>
+                    {selectedRestaurant.rating?.toFixed(1)}{' '}
+                    {Array.from({ length: Math.floor(selectedRestaurant.rating || 0) }, (_, index) => (
+                      <span key={index} style={{ color: '#FFD700', fontSize: '1.2em' }}>&#9733;</span> 
+                    ))}
+                    {selectedRestaurant.rating && selectedRestaurant.rating % 1 !== 0 && (
+                      <span style={{ color: '#FFD700', fontSize: '1.2em' }}>&#9734;</span> 
+                    )}
+                    {Array.from({ length: Math.floor(5 - Math.ceil(selectedRestaurant.rating || 0)) }, (_, index) => (
+                      <span key={index} style={{ color: 'grey', fontSize: '1.2em', padding: '0.05em 0.1em' }}>&#9734;</span> 
+                    ))}
+                    ({selectedRestaurant.user_ratings_total})
+                  </div>
+                </div>
+              </div>
+            </InfoWindow>
+          )}
+        </Marker>
+      ))}
+    </GoogleMap>
   );
 };
 

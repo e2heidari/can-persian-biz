@@ -127,12 +127,14 @@ const BackgroundImage = styled(Image)<{ mobileHide?: boolean }>`
 `;
 
 const Fastfood: React.FC = () => {
+  const [selectedCity, setSelectedCity] = useState<string>('');
   const [selectedCityCoords, setSelectedCityCoords] = useState({ lat: 49.2827, lng: -123.1207 }); // Default to Vancouver coordinates
 
   // Event handler for when a city is selected
+
   const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const cityName = e.target.value;
-    // Find the selected city's coordinates from the Location JSON
+    setSelectedCity(cityName); // Update the selected city name
     const city = Location.find((city) => city.name === cityName);
     if (city) {
       setSelectedCityCoords({ lat: city.lat, lng: city.lng });
@@ -140,6 +142,7 @@ const Fastfood: React.FC = () => {
       setSelectedCityCoords({ lat: 49.2827, lng: -123.1207 }); // Default to Vancouver coordinates if city not found
     }
   };
+
 
   const handleNearMeClick = () => {
     // Handle Near Me button click event
@@ -164,7 +167,7 @@ const Fastfood: React.FC = () => {
         <RightBox>
           <RightMiddleBox>
             <TextBox>CHOOSE YOUR CITY</TextBox>
-            <Dropdown onChange={handleCityChange}>
+            <Dropdown onChange={handleCityChange} value={selectedCity}>
               <option value="">Slect your city</option>
               {Location.map((city, index) => (
                 <option key={index} value={city.name}>
