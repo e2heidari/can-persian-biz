@@ -46,7 +46,8 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng}) => {
   useEffect(() => {
     const fetchRestaurantDetails = async () => {
       try {
-        const placeIds = ["ChIJhd_AaSpzhlQRR0HKIE5tj_w", "ChIJMYMDpChyhlQRu37tlv6qDUI"];
+        const placeIds = ["ChIJm256IG5zhlQRBbAxfDdcFdM", "ChIJtXPMTvBzhlQRXRnWuohXyhY", "ChIJ2XUWoChyhlQR0JjHw1UUPwY", "ChIJhdX87IdxhlQRaPEShBeVjqc", "ChIJWfqwutRzhlQR8fSm-9WiCqU", "ChIJVzoIGtRzhlQR8Kyc1DyKEVU", "ChIJNYJnQNRzhlQRoOUptEtYLdo",
+      "ChIJY8uiZCtyhlQR2Pkv-OwFBKk", "ChIJuUf5RtRzhlQRfsyJWf8jf9Q", "ChIJ6V0dsH9xhlQRk29NnlBwvDs", "ChIJVZjKRJdxhlQRHaBRedlJ-KA", "ChIJF4z0qSBxhlQRQVwz7-Jp_Jw", "ChIJM8lbKtPRhVQRGUDVqKCrn40", "ChIJAQBAvH9xhlQRr9iI1i0f_UI", "ChIJ9TZnM3pxhlQRWaIsRG6m3-E", "ChIJDTh3PatzhlQRGpB9jNaTeTU", "ChIJrVW1IL1zhlQRTXHPrsNtdV8", "ChIJ-zlRcbZzhlQRG3HPhgcsqU4", "ChIJ-Ru7jt1zhlQRsEK-1YZhYp0", "ChIJDyoW7ZpzhlQRGcexMGs7p84"];
   
         const placesService = new google.maps.places.PlacesService(
           document.createElement("div")
@@ -196,7 +197,7 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng}) => {
           }}
           title={restaurant.name}
           icon={{
-            url: "/Untitled Design_1-9.png", // Use the custom icon URL
+            url: "/Untitled Design_1-14.png", // Use the custom icon URL
             scaledSize: new window.google.maps.Size(50, 50), // Adjust size as needed
           }}
           onClick={() => handleMarkerClick(restaurant)}
