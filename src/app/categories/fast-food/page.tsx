@@ -25,7 +25,7 @@ const ContentSection = styled.div`
 `;
 
 const RightBox = styled.div`
-  width: 40%;
+  width: 25%;
   height: 90vh;
   display: flex;
   flex-direction: column;
@@ -40,8 +40,25 @@ const RightBox = styled.div`
   }
 `;
 
+const MiddleBox = styled.div`
+  width: 30%;
+  height: 90vh;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  @media (max-width: 1180px) {
+    background-color: gray;
+    height: auto;
+    flex-direction: row;
+    width: 100%;
+  }
+`;
+
 const LeftBox = styled.div`
-  width: 60%; /* Adjust the width as needed */
+  width: 55%; /* Adjust the width as needed */
   height: 90vh;
   display: flex;
   justify-content: center;
@@ -53,9 +70,22 @@ const LeftBox = styled.div`
     height: auto;
   }
 `;
+const MapBox = styled.div`
+  width: 90%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2em;
+  @media (max-width: 1180px) {
+    width: 100%;
+    height: auto;
+  }
+`;
 
 const RightMiddleBox = styled.div`
-  width: 70%;
+  width: 90%;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -159,11 +189,16 @@ const Fastfood: React.FC = () => {
           mobileHide // Add this prop to hide background on mobile
         />
         <LeftBox>
+          <MapBox>
           <GooglePlacesMap 
            lat={selectedCityCoords.lat}
            lng={selectedCityCoords.lng}
             />
+            </MapBox>
         </LeftBox>
+        <MiddleBox>
+          {/* Add content for the middle box here */}
+        </MiddleBox>
         <RightBox>
           <RightMiddleBox>
             <TextBox>CHOOSE YOUR CITY</TextBox>

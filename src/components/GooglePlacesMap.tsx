@@ -184,7 +184,7 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng}) => {
       zoom={zoom} // Use the zoom state instead of a fixed value
       center={{ lat, lng }} // Default to Vancouver
       mapTypeId={google.maps.MapTypeId.ROADMAP}
-      mapContainerStyle={{ width: "800px", height: "600px" }}
+      mapContainerStyle={{ width: "700px", height: "600px" }}
       onClick={() => setSelectedRestaurant(null)}
       onLoad={onMapLoad}
     >
