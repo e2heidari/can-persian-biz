@@ -3,16 +3,72 @@ import Image from 'next/image'
 
 export const ContentSection = styled.div`
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    width: 100%; /* Ensure the ContentSection spans the full width */
+    height: 100%; /* Ensure the ContentSection spans the full height */
+
     @media (max-width: 1180px) {
         flex-direction: column-reverse;
+        align-items: center;
     }
 `
 
+export const LeftBox = styled.div`
+    width: 55vw; /* Adjust the width as needed */
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+
+    @media (max-width: 1180px) {
+        width: 100%;
+        height: auto;
+    }
+`
+
+export const MapBox = styled.div`
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2em;
+
+    @media (max-width: 768px) {
+        width: 100vw; // Width for mobile screens
+    }
+`
+
+export const MiddleBox = styled.div`
+    width: 28vw;
+    height: 85vh;
+    background-color: gray;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @media (max-width: 768px) {
+        background-color: gray;
+        flex-direction: row;
+        width: 100vw;
+        height: 30vh;
+    }
+`
+export const MiddleRestaurantComponent = styled.div`
+    position: relative;
+
+    width: 25vw;
+    height: 20vh;
+    background-color: white;
+`
 export const RightBox = styled.div`
-    width: 25%;
+    width: 20vw;
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -27,63 +83,18 @@ export const RightBox = styled.div`
     }
 `
 
-export const MiddleBox = styled.div`
-    width: 30%;
-    height: 90vh;
-    background-color: gray;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2em;
-    @media (max-width: 1180px) {
-        background-color: gray;
-        height: auto;
-        flex-direction: row;
-        width: 100%;
-    }
-`
-
-export const LeftBox = styled.div`
-    width: 55%; /* Adjust the width as needed */
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    object-fit: cover;
-
-    @media (max-width: 1180px) {
-        width: 100%;
-        height: auto;
-    }
-`
-
-export const MapBox = styled.div`
-    width: 90%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2em;
-    @media (max-width: 1180px) {
-        width: 100%;
-        height: auto;
-    }
-`
-
 export const RightMiddleBox = styled.div`
-    width: 90%;
+    width: 18vw;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2em;
+    padding: 2vh;
     @media (max-width: 1180px) {
         background-color: gray;
         flex-direction: row;
-        width: 100%;
+        width: 100vw;
     }
 `
 

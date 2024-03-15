@@ -11,6 +11,7 @@ import {
     RightMiddleBox,
     TextBox,
     Dropdown,
+    MiddleRestaurantComponent,
 } from './styles'
 import Location from '../locations.json'
 import GooglePlacesMap from '../../../components/GooglePlacesMap'
@@ -54,7 +55,11 @@ const Content = (props: { restaurants: Restaurant[] }) => {
                     />
                 </MapBox>
             </LeftBox>
-            <MiddleBox>{/* Add content for the middle box here */}</MiddleBox>
+            <MiddleBox>
+                {props.restaurants.slice(0, 6).map((restaurant, index) => (
+                    <MiddleRestaurantComponent key={index} />
+                ))}
+            </MiddleBox>
             <RightBox>
                 <RightMiddleBox>
                     <TextBox>Choose your city</TextBox>

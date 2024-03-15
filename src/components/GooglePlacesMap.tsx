@@ -119,12 +119,22 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
         return <p>Loading...</p>
     }
 
+    const mapContainerStyle = {
+        width: '48vw', // Set width to 100vw on mobile
+        height: '80vh',
+    }
+
+    if (window.innerWidth <= 768) {
+        mapContainerStyle.width = '100vw' // Set width to 100vw for mobile screens
+        mapContainerStyle.height = '80vh' // Set height to 100vh for mobile screens
+    }
+
     return (
         <GoogleMap
             zoom={zoom} // Use the zoom state instead of a fixed value
             center={{ lat, lng }} // Default to Vancouver
             mapTypeId={google.maps.MapTypeId.ROADMAP}
-            mapContainerStyle={{ width: '700px', height: '600px' }}
+            mapContainerStyle={mapContainerStyle}
             onClick={() => setSelectedRestaurant(null)}
             onLoad={onMapLoad}
         >
@@ -137,7 +147,11 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
                     }}
                     title={restaurant.name}
                     icon={{
-                        url: '/Untitled Design_1-14.png', // Use the custom icon URL
+                        url: restaurant
+                            ? restaurant.opening_hours?.open_now
+                                ? '/Untitled Design_1-20.png'
+                                : '/Untitled Design_1-21.png'
+                            : '/Untitled Design_1-14.png', // Use the custom icon URL
                         scaledSize: new window.google.maps.Size(50, 50), // Adjust size as needed
                     }}
                     onClick={() => handleMarkerClick(restaurant)}
@@ -153,12 +167,6 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
                         >
                             <div>
                                 <h2>{selectedRestaurant.name}</h2>
-                                <p>
-                                    Open Now:{' '}
-                                    {selectedRestaurant.opening_hours?.open_now
-                                        ? 'Yes'
-                                        : 'No'}
-                                </p>
                                 <div>
                                     <div>
                                         {selectedRestaurant.rating?.toFixed(1)}{' '}

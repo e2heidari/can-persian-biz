@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Link from 'next/link'
 
 const HeaderContainer = styled.header`
+    height: 5vh;
     background-color: white;
     color: #fff;
     display: flex;
@@ -22,7 +23,7 @@ const LogoBox = styled.div`
 `
 
 const Logo = styled.img`
-    width: 30px;
+    width: 4vh;
     margin-right: 12px;
 `
 
@@ -39,7 +40,7 @@ const TextBox = styled.div`
 
 const SignUpBox = styled.div`
     width: 68.86px;
-    height: 40px;
+    height: 5vh;
     color: black;
     display: flex;
     align-items: center;
@@ -50,7 +51,7 @@ const SignUpBox = styled.div`
 
 const LogInBox = styled.div`
     width: 55.97px;
-    height: 40px;
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;

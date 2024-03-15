@@ -32,7 +32,7 @@ async function fetchPlaceDetails(placeId: string) {
 export const fetchDetailsForPlace = (placeId: string) => {
     return new Promise<Restaurant>((resolve) => {
         return fetchPlaceDetails(placeId).then((place) => {
-            console.log('🚀 ~ returnfetchPlaceDetails ~ place:', place)
+            // console.log('🚀 ~ returnfetchPlaceDetails ~ place:', place)
             const restaurant: Restaurant = {
                 place_id: place.place_id,
                 name: place.name,
