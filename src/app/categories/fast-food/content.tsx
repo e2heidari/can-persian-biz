@@ -11,11 +11,11 @@ import {
     RightMiddleBox,
     TextBox,
     Dropdown,
-    MiddleRestaurantComponent,
 } from './styles'
 import Location from '../locations.json'
 import GooglePlacesMap from '../../../components/GooglePlacesMap'
 import { Restaurant } from './type'
+import MiddleRestaurantComponent from '../../../components/MiddleRestaurantComponent'
 
 const Content = (props: { restaurants: Restaurant[] }) => {
     const [selectedCity, setSelectedCity] = useState<string>('')
@@ -34,7 +34,7 @@ const Content = (props: { restaurants: Restaurant[] }) => {
             setSelectedCityCoords({ lat: 49.2827, lng: -123.1207 }) // Default to Vancouver coordinates if city not found
         }
     }
-
+    console.log(props.restaurants)
     const handleNearMeClick = () => {
         // Handle Near Me button click event
     }
@@ -56,8 +56,11 @@ const Content = (props: { restaurants: Restaurant[] }) => {
                 </MapBox>
             </LeftBox>
             <MiddleBox>
-                {props.restaurants.slice(0, 6).map((restaurant, index) => (
-                    <MiddleRestaurantComponent key={index} />
+                {props.restaurants.map((restaurant, index) => (
+                    <MiddleRestaurantComponent
+                        restaurant={restaurant}
+                        key={index}
+                    />
                 ))}
             </MiddleBox>
             <RightBox>
