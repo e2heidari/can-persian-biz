@@ -121,7 +121,7 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
 
     const mapContainerStyle = {
         width: '48vw', // Set width to 100vw on mobile
-        height: '80vh',
+        height: '90vh',
     }
 
     if (window.innerWidth <= 768) {

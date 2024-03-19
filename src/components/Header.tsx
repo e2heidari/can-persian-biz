@@ -5,16 +5,17 @@ import Link from 'next/link'
 
 const HeaderContainer = styled.header`
     height: 5vh;
+    width: 100vw;
     background-color: white;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2%;
+    padding: 0 2vw;
 
-    @media (max-width: 768px) {
-        padding: 0px 8px;
-    }
+    // @media (max-width: 768px) {
+    //     padding: 0px 8px;
+    // }
 `
 
 const LogoBox = styled.div`

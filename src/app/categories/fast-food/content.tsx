@@ -15,7 +15,7 @@ import {
 import Location from '../locations.json'
 import GooglePlacesMap from '../../../components/GooglePlacesMap'
 import { Restaurant } from './type'
-import MiddleRestaurantComponent from '../../../components/MiddleRestaurantComponent'
+import MiddleRestaurantsComponent from '../../../components/MiddleRestaurantComponent'
 
 const Content = (props: { restaurants: Restaurant[] }) => {
     const [selectedCity, setSelectedCity] = useState<string>('')
@@ -57,7 +57,7 @@ const Content = (props: { restaurants: Restaurant[] }) => {
             </LeftBox>
             <MiddleBox>
                 {props.restaurants.map((restaurant, index) => (
-                    <MiddleRestaurantComponent
+                    <MiddleRestaurantsComponent
                         restaurant={restaurant}
                         key={index}
                     />

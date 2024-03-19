@@ -23,13 +23,13 @@ const FastFood = async () => {
     return (
         <div
             style={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: '100vh',
+                overflow: 'hidden',
             }}
         >
             <Header />
-            <Content restaurants={restaurants} />
+            <div>
+                <Content restaurants={restaurants} />
+            </div>
             <Footer />
         </div>
     )
