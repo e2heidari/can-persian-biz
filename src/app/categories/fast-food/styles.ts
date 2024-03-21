@@ -48,7 +48,7 @@ export const MiddleBox = styled.div`
     overflow-y: auto;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     @media (max-width: 768px) {
         background-color: gray;

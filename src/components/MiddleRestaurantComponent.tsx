@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 const MiddleRestaurantComponent = styled.div`
-    border: 3px solid black;
+    border: 1px solid black;
     width: 24vw;
     background-color: white;
 `

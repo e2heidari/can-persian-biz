@@ -6,6 +6,7 @@ import {
     Marker,
     InfoWindow,
 } from '@react-google-maps/api'
+import StarRating from './StarRating'
 
 interface Restaurant {
     opening_hours?: google.maps.places.PlaceOpeningHours
@@ -168,65 +169,11 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
                             <div>
                                 <h2>{selectedRestaurant.name}</h2>
                                 <div>
-                                    <div>
-                                        {selectedRestaurant.rating?.toFixed(1)}{' '}
-                                        {Array.from(
-                                            {
-                                                length: Math.floor(
-                                                    selectedRestaurant.rating ||
-                                                        0
-                                                ),
-                                            },
-                                            (_, index) => (
-                                                <span
-                                                    key={index}
-                                                    style={{
-                                                        color: '#FFD700',
-                                                        fontSize: '1.2em',
-                                                    }}
-                                                >
-                                                    &#9733;
-                                                </span>
-                                            )
-                                        )}
-                                        {selectedRestaurant.rating &&
-                                            selectedRestaurant.rating % 1 !==
-                                                0 && (
-                                                <span
-                                                    style={{
-                                                        color: '#FFD700',
-                                                        fontSize: '1.2em',
-                                                    }}
-                                                >
-                                                    &#9734;
-                                                </span>
-                                            )}
-                                        {Array.from(
-                                            {
-                                                length: Math.floor(
-                                                    5 -
-                                                        Math.ceil(
-                                                            selectedRestaurant.rating ||
-                                                                0
-                                                        )
-                                                ),
-                                            },
-                                            (_, index) => (
-                                                <span
-                                                    key={index}
-                                                    style={{
-                                                        color: 'grey',
-                                                        fontSize: '1.2em',
-                                                        padding: '0.05em 0.1em',
-                                                    }}
-                                                >
-                                                    &#9734;
-                                                </span>
-                                            )
-                                        )}
-                                        ({selectedRestaurant.user_ratings_total}
-                                        )
-                                    </div>
+                                    {selectedRestaurant.rating}
+                                    <StarRating
+                                        rating={selectedRestaurant.rating || 0}
+                                    />
+                                    ({selectedRestaurant.user_ratings_total})
                                 </div>
                             </div>
                         </InfoWindow>
