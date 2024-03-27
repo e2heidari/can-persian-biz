@@ -20,6 +20,11 @@ export const ContentSection = styled.div`
 export const LeftBox = styled.div`
     flex-basis: 55vw; /* Adjust the width as needed */
     height: 90vh;
+    position: relative;
+    border-radius: 10px;
+    background-color: gray;
+    margin: 1em;
+    opacity: 0.5;
 
     @media (max-width: 1180px) {
         width: 100vw;
@@ -41,12 +46,14 @@ export const MapBox = styled.div`
 
 export const MiddleBox = styled.div`
     position: relative;
+    opacity: 0.5;
     flex-basis: 28vw;
     height: 90vh;
     border-radius: 10px;
     background-color: gray;
     overflow-y: auto;
     display: flex;
+    margin: 1em;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -81,7 +88,7 @@ export const RightMiddleBox = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2vh;
+    padding: 2em;
     border-radius: 10px;
     background-color: rgba(201, 212, 223, 1);
     box-shadow: 15px 15px 30px -10px rgba(0, 0, 0, 0.2),
@@ -174,8 +181,8 @@ export const BackgroundImage = styled(Image)<{ mobileHide?: boolean }>`
     position: relative;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
 
     ${(props) =>

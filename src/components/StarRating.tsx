@@ -6,7 +6,7 @@ interface StarRatingProps {
 }
 
 const StarContainer = styled.div`
-    font-size: 24px; /* Adjust font size as needed */
+    font-size: 20px; /* Adjust font size as needed */
 `
 
 const Star = styled.span`

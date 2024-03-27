@@ -23,6 +23,12 @@ const Content = (props: { restaurants: Restaurant[] }) => {
         lat: 49.2827,
         lng: -123.1207,
     }) // Default to Vancouver coordinates
+    const [selectedRestaurantName, setSelectedRestaurantName] = useState<
+        string | null
+    >(null) // Track selected restaurant name
+    const [onMapRestaurant, setOnMapRestaurant] = useState<Restaurant | null>(
+        null
+    ) // Track selected restaurant for map
 
     const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const cityName = e.target.value
@@ -34,10 +40,22 @@ const Content = (props: { restaurants: Restaurant[] }) => {
             setSelectedCityCoords({ lat: 49.2827, lng: -123.1207 }) // Default to Vancouver coordinates if city not found
         }
     }
+
+    const handleRestaurantSelect = ({
+        restaurant,
+    }: {
+        restaurant: Restaurant | null
+    }) => {
+        // Do something with the selected restaurant and its name
+        console.log('Selected restaurant:', restaurant)
+        setOnMapRestaurant(restaurant)
+    }
+
     console.log(props.restaurants)
     const handleNearMeClick = () => {
         // Handle Near Me button click event
     }
+
     return (
         <ContentSection>
             <BackgroundImage
@@ -52,14 +70,16 @@ const Content = (props: { restaurants: Restaurant[] }) => {
                         lat={selectedCityCoords.lat}
                         lng={selectedCityCoords.lng}
                         restaurants={props.restaurants}
+                        onRestaurantSelect={handleRestaurantSelect}
                     />
                 </MapBox>
             </LeftBox>
             <MiddleBox>
-                {props.restaurants.map((restaurant, index) => (
+                {props.restaurants.map((onPaperRestaurant, index) => (
                     <MiddleRestaurantsComponent
-                        restaurant={restaurant}
+                        restaurant={onPaperRestaurant}
                         key={index}
+                        onMapRestaurant={onMapRestaurant}
                     />
                 ))}
             </MiddleBox>

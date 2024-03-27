@@ -19,26 +19,34 @@ interface Restaurant {
             lng: number
         }
     }
-    rating?: number // Define rating property
-    user_ratings_total?: number // Define user_ratings_total property
-    price_level?: number // Define price_level property
-    website?: string // Define website property
+    rating?: number
+    user_ratings_total?: number
+    price_level?: number
+    website?: string
 }
 
 interface Props {
     lat: number
     lng: number
     restaurants: Restaurant[]
+    onRestaurantSelect: (selectedRestaurant: {
+        restaurant: Restaurant | null
+    }) => void // Modify the function signature
 }
 
-const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
+const GooglePlacesMap: React.FC<Props> = ({
+    lat,
+    lng,
+    restaurants,
+    onRestaurantSelect,
+}) => {
     const libraries = useMemo(() => ['places'], [])
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
         libraries: libraries as any,
     })
 
-    const [zoom, setZoom] = useState(14) // State to track the zoom level
+    const [zoom, setZoom] = useState(14)
     const [map, setMap] = useState<google.maps.Map | null>(null)
     const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(
         null
@@ -47,9 +55,6 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
         useState<Restaurant | null>(null)
 
     useEffect(() => {
-        console.log(zoom)
-        // Update the zoom level based on your requirements
-        // For example, you can set the zoom level to 14 when lat and lng change
         setZoom(14)
     }, [lat, lng])
 
@@ -114,6 +119,8 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
 
     const handleMarkerClick = (restaurant: Restaurant) => {
         setSelectedRestaurant(restaurant)
+        // Call the parent component function with the selected restaurant and its name
+        onRestaurantSelect({ restaurant })
     }
 
     if (!isLoaded) {
@@ -121,19 +128,19 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
     }
 
     const mapContainerStyle = {
-        width: '48vw', // Set width to 100vw on mobile
+        width: '48vw',
         height: '90vh',
     }
 
     if (window.innerWidth <= 768) {
-        mapContainerStyle.width = '100vw' // Set width to 100vw for mobile screens
-        mapContainerStyle.height = '80vh' // Set height to 100vh for mobile screens
+        mapContainerStyle.width = '100vw'
+        mapContainerStyle.height = '80vh'
     }
 
     return (
         <GoogleMap
-            zoom={zoom} // Use the zoom state instead of a fixed value
-            center={{ lat, lng }} // Default to Vancouver
+            zoom={zoom}
+            center={{ lat, lng }}
             mapTypeId={google.maps.MapTypeId.ROADMAP}
             mapContainerStyle={mapContainerStyle}
             onClick={() => setSelectedRestaurant(null)}
@@ -152,11 +159,10 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
                             ? restaurant.opening_hours?.open_now
                                 ? '/Untitled Design_1-20.png'
                                 : '/Untitled Design_1-21.png'
-                            : '/Untitled Design_1-14.png', // Use the custom icon URL
-                        scaledSize: new window.google.maps.Size(50, 50), // Adjust size as needed
+                            : '/Untitled Design_1-14.png',
+                        scaledSize: new window.google.maps.Size(50, 50),
                     }}
                     onClick={() => handleMarkerClick(restaurant)}
-                    onLoad={() => console.log('Restaurant Marker Loaded')}
                 >
                     {selectedRestaurant === restaurant && (
                         <InfoWindow
@@ -166,14 +172,31 @@ const GooglePlacesMap: React.FC<Props> = ({ lat, lng, restaurants }) => {
                             }}
                             onCloseClick={() => setSelectedRestaurant(null)}
                         >
-                            <div>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'right',
+                                    gap: '2px',
+                                }}
+                            >
                                 <h2>{selectedRestaurant.name}</h2>
-                                <div>
-                                    {selectedRestaurant.rating}
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        alignItems: 'center',
+                                        gap: '2px',
+                                    }}
+                                >
+                                    <div>({selectedRestaurant.rating})</div>
                                     <StarRating
                                         rating={selectedRestaurant.rating || 0}
                                     />
-                                    ({selectedRestaurant.user_ratings_total})
+                                    <span>
+                                        ({selectedRestaurant.user_ratings_total}
+                                        )
+                                    </span>
                                 </div>
                             </div>
                         </InfoWindow>

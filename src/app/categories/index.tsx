@@ -142,6 +142,7 @@ const categoriesData = [
   { icon: 'category-icon15.png', text: 'Cleaning' },
   { icon: 'category-icon16.png', text: 'Painting' },
   { icon: 'category-icon17.png', text: 'Trainer' },
+  { icon: 'category-icon20.png', text: 'Influencer' },
 ];
 
 
