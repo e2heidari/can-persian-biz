@@ -11,7 +11,7 @@ import {
     RightMiddleBox,
     TextBox,
     Dropdown,
-} from './styles'
+} from '../styles'
 import Location from '../locations.json'
 import GooglePlacesMap from '../../../components/GooglePlacesMap'
 import { Restaurant } from './type'
