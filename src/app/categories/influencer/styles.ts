@@ -37,7 +37,6 @@ export const RightBox = styled.div`
         height: auto;
     }
 `
-
 export const RightMiddleBox = styled.div`
     width: 18vw;
     background-color: white;
@@ -98,7 +97,6 @@ export const TextBox = styled.h3`
         display: none;
     }
 `
-
 export const Dropdown = styled.select`
     width: 100%;
     padding: 10px;
@@ -113,7 +111,6 @@ export const Dropdown = styled.select`
         margin-top: 15px;
     }
 `
-
 export const NearMeButton = styled.button`
     position: relative;
     background-color: black;
@@ -184,4 +181,5 @@ export const CategoryPageContainer = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100vw;
 `
