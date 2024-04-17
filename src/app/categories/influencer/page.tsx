@@ -40,12 +40,12 @@ const Influencer: React.FC = () => {
 
                 <RightBox>
                     <RightMiddleBox>
-                        <TextBox>Choose your city</TextBox>
+                        <TextBox>Choose your category</TextBox>
                         <Dropdown
                             onChange={handleInstaCategoryChange}
                             value={selectedName}
                         >
-                            <option value="">Select your city</option>
+                            <option value="">Select your category</option>
                             {instaCat.map((city, index) => (
                                 <option key={index} value={city.name}>
                                     {city.name}
