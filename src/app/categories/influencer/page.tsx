@@ -14,16 +14,19 @@ import {
     Dropdown,
     CategoryPageContainer,
 } from './styles'
-import instaCat from '../instaCat.json'
+import instCat from './instCat.json'
+import instData from './instData.json'
+import LeftInstComponent from './LeftInstComponent'
+import MiddleInstComponent from './MiddleInstComponent'
 
 const Influencer: React.FC = () => {
     const [selectedName, setSelectedName] = useState<string>('')
 
-    const handleInstaCategoryChange = (
+    const handleInstCategoryChange = (
         e: React.ChangeEvent<HTMLSelectElement>
     ) => {
-        const instaCategoryName = e.target.value
-        setSelectedName(instaCategoryName)
+        const instCategoryName = e.target.value
+        setSelectedName(instCategoryName)
     }
 
     return (
@@ -31,28 +34,45 @@ const Influencer: React.FC = () => {
             <Header />
             <ContentSection>
                 <BackgroundImage
-                    src="/inflouencerbackground.jpg"
-                    alt="inflouencer Background"
+                    src="/influencerBackground.jpg"
+                    alt="influencer Background"
                     layout="fill"
                 />
-                <LeftBox></LeftBox>
-                <MiddleBox></MiddleBox>
-
+                <LeftBox>
+                    {instData.map((instMember, index) => (
+                        <LeftInstComponent
+                            id={instMember.id}
+                            title={instMember.title}
+                            post={instMember.post}
+                            followers={instMember.followers}
+                            following={instMember.following}
+                            key={index}
+                        />
+                    ))}
+                </LeftBox>
+                <MiddleBox>
+                    {instCat.map((instCatName, index) => (
+                        <MiddleInstComponent
+                            name={instCatName.name.replace(/\s/g, '-')}
+                            key={index}
+                        />
+                    ))}
+                </MiddleBox>
                 <RightBox>
                     <RightMiddleBox>
                         <TextBox>Choose your category</TextBox>
                         <Dropdown
-                            onChange={handleInstaCategoryChange}
+                            onChange={handleInstCategoryChange}
                             value={selectedName}
                         >
                             <option value="">Select your category</option>
-                            {instaCat.map((city, index) => (
+                            {instCat.map((city, index) => (
                                 <option key={index} value={city.name}>
                                     {city.name}
                                 </option>
                             ))}
                         </Dropdown>
-                        <NearMeButton>Near Me</NearMeButton>
+                        <NearMeButton>Search</NearMeButton>
                     </RightMiddleBox>
                 </RightBox>
             </ContentSection>

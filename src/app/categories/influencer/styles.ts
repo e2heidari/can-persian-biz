@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const MiddleBox = styled.div`
     position: relative;
-    opacity: 0.5;
+    // opacity: 0.5;
     flex-basis: 28vw;
     height: 90vh;
     border-radius: 10px;
@@ -78,9 +78,13 @@ export const LeftBox = styled.div`
     height: 90vh;
     position: relative;
     border-radius: 10px;
-    background-color: gray;
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.5
+    ); /* Adjust the last value (alpha) to change the opacity */
     margin: 1em;
-    opacity: 0.5;
 
     @media (max-width: 1180px) {
         width: 100vw;
