@@ -9,7 +9,7 @@ import {
     MiddleBox,
     NearMeButton,
     RightBox,
-    RightMiddleBox,
+    RightInsideBox,
     TextBox,
     Dropdown,
     CategoryPageContainer,
@@ -59,7 +59,7 @@ const Influencer: React.FC = () => {
                     ))}
                 </MiddleBox>
                 <RightBox>
-                    <RightMiddleBox>
+                    <RightInsideBox>
                         <TextBox>Choose your category</TextBox>
                         <Dropdown
                             onChange={handleInstCategoryChange}
@@ -73,7 +73,7 @@ const Influencer: React.FC = () => {
                             ))}
                         </Dropdown>
                         <NearMeButton>Search</NearMeButton>
-                    </RightMiddleBox>
+                    </RightInsideBox>
                 </RightBox>
             </ContentSection>
             <Footer />

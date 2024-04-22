@@ -8,19 +8,25 @@ interface StyledImageProps extends ImageProps {
 
 const LeftInstComponentWrapper = styled.div`
     display: grid;
-    grid-template-columns: 80px auto 70px 30px 70px 30px 70px;
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.5
+    ); /* Adjust the last value (alpha) to change the opacity */
+    grid-template-columns: 80px auto 70px 30px 70px 30px 70px 40px;
+    grid-template-rows: 3vh 3.5vh 3.5vh 3vh;
     border-radius: 10px;
-    height: 14vh; /* Set the height to 12vh */
-    padding: 0.5em; /* Add padding */
-    border: 1px solid black;
-    width: 55vw;
+    margin: 4px;
+    height: 13vh; /* Set the height to 12vh */
+    width: 100%;
 `
 
 const StyledImage = styled(Image)<StyledImageProps>`
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-end: 5;
     justify-self: stretch;
     place-self: center;
     border-radius: 50%;
@@ -35,34 +41,60 @@ const StyledImage = styled(Image)<StyledImageProps>`
 const AccountTitle = styled.p`
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
     justify-self: start;
     align-self: center;
+    margin: 4px;
+    font-weight: bold;
 `
 
-const PostBox = styled.div`
+const PostBoxName = styled.div`
     grid-column-start: 3;
     grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
     place-self: center;
 `
+const PostBoxAmount = styled.div`
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    place-self: center;
+    font-weight: bold;
+`
 
-const FollowersBox = styled.div`
+const FollowersBoxName = styled.div`
     grid-column-start: 5;
     grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
     place-self: center;
 `
+const FollowersBoxAmount = styled.div`
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    place-self: center;
+    font-weight: bold;
+`
 
-const FollowingBox = styled.div`
+const FollowingBoxName = styled.div`
     grid-column-start: 7;
     grid-column-end: 8;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
     place-self: center;
+`
+const FollowingBoxAmount = styled.div`
+    grid-column-start: 7;
+    grid-column-end: 8;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    place-self: center;
+    font-weight: bold;
 `
 
 interface LeftInstComponentProps {
@@ -95,9 +127,12 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                 imageUrl={getImageUrl(id)} // Pass imageUrl prop directly
             />
             <AccountTitle>{title}</AccountTitle>
-            <PostBox>post: {post}</PostBox>
-            <FollowersBox>followers: {followers}</FollowersBox>
-            <FollowingBox>following: {following}</FollowingBox>
+            <PostBoxName>post</PostBoxName>
+            <PostBoxAmount>{post}</PostBoxAmount>
+            <FollowersBoxName>followers</FollowersBoxName>
+            <FollowersBoxAmount>{followers}</FollowersBoxAmount>
+            <FollowingBoxName>following</FollowingBoxName>
+            <FollowingBoxAmount>{following}</FollowingBoxAmount>
         </LeftInstComponentWrapper>
     )
 }

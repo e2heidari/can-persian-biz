@@ -11,9 +11,10 @@ const StyledImageContainer = styled.div`
 `
 
 const StyledImage = styled(Image)<StyledImageProps>`
-    width: 28vw;
+    width: 19vw;
     height: 26vh;
     object-fit: cover;
+    border-radius: 10px;
 `
 
 const CategoryName = styled.p`

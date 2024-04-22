@@ -4,10 +4,15 @@ import Image from 'next/image'
 export const MiddleBox = styled.div`
     position: relative;
     // opacity: 0.5;
-    flex-basis: 28vw;
+    width: 24vw;
     height: 90vh;
     border-radius: 10px;
-    background-color: gray;
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0
+    ); /* Adjust the last value (alpha) to change the opacity */
     overflow-y: auto;
     display: flex;
     margin: 1em;
@@ -37,7 +42,7 @@ export const RightBox = styled.div`
         height: auto;
     }
 `
-export const RightMiddleBox = styled.div`
+export const RightInsideBox = styled.div`
     width: 18vw;
     background-color: white;
     display: flex;
@@ -74,7 +79,7 @@ export const ContentSection = styled.div`
 `
 
 export const LeftBox = styled.div`
-    flex-basis: 55vw; /* Adjust the width as needed */
+    width: 55vw; /* Adjust the width as needed */
     height: 90vh;
     position: relative;
     border-radius: 10px;
@@ -82,7 +87,7 @@ export const LeftBox = styled.div`
         255,
         255,
         255,
-        0.5
+        0
     ); /* Adjust the last value (alpha) to change the opacity */
     margin: 1em;
 
