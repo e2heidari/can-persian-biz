@@ -3,22 +3,39 @@ import Image from 'next/image'
 
 export const MiddleBox = styled.div`
     position: relative;
-    // opacity: 0.5;
     width: 24vw;
     height: 90vh;
     border-radius: 10px;
-    background-color: rgba(
-        255,
-        255,
-        255,
-        0
-    ); /* Adjust the last value (alpha) to change the opacity */
+    background-color: rgba(255, 255, 255, 0);
     overflow-y: auto;
     display: flex;
     margin: 1em;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+
+    /* Hide default scrollbar for webkit browsers */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Create custom scrollbar for other browsers */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.7) transparent;
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+    }
+
     @media (max-width: 768px) {
         background-color: gray;
         flex-direction: row;
@@ -120,6 +137,7 @@ export const Dropdown = styled.select`
         margin-top: 15px;
     }
 `
+
 export const NearMeButton = styled.button`
     position: relative;
     background-color: black;

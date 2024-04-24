@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 import {
@@ -15,12 +15,12 @@ import {
     CategoryPageContainer,
 } from './styles'
 import instCat from './instCat.json'
-import instData from './instData.json'
 import LeftInstComponent from './LeftInstComponent'
 import MiddleInstComponent from './MiddleInstComponent'
 
 const Influencer: React.FC = () => {
-    const [selectedName, setSelectedName] = useState<string>('')
+    const [selectedName, setSelectedName] = useState<string>('Makeup')
+    const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
 
     const handleInstCategoryChange = (
         e: React.ChangeEvent<HTMLSelectElement>
@@ -28,6 +28,23 @@ const Influencer: React.FC = () => {
         const instCategoryName = e.target.value
         setSelectedName(instCategoryName)
     }
+    useEffect(() => {
+        const fetchData = async () => {
+            if (!selectedName) {
+                // Reset the data if no category is selected
+                setInstData([])
+                return
+            }
+            try {
+                const response = await import(`./${selectedName}.json`)
+                setInstData(response.default)
+            } catch (error) {
+                console.error('Error fetching JSON file:', error)
+                setInstData([]) // Reset the data if there's an error
+            }
+        }
+        fetchData()
+    }, [selectedName])
 
     return (
         <CategoryPageContainer>
@@ -66,9 +83,9 @@ const Influencer: React.FC = () => {
                             value={selectedName}
                         >
                             <option value="">Select your category</option>
-                            {instCat.map((city, index) => (
-                                <option key={index} value={city.name}>
-                                    {city.name}
+                            {instCat.map((category, index) => (
+                                <option key={index} value={category.name}>
+                                    {category.name}
                                 </option>
                             ))}
                         </Dropdown>

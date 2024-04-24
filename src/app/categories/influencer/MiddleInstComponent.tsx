@@ -13,7 +13,7 @@ const StyledImageContainer = styled.div`
 const StyledImage = styled(Image)<StyledImageProps>`
     width: 19vw;
     height: 26vh;
-    object-fit: cover;
+    overflow: hidden;
     border-radius: 10px;
 `
 

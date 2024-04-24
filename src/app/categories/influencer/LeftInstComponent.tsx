@@ -12,7 +12,7 @@ const LeftInstComponentWrapper = styled.div`
         255,
         255,
         255,
-        0.5
+        0.4
     ); /* Adjust the last value (alpha) to change the opacity */
     grid-template-columns: 80px auto 70px 30px 70px 30px 70px 40px;
     grid-template-rows: 3vh 3.5vh 3.5vh 3vh;
