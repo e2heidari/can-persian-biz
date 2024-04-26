@@ -7,11 +7,15 @@ import {
     ContentSection,
     LeftBox,
     MiddleBox,
-    NearMeButton,
-    RightBox,
+    // NearMeButton,
+    // RightBox,
     RightInsideBox,
     TextBox,
-    Dropdown,
+    DropdownWrapper,
+    DropdownButton,
+    DropdownContent,
+    DropdownMenu,
+    DropdownMenuItem,
     CategoryPageContainer,
 } from './styles'
 import instCat from './instCat.json'
@@ -19,14 +23,14 @@ import LeftInstComponent from './LeftInstComponent'
 import MiddleInstComponent from './MiddleInstComponent'
 
 const Influencer: React.FC = () => {
-    const [selectedName, setSelectedName] = useState<string>('Makeup')
+    const [selectedName, setSelectedName] = useState<string>('')
     const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
+    const [selectedCategory, setSelectedCategory] = useState<string>('Settings') // Initial value is 'Settings'
 
-    const handleInstCategoryChange = (
-        e: React.ChangeEvent<HTMLSelectElement>
-    ) => {
-        const instCategoryName = e.target.value
+    const handleInstCategoryChange = (selectedOption: string) => {
+        const instCategoryName = selectedOption
         setSelectedName(instCategoryName)
+        setSelectedCategory(selectedOption)
     }
     useEffect(() => {
         const fetchData = async () => {
@@ -51,7 +55,7 @@ const Influencer: React.FC = () => {
             <Header />
             <ContentSection>
                 <BackgroundImage
-                    src="/influencerBackground.jpg"
+                    src="/influencerBackground1.jpg"
                     alt="influencer Background"
                     layout="fill"
                 />
@@ -75,23 +79,35 @@ const Influencer: React.FC = () => {
                         />
                     ))}
                 </MiddleBox>
-                <RightBox>
-                    <RightInsideBox>
-                        <TextBox>Choose your category</TextBox>
-                        <Dropdown
-                            onChange={handleInstCategoryChange}
-                            value={selectedName}
-                        >
-                            <option value="">Select your category</option>
+                <RightInsideBox>
+                    {/* <TextBox>Choose your category</TextBox> */}
+                    <DropdownWrapper>
+                        <DropdownContent>
+                            <span className="material-symbols-outlined">
+                                {' '}
+                                {selectedCategory}{' '}
+                            </span>
+                            <span className="material-symbols-outlined">^</span>
+                        </DropdownContent>
+                        <DropdownButton type="button"></DropdownButton>
+                        <DropdownMenu>
                             {instCat.map((category, index) => (
-                                <option key={index} value={category.name}>
-                                    {category.name}
-                                </option>
+                                <DropdownMenuItem
+                                    key={index}
+                                    onClick={() =>
+                                        handleInstCategoryChange(category.name)
+                                    }
+                                >
+                                    <span className="material-symbols-outlined">
+                                        <img src={`/${category.icon}`} />
+                                    </span>
+                                    <p>{category.name}</p>
+                                </DropdownMenuItem>
                             ))}
-                        </Dropdown>
-                        <NearMeButton>Search</NearMeButton>
-                    </RightInsideBox>
-                </RightBox>
+                        </DropdownMenu>
+                    </DropdownWrapper>
+                    {/* <NearMeButton>Search</NearMeButton> */}
+                </RightInsideBox>
             </ContentSection>
             <Footer />
         </CategoryPageContainer>

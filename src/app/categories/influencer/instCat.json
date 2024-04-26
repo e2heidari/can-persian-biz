@@ -1,29 +1,57 @@
 [
     {
-        "name": "Life style in Vancouver"
+        "icon": "icons8-fashion-96.png",
+        "name": "Fashion",
+        "des": "Fashion influencers garner engagement by showing people how to dress and influenceing their wardrobe. Influencers show the products they purchase from brands, post reviews about the clothes they like, and often become trendsetters with their fashion choices and personal style."
     },
     {
-        "name": "Fashion & Art"
+        "icon": "art.png",
+        "name": "Art",
+        "des": ""
     },
     {
-        "name": "Vancouver Groups"
+        "icon": "icons8-interior-design-96.png",
+        "name": "Designer",
+        "des": ""
     },
     {
-        "name": "Discoverer in Vancouver"
+        "icon": "icons8-user-groups-96.png",
+        "name": "Vancouver Groups",
+        "des": ""
     },
     {
-        "name": "Channel in Vancouver"
+        "icon": "lifestyle.png",
+        "name": "Lifestyle",
+        "des": "Lifestyle influencers post varying content around their personal routine, fashion choices, and their life in general. These types of influencers aren’t subject matter experts, but their audience follows them for aspiration or likeability — which often translates to high engagement."
     },
     {
-        "name": "Job & Career"
+        "icon": "icons8-food-and-wine-96.png",
+        "name": "Food",
+        "des": "Food influencers influence the way people eat. These types of influencers can be dieticians sharing how to lose weight or local restaurant reviewers rating the new cafe. These creators can drive how people feel about a particular food and sway customers’ opinions."
     },
     {
-        "name": "Photographer"
+        "icon": "icons8-slr-camera-96.png",
+        "name": "Photographer",
+        "des": ""
     },
     {
-        "name": "Immigration"
+        "icon": "icons8-passport-96.png",
+        "name": "Immigration",
+        "des": ""
     },
     {
-        "name": "Makeup"
+        "icon": "icons8-national-park-96.png",
+        "name": "Travel",
+        "des": "Travel influencers share tips regarding all things travel — places to visit, travel-related products, and hotels to stay in. These types of influencers inspire their audience to pursue their travel goals and recommend a pathway to reach there."
+    },
+    {
+        "icon": "icons8-mortarboard-96.png",
+        "name": "Education",
+        "des": ""
+    },
+    {
+        "icon": "icons8-mascara-96.png",
+        "name": "Makeup Artist",
+        "des": ""
     }
 ]

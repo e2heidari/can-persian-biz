@@ -44,28 +44,13 @@ export const MiddleBox = styled.div`
     }
 `
 
-export const RightBox = styled.div`
-    flex-basis: 20vw;
+export const RightInsideBox = styled.div`
+    width: 26vw;
     height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(4px);
-
-    @media (max-width: 1180px) {
-        background-color: #007bff;
-        width: 100%;
-        height: auto;
-    }
-`
-export const RightInsideBox = styled.div`
-    width: 18vw;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    align-items: flex-start;
     padding: 2em;
     border-radius: 10px;
     background-color: rgba(201, 212, 223, 1);
@@ -77,6 +62,119 @@ export const RightInsideBox = styled.div`
         background-color: gray;
         flex-direction: row;
         width: 100vw;
+    }
+`
+export const TextBox = styled.h3`
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Alcubierre', sans-serif;
+    @media (max-width: 1180px) {
+        display: none;
+    }
+`
+export const DropdownWrapper = styled.div`
+    position: relative;
+    cursor: pointer;
+`
+
+export const DropdownButton = styled.button`
+    width: 18vw;
+    height: 60px;
+    border: 0;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 17px;
+    background: #3c3c3c;
+`
+
+export const DropdownContent = styled.div`
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: #f7f7f7;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 6px;
+        right: 10%;
+        width: 80%;
+        height: 1px;
+        transform: scaleX(0);
+        background: rgb(255 255 255 / 30%);
+        transition: 0.3s;
+    }
+
+    ${DropdownWrapper}:hover &::after {
+        transform: scaleX(1);
+    }
+
+    ${DropdownWrapper} > & > span:first-child {
+        font-size: 20px;
+    }
+
+    ${DropdownWrapper} > & > span:last-child {
+        margin-left: auto;
+    }
+
+    ${DropdownWrapper} > & > span:last-child {
+        transition: 0.3s;
+    }
+
+    ${DropdownWrapper}:hover & > span:last-child {
+        rotate: -180deg;
+    }
+`
+
+export const DropdownMenu = styled.div`
+    position: absolute;
+    z-index: 1;
+    top: -6px;
+    left: 50%;
+    display: grid;
+    width: 110%;
+    padding: 70px 0 6px;
+    border-radius: 6px;
+    translate: -50% 0;
+    visibility: hidden;
+    opacity: 0;
+    scale: 0.85;
+    background: linear-gradient(#ea8d8d, #a890fe);
+    transition: 0.3s;
+
+    ${DropdownWrapper}:hover & {
+        visibility: visible;
+        opacity: 1;
+        scale: 1;
+    }
+`
+
+export const DropdownMenuItem = styled.a`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f7f7f7;
+    font-size: 20px;
+    padding: 5px 24px;
+
+    &:hover {
+        background: rgb(0 0 0 / 10%);
+    }
+
+    & > span {
+        height: 35px;
+        width: 35px;
+        background: white;
+        border-radius: 6px;
     }
 `
 export const ContentSection = styled.div`
@@ -96,7 +194,7 @@ export const ContentSection = styled.div`
 `
 
 export const LeftBox = styled.div`
-    width: 55vw; /* Adjust the width as needed */
+    width: 45vw; /* Adjust the width as needed */
     height: 90vh;
     position: relative;
     border-radius: 10px;
@@ -111,30 +209,6 @@ export const LeftBox = styled.div`
     @media (max-width: 1180px) {
         width: 100vw;
         height: auto;
-    }
-`
-export const TextBox = styled.h3`
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    font-family: 'Alcubierre', sans-serif;
-    @media (max-width: 1180px) {
-        display: none;
-    }
-`
-export const Dropdown = styled.select`
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background: #dde1e7;
-    box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
-        5px 5px 9px rgba(94, 104, 121, 0.3);
-    @media (max-width: 1180px) {
-        margin-top: 15px;
     }
 `
 
