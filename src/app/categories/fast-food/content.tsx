@@ -13,7 +13,7 @@ import {
     Dropdown,
 } from '../styles'
 import Location from '../locations.json'
-import GooglePlacesMap from '../../../components/GooglePlacesMap'
+import GooglePlacesMap from '../GooglePlacesMap'
 import { Restaurant } from './type'
 import MiddleRestaurantsComponent from '../../../components/MiddleRestaurantComponent'
 
