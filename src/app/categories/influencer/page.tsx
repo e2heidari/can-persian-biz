@@ -25,12 +25,16 @@ import MiddleInstComponent from './MiddleInstComponent'
 const Influencer: React.FC = () => {
     const [selectedName, setSelectedName] = useState<string>('')
     const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
-    const [selectedCategory, setSelectedCategory] = useState<string>('Settings') // Initial value is 'Settings'
+    const [selectedCategory, setSelectedCategory] = useState<string>('Category') // Initial value is 'Settings'
+    const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>(
+        'icons8-instagram-96.png'
+    )
 
-    const handleInstCategoryChange = (selectedOption: string) => {
+    const handleInstCategoryChange = (selectedOption: string, icon: string) => {
         const instCategoryName = selectedOption
         setSelectedName(instCategoryName)
         setSelectedCategory(selectedOption)
+        setSelectedCategoryIcon(icon)
     }
     useEffect(() => {
         const fetchData = async () => {
@@ -83,11 +87,29 @@ const Influencer: React.FC = () => {
                     {/* <TextBox>Choose your category</TextBox> */}
                     <DropdownWrapper>
                         <DropdownContent>
-                            <span className="material-symbols-outlined">
-                                {' '}
-                                {selectedCategory}{' '}
+                            <span
+                                className="material-symbols-outlined"
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <img
+                                    src={`/${selectedCategoryIcon}`}
+                                    style={{
+                                        height: '38px',
+                                        width: '38px',
+                                        background: 'white',
+                                        borderRadius: '6px',
+                                        marginRight: '5px', // Add some margin between the image and text
+                                    }}
+                                />{' '}
+                                {selectedCategory}
                             </span>
-                            <span className="material-symbols-outlined">^</span>
+
+                            <span className="material-symbols-outlined">
+                                <img src="/icons8-down-button-50.png" />
+                            </span>
                         </DropdownContent>
                         <DropdownButton type="button"></DropdownButton>
                         <DropdownMenu>
@@ -95,7 +117,10 @@ const Influencer: React.FC = () => {
                                 <DropdownMenuItem
                                     key={index}
                                     onClick={() =>
-                                        handleInstCategoryChange(category.name)
+                                        handleInstCategoryChange(
+                                            category.name,
+                                            category.icon
+                                        )
                                     }
                                 >
                                     <span className="material-symbols-outlined">
