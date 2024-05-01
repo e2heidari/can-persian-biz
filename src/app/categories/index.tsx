@@ -142,7 +142,7 @@ const categoriesData = [
     { icon: 'icons8-spa-care-96.png', text: 'Health & Beauty' },
 ]
 
-const CategoriesBox: React.FC = () => {
+const Categories: React.FC = () => {
     const [showAllIcons, setShowAllIcons] = useState(false)
     const [moreButtonText, setMoreButtonText] = useState('More')
 
@@ -205,4 +205,4 @@ const CategoriesBox: React.FC = () => {
     )
 }
 
-export default CategoriesBox
+export default Categories

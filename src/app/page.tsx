@@ -5,11 +5,12 @@ import Header from '../components/Header'
 import SearchBox from '../components/section1/SearchBox'
 import Footer from '../components/Footer'
 import { Element } from 'react-scroll'
-import CategoriesBox from './categories'
+import Categories from './categories'
 import BulletinBox from '../components/section3/BulletinBox'
 
 const MainContainer = styled.div`
     overflow: hidden;
+    width: 100%;
 `
 
 const IndexPage = () => {
@@ -20,7 +21,7 @@ const IndexPage = () => {
                 <SearchBox />
             </Element>
             <Element name="section2">
-                <CategoriesBox />
+                <Categories />
             </Element>
             <Element name="section3">
                 <BulletinBox />

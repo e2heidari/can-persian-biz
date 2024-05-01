@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const HeaderContainer = styled.header`
     height: 5vh;
-    width: 100vw;
+    width: 100%;
     background-color: white;
     color: #fff;
     display: flex;

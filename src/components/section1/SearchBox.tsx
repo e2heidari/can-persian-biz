@@ -5,6 +5,7 @@ import Image from 'next/image'
 
 const SearchBoxContainer = styled.section`
     position: relative;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,13 +22,14 @@ const BackgroundImage = styled(Image)`
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 60vh;
     object-fit: cover;
 `
 
 const TopBox = styled.div`
     font-size: 40.663px;
+    width: 100%;
     font-weight: bold;
     text-align: center;
     color: black;
