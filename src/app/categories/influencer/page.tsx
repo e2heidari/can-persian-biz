@@ -22,21 +22,22 @@ import instCat from './instCat.json'
 import LeftInstComponent from './LeftInstComponent'
 import MiddleInstComponent from './MiddleInstComponent'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectCoverflow } from 'swiper/modules'
+import { EffectCoverflow, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
+import 'swiper/css/pagination'
 
 const Influencer: React.FC = () => {
     const [selectedName, setSelectedName] = useState<string>('')
     const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
     // const [selectedCategory, setSelectedCategory] = useState<string>('Category') // Initial value is 'Settings'
-    const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>()
+    // const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>()
 
     const handleInstCategoryChange = (selectedOption: string, icon: string) => {
         const instCategoryName = selectedOption
         setSelectedName(instCategoryName)
         // setSelectedCategory(selectedOption)
-        setSelectedCategoryIcon(icon)
+        // setSelectedCategoryIcon(icon)
     }
     useEffect(() => {
         const fetchData = async () => {
@@ -68,7 +69,8 @@ const Influencer: React.FC = () => {
                 <Swiper
                     grabCursor
                     centeredSlides
-                    slidesPerView="auto"
+                    slidesPerView={4}
+                    spaceBetween={10}
                     effect="coverflow"
                     loop
                     // style={{
@@ -81,7 +83,8 @@ const Influencer: React.FC = () => {
                         modifier: 1,
                         slideShadows: true,
                     }}
-                    modules={[EffectCoverflow]}
+                    pagination={{ clickable: true }} // Enable pagination with clickable bullets
+                    modules={[EffectCoverflow, Pagination]}
                 >
                     {instCat.map((category, index) => (
                         <SwiperSlide
