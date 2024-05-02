@@ -5,8 +5,8 @@ import Footer from '../../../components/Footer'
 import {
     BackgroundImage,
     ContentSection,
-    LeftBox,
-    MiddleBox,
+    Article,
+    CustomContent,
     // NearMeButton,
     // RightBox,
     TopBox,
@@ -57,25 +57,22 @@ const Influencer: React.FC = () => {
         fetchData()
     }, [selectedName])
 
+    const [active, setActive] = useState(0)
+
+    const handleToggle = (index: number) => setActive(index)
+
     return (
         <CategoryPageContainer>
             <Header />
-            <TopBox
-                style={{
-                    width: '100%',
-                    backgroundColor: '#0e0e0e',
-                }}
-            >
+            <TopBox>
                 <Swiper
                     grabCursor
                     centeredSlides
-                    slidesPerView={4}
-                    spaceBetween={10}
+                    slidesPerView={3}
+                    spaceBetween={15}
                     effect="coverflow"
                     loop
-                    // style={{
-                    //     width: '100%',
-                    // }}
+                    style={{}}
                     coverflowEffect={{
                         rotate: 50,
                         stretch: 0,
@@ -94,8 +91,8 @@ const Influencer: React.FC = () => {
                                 backgroundImage: `url(${category.slide})`,
                                 backgroundPosition: 'center',
                                 backgroundSize: 'cover',
-                                width: '19%',
-                                height: '30vh',
+                                width: '20%',
+                                height: '32vh',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'flex-end', // Align items at the bottom
@@ -120,7 +117,7 @@ const Influencer: React.FC = () => {
                                     style={{
                                         width: '30px',
                                         height: '30px',
-                                        background: '#10121E',
+                                        background: '#060606',
                                         borderRadius: '6px',
                                     }}
                                 />
@@ -187,31 +184,46 @@ const Influencer: React.FC = () => {
                 {/* <NearMeButton>Search</NearMeButton> */}
             </TopBox>
             <ContentSection>
-                <BackgroundImage
-                    src="/influencerBackground1.jpg"
-                    alt="influencer Background"
-                    layout="fill"
-                />
-                <LeftBox>
-                    {instData.map((instMember, index) => (
-                        <LeftInstComponent
-                            id={instMember.id}
-                            title={instMember.title}
-                            post={instMember.post}
-                            followers={instMember.followers}
-                            following={instMember.following}
-                            key={index}
-                        />
-                    ))}
-                </LeftBox>
-                <MiddleBox>
-                    {instCat.map((instCatName, index) => (
-                        <MiddleInstComponent
-                            name={instCatName.name.replace(/\s/g, '-')}
-                            key={index}
-                        />
-                    ))}
-                </MiddleBox>
+                <Article
+                    isActive={active === 1}
+                    onClick={() => handleToggle(0)}
+                >
+                    <BackgroundImage
+                        src="/influencerBackground1.jpg"
+                        alt="influencer Background"
+                        layout="fill"
+                    />
+                    <CustomContent isActive={active === 0}>
+                        {instData.map((instMember, index) => (
+                            <LeftInstComponent
+                                id={instMember.id}
+                                title={instMember.title}
+                                post={instMember.post}
+                                followers={instMember.followers}
+                                following={instMember.following}
+                                key={index}
+                            />
+                        ))}
+                    </CustomContent>
+                </Article>
+                <Article
+                    isActive={active === 0}
+                    onClick={() => handleToggle(1)}
+                >
+                    <BackgroundImage
+                        src="/jon-ly-Xn7GvimQrk8-unsplash (1).jpg"
+                        alt="influencer Background"
+                        layout="fill"
+                    />
+                    <CustomContent isActive={active === 1}>
+                        {instCat.map((instCatName, index) => (
+                            <MiddleInstComponent
+                                name={instCatName.name.replace(/\s/g, '-')}
+                                key={index}
+                            />
+                        ))}
+                    </CustomContent>
+                </Article>
             </ContentSection>
             <Footer />
         </CategoryPageContainer>

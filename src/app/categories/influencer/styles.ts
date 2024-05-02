@@ -1,70 +1,161 @@
 import styled, { css } from 'styled-components'
 import Image from 'next/image'
 
+export const BackgroundImage = styled(Image)<{ mobileHide?: boolean }>`
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+
+    ${(props) =>
+        props.mobileHide &&
+        css`
+            @media (max-width: 1180px) {
+                display: none;
+            }
+        `}
+`
+
 export const CategoryPageContainer = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
 `
-
-export const MiddleBox = styled.div`
-    position: relative;
-    width: 30%;
-    height: 90vh;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0);
-    overflow-y: auto;
-    display: flex;
-    margin: 1em;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-
-    /* Hide default scrollbar for webkit browsers */
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* Create custom scrollbar for other browsers */
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.7) transparent;
-
-    /* Track */
-    &::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
-
-    /* Handle */
-    &::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.7);
-        border-radius: 20px;
-        border: 6px solid transparent;
-        background-clip: content-box;
-    }
-
-    @media (max-width: 768px) {
-        background-color: gray;
-        flex-direction: row;
-        width: 100%;
-        height: 30vh;
-    }
-`
-
 export const TopBox = styled.div`
-    height: 37vh;
+    height: 36vh;
     width: 100%;
-    justify-content: center;
-    padding: 2em;
+    align-items: stretch;
+    padding: 2vh;
     background-color: #0e0e0e;
     @media (max-width: 1180px) {
-        background-color: gray;
+        padding: 2vh;
         flex-direction: row;
         width: 100%;
     }
 `
+export const ContentSection = styled.section`
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    cursor: pointer;
+    width: 100%;
+
+    @media (max-width: 1180px) {
+        gap: 2px;
+        padding: 0;
+    }
+`
+export const Article = styled.article<{ isActive: boolean }>`
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    width: 100%;
+    height: 70vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    // align-items: flex-end;
+    opacity: 0.9;
+    transition: 0.5s;
+    ${(props) =>
+        props.isActive &&
+        `
+    width: 20%;
+    opacity: 1;
+    @media (max-width: 768px) {
+    width: 64px;
+    }
+  `}
+`
+export const CustomContent = styled.div<{ isActive: boolean }>`
+    position: absolute;
+    width: 100%;
+    height: 70vh;
+    overflow: scroll;
+    opacity: ${(props) => (props.isActive ? '1' : '0')};
+    visibility: ${(props) => (props.isActive ? 'visible' : 'hidden')};
+    padding: 10px 10px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px); /* Add blur effect */
+    transition: 0.25s;
+    @media (max-width: 768px) {
+        width: 100%;
+        align-items: center;
+        padding: 5px 5px;
+    }
+`
+
+// export const MiddleBox = styled.div`
+//     position: relative;
+//     width: 30%;
+//     height: 90vh;
+//     border-radius: 10px;
+//     background-color: rgba(255, 255, 255, 0);
+//     overflow-y: auto;
+//     display: flex;
+//     margin: 1em;
+//     justify-content: space-between;
+//     align-items: center;
+//     flex-direction: column;
+
+//     /* Hide default scrollbar for webkit browsers */
+//     &::-webkit-scrollbar {
+//         display: none;
+//     }
+
+//     /* Create custom scrollbar for other browsers */
+//     scrollbar-width: thin;
+//     scrollbar-color: rgba(255, 255, 255, 0.7) transparent;
+
+//     /* Track */
+//     &::-webkit-scrollbar-track {
+//         background-color: transparent;
+//     }
+
+//     /* Handle */
+//     &::-webkit-scrollbar-thumb {
+//         background-color: rgba(255, 255, 255, 0.7);
+//         border-radius: 20px;
+//         border: 6px solid transparent;
+//         background-clip: content-box;
+//     }
+
+//     @media (max-width: 768px) {
+//         background-color: gray;
+//         flex-direction: row;
+//         width: 100%;
+//         height: 30vh;
+//     }
+// `
+
+// export const LeftBox = styled.div`
+//     width: 70%; /* Adjust the width as needed */
+//     height: 90vh;
+//     position: relative;
+//     border-radius: 10px;
+//     background-color: rgba(
+//         255,
+//         255,
+//         255,
+//         0
+//     ); /* Adjust the last value (alpha) to change the opacity */
+//     margin: 1em;
+
+//     @media (max-width: 1180px) {
+//         width: 100%;
+//         height: auto;
+//     }
+// `
 // export const TextBox = styled.h3`
 //     padding: 10px;
 //     margin-bottom: 10px;
@@ -178,40 +269,6 @@ export const TopBox = styled.div`
 //         border-radius: 6px;
 //     }
 // `
-export const ContentSection = styled.div`
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    height: 100vh;
-    width: 100%;
-    padding: 1em;
-
-    @media (max-width: 1180px) {
-        flex-direction: column-reverse;
-        align-items: center;
-        padding: 0;
-    }
-`
-
-export const LeftBox = styled.div`
-    width: 70%; /* Adjust the width as needed */
-    height: 90vh;
-    position: relative;
-    border-radius: 10px;
-    background-color: rgba(
-        255,
-        255,
-        255,
-        0
-    ); /* Adjust the last value (alpha) to change the opacity */
-    margin: 1em;
-
-    @media (max-width: 1180px) {
-        width: 100%;
-        height: auto;
-    }
-`
 
 // export const NearMeButton = styled.button`
 //     position: relative;
@@ -261,20 +318,3 @@ export const LeftBox = styled.div`
 //         top: 1px;
 //     }
 // `
-
-export const BackgroundImage = styled(Image)<{ mobileHide?: boolean }>`
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-
-    ${(props) =>
-        props.mobileHide &&
-        css`
-            @media (max-width: 1180px) {
-                display: none;
-            }
-        `}
-`
