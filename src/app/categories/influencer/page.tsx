@@ -20,7 +20,7 @@ import {
 } from './styles'
 import instCat from './instCat.json'
 import LeftInstComponent from './LeftInstComponent'
-import MiddleInstComponent from './MiddleInstComponent'
+import RightInstComponent from './RightInstComponent'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCoverflow, Pagination } from 'swiper/modules'
 import 'swiper/css'
@@ -217,7 +217,7 @@ const Influencer: React.FC = () => {
                     />
                     <CustomContent isActive={active === 1}>
                         {instCat.map((instCatName, index) => (
-                            <MiddleInstComponent
+                            <RightInstComponent
                                 name={instCatName.name.replace(/\s/g, '-')}
                                 key={index}
                             />

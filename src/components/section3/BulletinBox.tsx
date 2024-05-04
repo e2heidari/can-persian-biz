@@ -29,7 +29,6 @@ const BulletinBox = styled.article`
     width: 30vw;
     text-align: center;
     vertical-align: top;
-
     display: inline-block;
 `
 

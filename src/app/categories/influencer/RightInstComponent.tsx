@@ -28,7 +28,7 @@ interface MiddleInstComponentProps {
     name: string
 }
 
-const MiddleInstComponent: React.FC<MiddleInstComponentProps> = ({ name }) => {
+const RightInstComponent: React.FC<MiddleInstComponentProps> = ({ name }) => {
     const getImageUrl = (name: string) => {
         // Assuming images are stored in a folder named 'images'
         return `/${name}.jpg` // Change the file extension as per your image format
@@ -49,4 +49,4 @@ const MiddleInstComponent: React.FC<MiddleInstComponentProps> = ({ name }) => {
     )
 }
 
-export default MiddleInstComponent
+export default RightInstComponent
