@@ -48,33 +48,31 @@ const TopBox = styled.div`
 `
 
 const FindTheText = styled.div`
-    font-size: 40.663px;
+    background-image: url('alex-perez-ioJBsYQ-pPM-unsplash (1).jpg');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 4vw;
+    font-weight: bold;
     backdrop-filter: blur(5px);
 
-    @media (max-width: 1280px) {
-        font-size: 30.52px;
-        backdrop-filter: blur(5px);
-    }
-
     @media (max-width: 768px) {
-        /* Mobile size styles */
-        font-size: 20.52px;
         backdrop-filter: blur(5px);
     }
 `
 
 const BestPersianText = styled.div`
-    font-size: 72.534px;
+    background-image: url('alex-perez-ioJBsYQ-pPM-unsplash (1).jpg');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 6vw;
+    font-weight: bold;
     backdrop-filter: blur(5px);
 
-    @media (max-width: 1080px) {
-        font-size: 50.52px;
-        backdrop-filter: blur(5px);
-    }
-
     @media (max-width: 768px) {
-        /* Mobile size styles */
-        font-size: 28.52px;
         backdrop-filter: blur(5px);
     }
 `

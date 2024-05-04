@@ -20,7 +20,7 @@ const LeftInstComponentWrapper = styled.div`
     margin: 0px;
     width: 100%;
     @media (max-width: 768px) {
-        grid-template-columns: 50px auto 30px 15px 55px 10px 75px 0px;
+        grid-template-columns: 50px auto 40px 20px 55px 15px;
         grid-template-rows: 1vh 2.9vh 2.9vh 1vh;
     }
 `
@@ -42,8 +42,8 @@ const StyledImage = styled(Image)<StyledImageProps>`
         0.5
     ); /* Adjust the last value (alpha) to change the opacity */
     @media (max-width: 768px) {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
     }
 `
 
@@ -102,6 +102,9 @@ const FollowingBoxName = styled.p`
     grid-row-end: 3;
     font-size: 16px;
     place-self: center;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 const FollowingBoxAmount = styled.p`
     grid-column-start: 7;
@@ -111,6 +114,9 @@ const FollowingBoxAmount = styled.p`
     font-size: 16px;
     place-self: center;
     font-weight: bold;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 
 interface LeftInstComponentProps {

@@ -9,7 +9,7 @@ import Categories from './categories'
 import BulletinBox from '../components/section3/BulletinBox'
 
 const MainContainer = styled.div`
-    overflow: hidden;
+    overflow: scroll;
     width: 100%;
 `
 

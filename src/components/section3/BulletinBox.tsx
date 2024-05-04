@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
-const BulletinBoxContainer = styled.div`
+const BulletinBoxContainer = styled.section`
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the boxes horizontally */
+    align-items: center;
     background-image: url('/section-bulletin.jpg'); /* Default background image */
     background-size: cover;
     background-position: center center;
@@ -13,25 +15,22 @@ const BulletinBoxContainer = styled.div`
         transform: translateY(0);
         transition: transform 0.3s ease-in-out;
     }
-    padding: 10% 0;
+    padding: 3vh 0;
     width: 100%;
     height: 73vh;
     margin: 0 auto;
 
     @media (max-width: 768px) {
         background-image: url('/mobilesizeBulletinBackground.jpg'); /* Mobile background image */
-        padding: 20% 0;
-        height: 55vh;
     }
 `
 
-const BulletinBox = styled.div`
-    width: 33.33vw;
+const BulletinBox = styled.article`
+    width: 30vw;
     text-align: center;
+    vertical-align: top;
 
-    @media (max-width: 768px) {
-        width: 100vw;
-    }
+    display: inline-block;
 `
 
 const BulletinIconContainer = styled.div`
@@ -46,36 +45,24 @@ const BulletinIconContainer = styled.div`
 `
 
 const BulletinIcon = styled.img`
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
 
     @media (max-width: 1024px) {
-        width: 75px;
-        height: 75px;
+        width: 85px;
+        height: 85px;
     }
 `
 
 const BulletinText = styled.div`
-    height: 54px;
-    font-size: 40px;
-    font-weight: 650;
+    font-size: 3.5vw;
     text-align: center;
     color: white;
-
-    @media (max-width: 1024px) {
-        height: 42px;
-        font-size: 31px;
-    }
-    @media (max-width: 768px) {
-        height: 25px;
-        font-size: 17px;
-    }
 `
 
 const BulletinBottomBox = styled.div`
-    height: 3vh;
-    font-weight: 250;
-    font-size: 2.5vh;
+    font-size: 2.5vw;
+    text-align: center;
     color: white;
 `
 

@@ -4,43 +4,50 @@ import { Button } from 'antd'
 import Category from './Category'
 import Link from 'next/link'
 
-const CategoriesBoxContainer = styled.div`
-    display: flex;
-    flex-direction: column;
+const BackgroundContainer = styled.div`
     background-color: white;
-    padding: 5% 0;
-    margin: 0 auto;
-
-    @media (max-width: 1280px) {
-        padding: 3% 0;
-    }
+    width: 100%;
 
     @media (max-width: 768px) {
-        padding: 5% 0;
+        background-color: ${(props: { showAllIcons: boolean }) =>
+            props.showAllIcons ? 'white' : 'transparent'};
+    }
+`
+
+const CategoriesBoxContainer = styled.div`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px 10px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        padding: 5px 5px;
     }
 `
 
 const TextTopBox = styled.div`
-    height: 25px;
+    height: 2vh;
+    width: 100%;
     margin: 10px 0 40px 0;
-    font-size: 21px;
+    font-size: 2vw;
     display: flex;
     justify-content: center;
     color: #747474;
-    font-weight: 300;
 
     @media (max-width: 768px) {
         /* Mobile size styles */
-        font-size: 18px;
+        font-size: 3vw;
         margin: 10px 0px 20px 0px;
     }
 `
 
 const CategoriesContainer = styled.div`
-    margin: 30px auto;
-    padding: 0 12%;
     display: flex;
     flex-wrap: wrap;
+    margin: 30px auto;
+    padding: 0 12%;
     justify-content: center; /* Center the boxes horizontally */
     align-items: center;
     @media (max-width: 1024px) {
@@ -108,15 +115,6 @@ const StyledButton = styled(Button)`
             margin: 10px 0px;
             border-radius: 20px;
         }
-    }
-`
-
-const BackgroundContainer = styled.div`
-    background-color: white;
-
-    @media (max-width: 768px) {
-        background-color: ${(props: { showAllIcons: boolean }) =>
-            props.showAllIcons ? 'white' : 'transparent'};
     }
 `
 
