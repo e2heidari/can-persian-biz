@@ -53,11 +53,10 @@ export const ContentSection = styled.section`
 `
 export const Article = styled.article<{ isActive: boolean }>`
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
     background: #ffffff;
     width: 100%;
     height: 70vh;
-    border-radius: 10px;
     display: flex;
     align-items: center;
     // align-items: flex-end;
@@ -72,6 +71,27 @@ export const Article = styled.article<{ isActive: boolean }>`
     width: 64px;
     }
   `}
+    /* Hide default scrollbar for webkit browsers */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Create custom scrollbar for other browsers */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.7) transparent;
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+    }
 `
 export const CustomContent = styled.div<{ isActive: boolean }>`
     position: absolute;

@@ -48,7 +48,7 @@ const TopBox = styled.div`
 `
 
 const FindTheText = styled.div`
-    background-image: url('alex-perez-ioJBsYQ-pPM-unsplash (1).jpg');
+    background-image: url('dave-hoefler-lsoogGC_5dg-unsplash.jpg');
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
@@ -63,7 +63,7 @@ const FindTheText = styled.div`
 `
 
 const BestPersianText = styled.div`
-    background-image: url('alex-perez-ioJBsYQ-pPM-unsplash (1).jpg');
+    background-image: url('dave-hoefler-lsoogGC_5dg-unsplash.jpg');
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;

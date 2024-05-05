@@ -91,8 +91,9 @@ const Influencer: React.FC = () => {
                                 backgroundImage: `url(${category.slide})`,
                                 backgroundPosition: 'center',
                                 backgroundSize: 'cover',
-                                width: '20%',
+                                width: '17vw',
                                 height: '32vh',
+                                borderRadius: '10px',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'flex-end', // Align items at the bottom
