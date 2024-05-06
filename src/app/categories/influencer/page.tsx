@@ -23,21 +23,23 @@ import LeftInstComponent from './LeftInstComponent'
 import RightInstComponent from './RightInstComponent'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCoverflow, Pagination } from 'swiper/modules'
+import { useMediaQuery } from 'react-responsive'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
+import { relative } from 'path'
 
 const Influencer: React.FC = () => {
     const [selectedName, setSelectedName] = useState<string>('')
     const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
     // const [selectedCategory, setSelectedCategory] = useState<string>('Category') // Initial value is 'Settings'
-    // const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>()
+    const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>()
 
     const handleInstCategoryChange = (selectedOption: string, icon: string) => {
         const instCategoryName = selectedOption
         setSelectedName(instCategoryName)
         // setSelectedCategory(selectedOption)
-        // setSelectedCategoryIcon(icon)
+        setSelectedCategoryIcon(icon)
     }
     useEffect(() => {
         const fetchData = async () => {
@@ -60,6 +62,8 @@ const Influencer: React.FC = () => {
     const [active, setActive] = useState(0)
 
     const handleToggle = (index: number) => setActive(index)
+
+    const isMobile = useMediaQuery({ maxWidth: 768 })
 
     return (
         <CategoryPageContainer>
@@ -92,7 +96,7 @@ const Influencer: React.FC = () => {
                                 backgroundPosition: 'center',
                                 backgroundSize: 'cover',
                                 width: '17vw',
-                                height: '32vh',
+                                height: isMobile ? '22vh' : '32vh',
                                 borderRadius: '10px',
                                 display: 'flex',
                                 flexDirection: 'column',
@@ -195,6 +199,24 @@ const Influencer: React.FC = () => {
                         layout="fill"
                     />
                     <CustomContent isActive={active === 0}>
+                        <img
+                            src={`/${selectedCategoryIcon}`}
+                            alt={selectedName}
+                            style={{
+                                width: '30px',
+                                height: '30px',
+                                background: '#060606',
+                                borderRadius: '6px',
+                            }}
+                        />
+                        <span
+                            style={{
+                                // textAlign: 'center',
+                                color: '#ffffff',
+                            }}
+                        >
+                            {selectedName}
+                        </span>
                         {instData.map((instMember, index) => (
                             <LeftInstComponent
                                 id={instMember.id}

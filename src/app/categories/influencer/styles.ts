@@ -34,6 +34,7 @@ export const TopBox = styled.div`
     padding: 2vh;
     background-color: #0e0e0e;
     @media (max-width: 1180px) {
+        height: 26vh;
         padding: 2vh;
         flex-direction: row;
         width: 100%;
@@ -59,14 +60,11 @@ export const Article = styled.article<{ isActive: boolean }>`
     height: 70vh;
     display: flex;
     align-items: center;
-    // align-items: flex-end;
-    opacity: 0.9;
     transition: 0.5s;
     ${(props) =>
         props.isActive &&
         `
     width: 20%;
-    opacity: 1;
     @media (max-width: 768px) {
     width: 64px;
     }
