@@ -77,9 +77,9 @@ export const Article = styled.article<{ isActive: boolean }>`
     ${(props) =>
         props.isActive &&
         `
-    width: 20%;
+    width: 7%;
     @media (max-width: 768px) {
-    width: 64px;
+    width: 70px;
     }
   `}
     /* Hide default scrollbar for webkit browsers */

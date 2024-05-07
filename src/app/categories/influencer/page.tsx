@@ -36,7 +36,9 @@ const Influencer: React.FC = () => {
     const [selectedName, setSelectedName] = useState<string>('')
     const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
     // const [selectedCategory, setSelectedCategory] = useState<string>('Category') // Initial value is 'Settings'
-    const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>()
+    const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>(
+        'icons8-instagram-96.png'
+    )
 
     const handleInstCategoryChange = (selectedOption: string, icon: string) => {
         const instCategoryName = selectedOption
