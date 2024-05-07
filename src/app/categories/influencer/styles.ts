@@ -112,8 +112,53 @@ export const CustomContent = styled.div<{ isActive: boolean }>`
         padding: 5px 5px;
     }
 `
+export const CustomImage = styled.img`
+    width: 30px;
+    height: 30px;
+    background: #060606;
+    border-radius: 6px;
+`
 
-// export const MiddleBox = styled.div`
+export const OnClickCategoriesArea = styled.button`
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Align items horizontally
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */
+
+    &:hover {
+        transition-duration: 0.1s;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 6px;
+        opacity: 0;
+        transition: all 0.5s;
+        box-shadow: 0 0 10px 40px white;
+    }
+
+    &:active:after {
+        box-shadow: 0 0 0 0 white;
+        position: absolute;
+        border-radius: 6px;
+        width: 25px;
+        height: 25px;
+        opacity: 1;
+        transition: 0s;
+    }
+
+    &:active {
+        top: 1px;
+    }
+`
+// export const MiddleBox = styled.div
+
 //     position: relative;
 //     width: 30%;
 //     height: 90vh;

@@ -135,7 +135,6 @@ export const NearMeButton = styled.button`
     font-size: 16px;
     color: white;
     padding: 0.8em 1.8em;
-    cursor: pointer;
     user-select: none;
     text-align: center;
     text-decoration: none;

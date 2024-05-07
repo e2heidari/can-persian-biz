@@ -17,6 +17,8 @@ import {
     // DropdownMenu,
     // DropdownMenuItem,
     CategoryPageContainer,
+    OnClickCategoriesArea,
+    CustomImage,
 } from './styles'
 import instCat from './instCat.json'
 import LeftInstComponent from './LeftInstComponent'
@@ -27,7 +29,6 @@ import { useMediaQuery } from 'react-responsive'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
-import { relative } from 'path'
 
 const Influencer: React.FC = () => {
     const [selectedName, setSelectedName] = useState<string>('')
@@ -103,12 +104,7 @@ const Influencer: React.FC = () => {
                                 justifyContent: 'flex-end', // Align items at the bottom
                             }}
                         >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center', // Align items horizontally
-                                }}
+                            <OnClickCategoriesArea
                                 onClick={() =>
                                     handleInstCategoryChange(
                                         category.name,
@@ -120,8 +116,8 @@ const Influencer: React.FC = () => {
                                     src={`/${category.icon}`}
                                     alt={category.name}
                                     style={{
-                                        width: '30px',
-                                        height: '30px',
+                                        width: '25px',
+                                        height: '25px',
                                         background: '#060606',
                                         borderRadius: '6px',
                                     }}
@@ -134,7 +130,7 @@ const Influencer: React.FC = () => {
                                 >
                                     {category.name}
                                 </span>
-                            </div>
+                            </OnClickCategoriesArea>
                         </SwiperSlide>
                     ))}
                 </Swiper>
@@ -199,15 +195,9 @@ const Influencer: React.FC = () => {
                         layout="fill"
                     />
                     <CustomContent isActive={active === 0}>
-                        <img
+                        <CustomImage
                             src={`/${selectedCategoryIcon}`}
                             alt={selectedName}
-                            style={{
-                                width: '30px',
-                                height: '30px',
-                                background: '#060606',
-                                borderRadius: '6px',
-                            }}
                         />
                         <span
                             style={{
