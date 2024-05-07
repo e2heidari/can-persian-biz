@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import Image from 'next/image'
 
-export const BackgroundImage = styled(Image)<{ mobileHide?: boolean }>`
+export const BackgroundImage = styled(Image)<{ isActive?: boolean }>`
     position: relative;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@ export const BackgroundImage = styled(Image)<{ mobileHide?: boolean }>`
     object-fit: cover;
 
     ${(props) =>
-        props.mobileHide &&
+        props.isActive &&
         css`
             @media (max-width: 1180px) {
                 display: none;
@@ -91,13 +91,12 @@ export const Article = styled.article<{ isActive: boolean }>`
         background-clip: content-box;
     }
 `
-export const CustomContent = styled.div<{ isActive: boolean }>`
+export const CustomContent = styled.div`
     position: absolute;
     width: 100%;
     height: 70vh;
     overflow: scroll;
-    opacity: ${(props) => (props.isActive ? '1' : '0')};
-    visibility: ${(props) => (props.isActive ? 'visible' : 'hidden')};
+
     padding: 10px 10px;
     display: flex;
     align-items: flex-start;
@@ -109,6 +108,7 @@ export const CustomContent = styled.div<{ isActive: boolean }>`
     @media (max-width: 768px) {
         width: 100%;
         align-items: center;
+        gap: 5px;
         padding: 5px 5px;
     }
 `
@@ -117,6 +117,13 @@ export const CustomImage = styled.img`
     height: 30px;
     background: #060606;
     border-radius: 6px;
+`
+
+export const CustomName = styled.p<{ isActive: boolean }>`
+    opacity: ${(props) => (props.isActive ? '1' : '0')};
+    visibility: ${(props) => (props.isActive ? 'visible' : 'hidden')};
+    color: #ffffff;
+    display: inline-block;
 `
 
 export const OnClickCategoriesArea = styled.button`

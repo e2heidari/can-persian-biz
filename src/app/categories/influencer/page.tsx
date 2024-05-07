@@ -19,6 +19,7 @@ import {
     CategoryPageContainer,
     OnClickCategoriesArea,
     CustomImage,
+    CustomName,
 } from './styles'
 import instCat from './instCat.json'
 import LeftInstComponent from './LeftInstComponent'
@@ -96,6 +97,7 @@ const Influencer: React.FC = () => {
                                 backgroundImage: `url(${category.slide})`,
                                 backgroundPosition: 'center',
                                 backgroundSize: 'cover',
+                                padding: '0 0 3.2vh 0',
                                 width: '17vw',
                                 height: isMobile ? '22vh' : '32vh',
                                 borderRadius: '10px',
@@ -124,6 +126,7 @@ const Influencer: React.FC = () => {
                                 />
                                 <span
                                     style={{
+                                        fontSize: '14px',
                                         textAlign: 'center',
                                         color: '#ffffff',
                                     }}
@@ -194,19 +197,14 @@ const Influencer: React.FC = () => {
                         alt="influencer Background"
                         layout="fill"
                     />
-                    <CustomContent isActive={active === 0}>
+                    <CustomContent>
                         <CustomImage
                             src={`/${selectedCategoryIcon}`}
                             alt={selectedName}
                         />
-                        <span
-                            style={{
-                                // textAlign: 'center',
-                                color: '#ffffff',
-                            }}
-                        >
+                        <CustomName isActive={active === 0}>
                             {selectedName}
-                        </span>
+                        </CustomName>
                         {instData.map((instMember, index) => (
                             <LeftInstComponent
                                 id={instMember.id}
@@ -228,7 +226,7 @@ const Influencer: React.FC = () => {
                         alt="influencer Background"
                         layout="fill"
                     />
-                    <CustomContent isActive={active === 1}>
+                    <CustomContent>
                         {instCat.map((instCatName, index) => (
                             <RightInstComponent
                                 name={instCatName.name.replace(/\s/g, '-')}

@@ -15,14 +15,14 @@ const LeftInstComponentWrapper = styled.div`
         255,
         0.4
     ); /* Adjust the last value (alpha) to change the opacity */
-    grid-template-columns: 60px auto 60px 20px 60px 20px 60px 30px;
-    grid-template-rows: 1vh 3.5vh 3.5vh 1vh;
+    grid-template-columns: 50px auto 60px 20px 60px 20px 60px 30px;
+    grid-template-rows: 25px 25px;
     border-radius: 10px;
     margin: 0px;
     width: 100%;
     @media (max-width: 768px) {
-        grid-template-columns: 50px auto 40px 20px 55px 15px;
-        grid-template-rows: 1vh 2.9vh 2.9vh 1vh;
+        grid-template-columns: 45px auto 40px 20px 55px 15px;
+        grid-template-rows: 23px 23px;
     }
 `
 
@@ -32,7 +32,7 @@ const StyledImage = styled(Image)<StyledImageProps>`
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: 5;
+    grid-row-end: 3;
     justify-self: stretch;
     place-self: center;
     border-radius: 50%;
@@ -52,7 +52,7 @@ const AccountTitle = styled.p`
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
-    grid-row-end: 4;
+    grid-row-end: 3;
     justify-self: start;
     align-self: center;
     margin: 4px;
@@ -63,16 +63,16 @@ const AccountTitle = styled.p`
 const PostBoxName = styled.p`
     grid-column-start: 3;
     grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
     font-size: 16px;
     place-self: center;
 `
 const PostBoxAmount = styled.p`
     grid-column-start: 3;
     grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
     font-size: 16px;
     place-self: center;
     font-weight: bold;
@@ -81,16 +81,16 @@ const PostBoxAmount = styled.p`
 const FollowersBoxName = styled.p`
     grid-column-start: 5;
     grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
     font-size: 16px;
     place-self: center;
 `
 const FollowersBoxAmount = styled.p`
     grid-column-start: 5;
     grid-column-end: 6;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
     font-size: 16px;
     place-self: center;
     font-weight: bold;
@@ -99,8 +99,8 @@ const FollowersBoxAmount = styled.p`
 const FollowingBoxName = styled.p`
     grid-column-start: 7;
     grid-column-end: 8;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
     font-size: 16px;
     place-self: center;
     @media (max-width: 768px) {
@@ -110,8 +110,8 @@ const FollowingBoxName = styled.p`
 const FollowingBoxAmount = styled.p`
     grid-column-start: 7;
     grid-column-end: 8;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
     font-size: 16px;
     place-self: center;
     font-weight: bold;
