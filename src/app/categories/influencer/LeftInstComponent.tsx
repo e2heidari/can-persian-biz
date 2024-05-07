@@ -15,20 +15,20 @@ const LeftInstComponentWrapper = styled.div`
         255,
         0.4
     ); /* Adjust the last value (alpha) to change the opacity */
-    grid-template-columns: 50px auto 60px 20px 60px 20px 60px 30px;
-    grid-template-rows: 25px 25px;
+    grid-template-columns: 54px auto 60px 20px 60px 20px 60px 30px;
+    grid-template-rows: 27px 27px;
     border-radius: 10px;
     margin: 0px;
     width: 100%;
     @media (max-width: 768px) {
-        grid-template-columns: 45px auto 40px 20px 55px 15px;
-        grid-template-rows: 23px 23px;
+        grid-template-columns: 50px auto 40px 20px 55px 15px;
+        grid-template-rows: 25px 25px;
     }
 `
 
 const StyledImage = styled(Image)<StyledImageProps>`
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 54px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
@@ -43,8 +43,8 @@ const StyledImage = styled(Image)<StyledImageProps>`
         0.5
     ); /* Adjust the last value (alpha) to change the opacity */
     @media (max-width: 768px) {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
     }
 `
 
