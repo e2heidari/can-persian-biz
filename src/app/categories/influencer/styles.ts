@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import Image from 'next/image'
+import { SwiperSlide } from 'swiper/react'
 
 export const BackgroundImage = styled(Image)<{ isActive?: boolean }>`
     position: relative;
@@ -39,6 +40,18 @@ export const TopBox = styled.div`
         flex-direction: row;
         width: 100%;
     }
+`
+export const StyledSwiperSlide = styled(SwiperSlide)<{ isMobile: boolean }>`
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    padding: 0 0 3.2vh 0;
+    width: 17vw;
+    height: ${(props) => (props.isMobile ? '22vh' : '32vh')};
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 `
 export const ContentSection = styled.section`
     display: flex;

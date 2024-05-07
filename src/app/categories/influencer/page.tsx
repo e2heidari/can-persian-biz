@@ -20,11 +20,12 @@ import {
     OnClickCategoriesArea,
     CustomImage,
     CustomName,
+    StyledSwiperSlide,
 } from './styles'
 import instCat from './instCat.json'
 import LeftInstComponent from './LeftInstComponent'
 import RightInstComponent from './RightInstComponent'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper } from 'swiper/react'
 import { EffectCoverflow, Pagination } from 'swiper/modules'
 import { useMediaQuery } from 'react-responsive'
 import 'swiper/css'
@@ -75,7 +76,7 @@ const Influencer: React.FC = () => {
                     grabCursor
                     centeredSlides
                     slidesPerView={3}
-                    spaceBetween={15}
+                    spaceBetween={0}
                     effect="coverflow"
                     loop
                     style={{}}
@@ -90,20 +91,11 @@ const Influencer: React.FC = () => {
                     modules={[EffectCoverflow, Pagination]}
                 >
                     {instCat.map((category, index) => (
-                        <SwiperSlide
+                        <StyledSwiperSlide
                             key={index}
+                            isMobile={isMobile}
                             style={{
-                                position: 'relative',
                                 backgroundImage: `url(${category.slide})`,
-                                backgroundPosition: 'center',
-                                backgroundSize: 'cover',
-                                padding: '0 0 3.2vh 0',
-                                width: '17vw',
-                                height: isMobile ? '22vh' : '32vh',
-                                borderRadius: '10px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'flex-end', // Align items at the bottom
                             }}
                         >
                             <OnClickCategoriesArea
@@ -134,7 +126,7 @@ const Influencer: React.FC = () => {
                                     {category.name}
                                 </span>
                             </OnClickCategoriesArea>
-                        </SwiperSlide>
+                        </StyledSwiperSlide>
                     ))}
                 </Swiper>
 
