@@ -34,10 +34,8 @@ export const TopBox = styled.div`
     align-items: stretch;
     padding: 2vh;
     background-color: #0e0e0e;
-    @media (max-width: 1180px) {
+    @media (max-width: 768px) {
         height: 26vh;
-        padding: 2vh;
-        flex-direction: row;
         width: 100%;
     }
 `
@@ -104,15 +102,14 @@ export const Article = styled.article<{ isActive: boolean }>`
         background-clip: content-box;
     }
 `
-export const CustomContent = styled.div`
+export const BusinessesData = styled.div`
     position: absolute;
     width: 100%;
     height: 70vh;
     overflow: scroll;
-
     padding: 10px 10px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
     background-color: rgba(255, 255, 255, 0);
@@ -125,11 +122,38 @@ export const CustomContent = styled.div`
         padding: 5px 5px;
     }
 `
-export const CustomImage = styled.img`
+export const BusinessTypeIcon = styled.img`
     width: 30px;
     height: 30px;
     background: #060606;
     border-radius: 6px;
+`
+
+export const SortBox = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 30px 30px 110px;
+    grid-template-rows: 12px 12px;
+    @media (max-width: 768px) {
+        grid-template-columns: auto 22.5px 22.5px 18px;
+        grid-template-rows: 12px 12px;
+    }
+`
+export const SortDownIcon = styled.img`
+    width: 24px;
+    height: 24px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+`
+export const SortUpIcon = styled.img`
+    width: 24px;
+    height: 24px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
 `
 
 export const CustomName = styled.p<{ isActive: boolean }>`

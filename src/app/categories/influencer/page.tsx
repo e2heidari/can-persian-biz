@@ -6,7 +6,7 @@ import {
     BackgroundImage,
     ContentSection,
     Article,
-    CustomContent,
+    BusinessesData,
     // NearMeButton,
     // RightBox,
     TopBox,
@@ -18,9 +18,12 @@ import {
     // DropdownMenuItem,
     CategoryPageContainer,
     OnClickCategoriesArea,
-    CustomImage,
+    BusinessTypeIcon,
     CustomName,
     StyledSwiperSlide,
+    SortDownIcon,
+    SortUpIcon,
+    SortBox,
 } from './styles'
 import instCat from './instCat.json'
 import LeftInstComponent from './LeftInstComponent'
@@ -39,13 +42,16 @@ const Influencer: React.FC = () => {
     const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>(
         'icons8-instagram-96.png'
     )
+    const [iconsVisible, setIconsVisible] = useState<boolean>(false)
 
     const handleInstCategoryChange = (selectedOption: string, icon: string) => {
         const instCategoryName = selectedOption
         setSelectedName(instCategoryName)
         // setSelectedCategory(selectedOption)
         setSelectedCategoryIcon(icon)
+        setIconsVisible(true) // Show the icons when a category is selected
     }
+
     useEffect(() => {
         const fetchData = async () => {
             if (!selectedName) {
@@ -191,14 +197,26 @@ const Influencer: React.FC = () => {
                         alt="influencer Background"
                         layout="fill"
                     />
-                    <CustomContent>
-                        <CustomImage
+                    <BusinessesData>
+                        <BusinessTypeIcon
                             src={`/${selectedCategoryIcon}`}
                             alt={selectedName}
                         />
                         <CustomName isActive={active === 0}>
-                            {selectedName}
+                            <span>{selectedName}</span>
                         </CustomName>
+                        {iconsVisible && (
+                            <SortBox>
+                                <SortDownIcon
+                                    src={'/icons8-down-48.png'}
+                                    alt={selectedName}
+                                />
+                                <SortUpIcon
+                                    src={'/icons8-up-48.png'}
+                                    alt={selectedName}
+                                />
+                            </SortBox>
+                        )}
                         {instData.map((instMember, index) => (
                             <LeftInstComponent
                                 id={instMember.id}
@@ -209,7 +227,7 @@ const Influencer: React.FC = () => {
                                 key={index}
                             />
                         ))}
-                    </CustomContent>
+                    </BusinessesData>
                 </Article>
                 <Article
                     isActive={active === 0}
@@ -220,14 +238,14 @@ const Influencer: React.FC = () => {
                         alt="influencer Background"
                         layout="fill"
                     />
-                    <CustomContent>
+                    <BusinessesData>
                         {instCat.map((instCatName, index) => (
                             <RightInstComponent
                                 name={instCatName.name.replace(/\s/g, '-')}
                                 key={index}
                             />
                         ))}
-                    </CustomContent>
+                    </BusinessesData>
                 </Article>
             </ContentSection>
             <Footer />
