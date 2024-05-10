@@ -43,6 +43,8 @@ const Influencer: React.FC = () => {
         'icons8-instagram-96.png'
     )
     const [iconsVisible, setIconsVisible] = useState<boolean>(false)
+    const [sortAscending, setSortAscending] = useState<boolean>(false)
+    const [sortDescending, setSortDescending] = useState<boolean>(false)
 
     const handleInstCategoryChange = (selectedOption: string, icon: string) => {
         const instCategoryName = selectedOption
@@ -69,6 +71,74 @@ const Influencer: React.FC = () => {
         }
         fetchData()
     }, [selectedName])
+
+    const handleDownSort = () => {
+        setInstData([])
+        setSortAscending(!sortAscending) // Toggle sort direction
+    }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await import(`./${selectedName}.json`)
+                setInstData(sortAscendingData(response.default))
+            } catch (error) {
+                console.error('Error fetching JSON file:', error)
+                setInstData([]) // Reset the data if there's an error
+            }
+        }
+
+        fetchData()
+    }, [sortAscending])
+
+    const handleUpSort = () => {
+        setInstData([])
+        setSortDescending(!sortDescending) // Toggle sort direction
+    }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await import(`./${selectedName}.json`)
+                setInstData(sortDescendingData(response.default))
+            } catch (error) {
+                console.error('Error fetching JSON file:', error)
+                setInstData([]) // Reset the data if there's an error
+            }
+        }
+
+        fetchData()
+    }, [sortDescending])
+
+    const sortAscendingData = (data: any[]) => {
+        return data.sort((a, b) => {
+            // Function to handle numbers followed by "K"
+            const convertToNumber = (str: string) => {
+                if (str.includes('K')) {
+                    return parseFloat(str.replace('K', '')) * 1000
+                }
+                return parseFloat(str)
+            }
+            const followersA = convertToNumber(a.followers)
+            const followersB = convertToNumber(b.followers)
+            return followersB - followersA // Sort descending
+        })
+    }
+
+    const sortDescendingData = (data: any[]) => {
+        return data.sort((a, b) => {
+            // Function to handle numbers followed by "K"
+            const convertToNumber = (str: string) => {
+                if (str.includes('K')) {
+                    return parseFloat(str.replace('K', '')) * 1000
+                }
+                return parseFloat(str)
+            }
+            const followersA = convertToNumber(a.followers)
+            const followersB = convertToNumber(b.followers)
+            return followersA - followersB // Sort descending
+        })
+    }
 
     const [active, setActive] = useState(0)
 
@@ -209,11 +279,13 @@ const Influencer: React.FC = () => {
                             <SortBox>
                                 <SortDownIcon
                                     src={'/icons8-down-48.png'}
-                                    alt={selectedName}
+                                    alt="DownArrow"
+                                    onClick={handleDownSort}
                                 />
                                 <SortUpIcon
                                     src={'/icons8-up-48.png'}
-                                    alt={selectedName}
+                                    alt="UpArrow"
+                                    onClick={handleUpSort}
                                 />
                             </SortBox>
                         )}
