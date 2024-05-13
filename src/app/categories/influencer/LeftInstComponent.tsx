@@ -151,7 +151,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                     imageUrl={getImageUrl(id)} // Pass imageUrl prop directly
                 />
             </Link>
-            <Link key={id} href={`https://www.instagram.com/${id}/`}>
+            <Link key={title} href={`https://www.instagram.com/${id}/`}>
                 <AccountTitle>{title}</AccountTitle>
             </Link>
 
