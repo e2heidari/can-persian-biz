@@ -24,10 +24,13 @@ import {
     SortDownIcon,
     SortUpIcon,
     SortBox,
+    AdvertiseTypeIcon,
+    AdvertiseData,
+    AdContainer,
 } from './styles'
 import instCat from './instCat.json'
 import LeftInstComponent from './LeftInstComponent'
-import RightInstComponent from './RightInstComponent'
+import RightAdComponent from './RightAdComponent'
 import { Swiper } from 'swiper/react'
 import { EffectCoverflow, Pagination } from 'swiper/modules'
 import { useMediaQuery } from 'react-responsive'
@@ -305,19 +308,44 @@ const Influencer: React.FC = () => {
                     isActive={active === 0}
                     onClick={() => handleToggle(1)}
                 >
-                    <BackgroundImage
-                        src="/jon-ly-Xn7GvimQrk8-unsplash (1).jpg"
-                        alt="influencer Background"
-                        layout="fill"
-                    />
-                    <BusinessesData>
-                        {instCat.map((instCatName, index) => (
-                            <RightInstComponent
-                                name={instCatName.name.replace(/\s/g, '-')}
+                    <AdvertiseData>
+                        <AdContainer>
+                            <span
+                                style={{
+                                    fontSize: '14px',
+                                    textAlign: 'center',
+                                    color: '#ffffff',
+                                    marginBottom: '30px',
+                                }}
+                            >
+                                Weekly{' '}
+                            </span>
+                            <AdvertiseTypeIcon
+                                src={'/icons8-bullhorn-megaphone-96.png'}
+                                alt="bullhorn"
+                            />
+                            <span
+                                style={{
+                                    fontSize: '14px',
+                                    textAlign: 'center',
+                                    color: '#ffffff',
+                                    marginBottom: '30px',
+                                }}
+                            >
+                                Offers
+                            </span>
+                        </AdContainer>
+                        {instData.map((instMember, index) => (
+                            <RightAdComponent
+                                id={instMember.id}
+                                title={instMember.title}
+                                // post={instMember.post}
+                                // followers={instMember.followers}
+                                // following={instMember.following}
                                 key={index}
                             />
                         ))}
-                    </BusinessesData>
+                    </AdvertiseData>
                 </Article>
             </ContentSection>
             <Footer />

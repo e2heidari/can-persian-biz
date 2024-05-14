@@ -128,6 +128,35 @@ export const BusinessTypeIcon = styled.img`
     background: #060606;
     border-radius: 6px;
 `
+export const AdvertiseData = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 70vh;
+    overflow: scroll;
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
+    background-color: black;
+    backdrop-filter: blur(10px); /* Add blur effect */
+    transition: 0.25s;
+`
+
+export const AdContainer = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4vw;
+`
+export const AdvertiseTypeIcon = styled.img`
+    width: 30px;
+    height: 30px;
+    margin-bottom: 30px;
+    background: #060606;
+    border-radius: 6px;
+`
 
 export const SortBox = styled.div`
     width: 100%;
