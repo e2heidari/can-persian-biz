@@ -106,6 +106,7 @@ export const BusinessesData = styled.div`
     width: 100%;
     height: 70vh;
     overflow: scroll;
+    overflow-x: hidden;
     padding: 10px 10px;
     display: flex;
     align-items: center;
@@ -131,6 +132,7 @@ export const AdvertiseData = styled.div`
     width: 100%;
     height: 70vh;
     overflow: scroll;
+    overflow-x: hidden;
     padding: 10px 10px;
     display: flex;
     align-items: center;
