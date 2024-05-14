@@ -279,7 +279,7 @@ const Influencer: React.FC = () => {
                             <span>{selectedName}</span>
                         </CustomName>
                         {iconsVisible && (
-                            <SortBox>
+                            <SortBox isActive={active === 0}>
                                 <SortDownIcon
                                     src={'/icons8-down-48.png'}
                                     alt="DownArrow"
@@ -294,6 +294,7 @@ const Influencer: React.FC = () => {
                         )}
                         {instData.map((instMember, index) => (
                             <LeftInstComponent
+                                active={active}
                                 id={instMember.id}
                                 title={instMember.title}
                                 post={instMember.post}
@@ -337,6 +338,7 @@ const Influencer: React.FC = () => {
                         </AdContainer>
                         {instData.map((instMember, index) => (
                             <RightAdComponent
+                                active={active}
                                 id={instMember.id}
                                 title={instMember.title}
                                 // post={instMember.post}

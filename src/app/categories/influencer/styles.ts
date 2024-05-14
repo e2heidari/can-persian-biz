@@ -66,7 +66,6 @@ export const ContentSection = styled.section`
 export const Article = styled.article<{ isActive: boolean }>`
     position: relative;
     overflow-y: auto;
-    background: #ffffff;
     width: 100%;
     height: 70vh;
     display: flex;
@@ -76,9 +75,8 @@ export const Article = styled.article<{ isActive: boolean }>`
         props.isActive &&
         `
     width: 7%;
-    overflow-x: hidden;
     @media (max-width: 768px) {
-    width: 70px;
+    width: 65px;
     }
   `}
     /* Hide default scrollbar for webkit browsers */
@@ -113,8 +111,7 @@ export const BusinessesData = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 1vw;
-    background-color: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(10px); /* Add blur effect */
+    backdrop-filter: blur(4px); /* Add blur effect */
     transition: 0.25s;
     @media (max-width: 768px) {
         width: 100%;
@@ -164,7 +161,9 @@ export const AdvertiseTypeIcon = styled.img`
     border-radius: 6px;
 `
 
-export const SortBox = styled.div`
+export const SortBox = styled.div<{ isActive: boolean }>`
+    visibility: ${(props) => (props.isActive ? 'visible' : 'hidden')};
+
     width: 100%;
     display: grid;
     grid-template-columns: auto 30px 30px 110px;
@@ -192,7 +191,6 @@ export const SortUpIcon = styled.img`
 `
 
 export const CustomName = styled.p<{ isActive: boolean }>`
-    opacity: ${(props) => (props.isActive ? '1' : '0')};
     visibility: ${(props) => (props.isActive ? 'visible' : 'hidden')};
     color: #ffffff;
     display: inline-block;

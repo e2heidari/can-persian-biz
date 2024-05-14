@@ -6,7 +6,8 @@ interface StyledImageProps extends ImageProps {
     imageUrl: string
 }
 
-const AdCard = styled.div`
+const AdCard = styled.div<{ isActive: boolean }>`
+    visibility: ${(props) => (props.isActive ? 'visible' : 'hidden')};
     position: relative;
     display: flex;
     align-items: center;
@@ -29,6 +30,8 @@ const StyledImage = styled(Image)<StyledImageProps>`
 interface RightAdComponentProps {
     id: string
     title: string
+    active: number
+
     // post: string
     // followers: string
     // following: string
@@ -37,6 +40,7 @@ interface RightAdComponentProps {
 const RightAdComponent: React.FC<RightAdComponentProps> = ({
     id,
     title,
+    active,
     // post,
     // followers,
     // following,
@@ -48,7 +52,7 @@ const RightAdComponent: React.FC<RightAdComponentProps> = ({
     console.log(name)
 
     return (
-        <AdCard>
+        <AdCard isActive={active === 1}>
             <StyledImage
                 src={getImageUrl(id)}
                 alt={title}

@@ -7,7 +7,9 @@ interface StyledImageProps extends ImageProps {
     imageUrl: string
 }
 
-const LeftInstComponentWrapper = styled.div`
+const LeftInstComponentWrapper = styled.div<{ isActive: boolean }>`
+    visibility: ${(props) => (props.isActive ? 'visible' : 'hidden')};
+
     display: grid;
     background-color: rgba(
         255,
@@ -120,6 +122,7 @@ interface LeftInstComponentProps {
     post: string
     followers: string
     following: string
+    active: number
 }
 
 const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
@@ -128,6 +131,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
     post,
     followers,
     following,
+    active,
 }) => {
     const getImageUrl = (id: string) => {
         // Assuming images are stored in a folder named 'images'
@@ -135,7 +139,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
     }
 
     return (
-        <LeftInstComponentWrapper>
+        <LeftInstComponentWrapper isActive={active === 0}>
             <Link key={id} href={`https://www.instagram.com/${id}/`}>
                 <StyledImage
                     src={getImageUrl(id)}
