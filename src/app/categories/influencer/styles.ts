@@ -76,6 +76,7 @@ export const Article = styled.article<{ isActive: boolean }>`
         props.isActive &&
         `
     width: 7%;
+    overflow-x: hidden;
     @media (max-width: 768px) {
     width: 70px;
     }
@@ -111,14 +112,14 @@ export const BusinessesData = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 1vw;
     background-color: rgba(255, 255, 255, 0);
     backdrop-filter: blur(10px); /* Add blur effect */
     transition: 0.25s;
     @media (max-width: 768px) {
         width: 100%;
         align-items: center;
-        gap: 5px;
+        gap: 1vw;
         padding: 5px 5px;
     }
 `
@@ -133,7 +134,7 @@ export const AdvertiseData = styled.div`
     width: 100%;
     height: 70vh;
     overflow: scroll;
-    padding: 5px 5px;
+    padding: 10px 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -141,6 +142,11 @@ export const AdvertiseData = styled.div`
     background-color: black;
     backdrop-filter: blur(10px); /* Add blur effect */
     transition: 0.25s;
+    @media (max-width: 768px) {
+        width: 100%;
+        gap: 1vw;
+        padding: 5px 5px;
+    }
 `
 
 export const AdContainer = styled.div`

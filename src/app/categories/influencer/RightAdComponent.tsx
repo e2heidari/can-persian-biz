@@ -14,8 +14,8 @@ const AdCard = styled.div`
     width: 80vw;
     margin-bottom: 30px;
     padding: 5px 5px;
-    background: #121017;
-    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
 `
 
 const StyledImage = styled(Image)<StyledImageProps>`
