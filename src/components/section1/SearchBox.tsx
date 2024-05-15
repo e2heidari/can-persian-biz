@@ -46,13 +46,13 @@ const TopBox = styled.div`
         margin: 0 auto 7%;
     }
 `
+// background-image: url('2.jpg');
+// background-size: cover;
+// background-clip: text;
+// -webkit-background-clip: text;
+// color: transparent;
 
 const FindTheText = styled.div`
-    background-image: url('2.jpg');
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
     font-size: 4vw;
     font-weight: bold;
     backdrop-filter: blur(5px);
@@ -61,13 +61,13 @@ const FindTheText = styled.div`
         backdrop-filter: blur(5px);
     }
 `
+// background-image: url('2.jpg');
+// background-size: cover;
+// background-clip: text;
+// -webkit-background-clip: text;
+// color: transparent;
 
 const BestPersianText = styled.div`
-    background-image: url('2.jpg');
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
     font-size: 6vw;
     font-weight: bold;
     backdrop-filter: blur(5px);

@@ -123,6 +123,7 @@ interface LeftInstComponentProps {
     followers: string
     following: string
     active: number
+    image: string
 }
 
 const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
@@ -132,6 +133,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
     followers,
     following,
     active,
+    image,
 }) => {
     const getImageUrl = (id: string) => {
         // Assuming images are stored in a folder named 'images'

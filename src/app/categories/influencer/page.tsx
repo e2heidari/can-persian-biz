@@ -301,6 +301,7 @@ const Influencer: React.FC = () => {
                                 followers={instMember.followers}
                                 following={instMember.following}
                                 key={index}
+                                image={instMember.image}
                             />
                         ))}
                     </BusinessesData>
