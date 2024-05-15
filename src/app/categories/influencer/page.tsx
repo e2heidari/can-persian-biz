@@ -120,6 +120,9 @@ const Influencer: React.FC = () => {
                 if (str.includes('K')) {
                     return parseFloat(str.replace('K', '')) * 1000
                 }
+                if (str.includes('M')) {
+                    return parseFloat(str.replace('K', '')) * 1000000
+                }
                 return parseFloat(str)
             }
             const followersA = convertToNumber(a.followers)
@@ -134,6 +137,9 @@ const Influencer: React.FC = () => {
             const convertToNumber = (str: string) => {
                 if (str.includes('K')) {
                     return parseFloat(str.replace('K', '')) * 1000
+                }
+                if (str.includes('M')) {
+                    return parseFloat(str.replace('K', '')) * 1000000
                 }
                 return parseFloat(str)
             }
