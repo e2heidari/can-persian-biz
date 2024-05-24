@@ -8,7 +8,7 @@ const Categories = styled.button`
     width: 62px;
     font-weight: 300;
     color: #fff;
-    margin: 0 22px;
+    margin: 5px 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,13 +23,13 @@ const CategoryIcon = styled.img`
 const CategoryText = styled.div`
     color: black;
     width: 160%;
-    height: 2.2em;
     line-height: 1.2em;
     text-overflow: ellipsis;
     text-align: center;
     right: 0;
     font-size: 13px;
-    margin: 0.5em 0 0;
+    font-weight: bold;
+    margin: 0.2em 0 0;
 `
 
 interface CategoryProps {
