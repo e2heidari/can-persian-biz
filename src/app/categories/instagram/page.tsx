@@ -77,7 +77,7 @@ const instagram: React.FC = () => {
 
     const handleUpSort = () => {
         setInstData([])
-        setSortDescending(!sortDescending) // Toggle sort direction
+        setSortDescending(true) // Toggle sort direction
     }
 
     useEffect(() => {
@@ -96,7 +96,7 @@ const instagram: React.FC = () => {
 
     const handleDownSort = () => {
         setInstData([])
-        setSortAscending(!sortAscending) // Toggle sort direction
+        setSortAscending(true) // Toggle sort direction
     }
 
     useEffect(() => {
