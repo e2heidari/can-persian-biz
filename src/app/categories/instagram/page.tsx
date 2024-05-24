@@ -75,9 +75,9 @@ const instagram: React.FC = () => {
         fetchData()
     }, [selectedName])
 
-    const handleUpSort = () => {
+    const handleDownSort = () => {
         setInstData([])
-        setSortDescending(true) // Toggle sort direction
+        setSortAscending(!sortAscending) // Toggle sort direction
     }
 
     useEffect(() => {
@@ -94,9 +94,9 @@ const instagram: React.FC = () => {
         fetchData()
     }, [sortAscending])
 
-    const handleDownSort = () => {
+    const handleUpSort = () => {
         setInstData([])
-        setSortAscending(true) // Toggle sort direction
+        setSortDescending(!sortDescending) // Toggle sort direction
     }
 
     useEffect(() => {
@@ -123,7 +123,7 @@ const instagram: React.FC = () => {
                 if (str.includes('M')) {
                     return parseFloat(str.replace('K', '')) * 1000000
                 }
-                return parseFloat(str)
+                return parseFloat(str.replace(',', ''))
             }
             const followersA = convertToNumber(a.followers)
             const followersB = convertToNumber(b.followers)
@@ -141,7 +141,7 @@ const instagram: React.FC = () => {
                 if (str.includes('M')) {
                     return parseFloat(str.replace('K', '')) * 1000000
                 }
-                return parseFloat(str)
+                return parseFloat(str.replace(',', ''))
             }
             const followersA = convertToNumber(a.followers)
             const followersB = convertToNumber(b.followers)
