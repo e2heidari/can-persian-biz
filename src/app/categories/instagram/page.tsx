@@ -38,7 +38,7 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 
-const Influencer: React.FC = () => {
+const instagram: React.FC = () => {
     const [selectedName, setSelectedName] = useState<string>('')
     const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
     // const [selectedCategory, setSelectedCategory] = useState<string>('Category') // Initial value is 'Settings'
@@ -362,4 +362,4 @@ const Influencer: React.FC = () => {
     )
 }
 
-export default Influencer
+export default instagram

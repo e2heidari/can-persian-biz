@@ -8,15 +8,15 @@ const Categories = styled.button`
     width: 62px;
     font-weight: 300;
     color: #fff;
-    margin: 5px 25px;
+    margin: 8px 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
 `
 
 const CategoryIcon = styled.img`
-    width: 60px; /* Adjust the size of the icon as needed */
-    height: 60px; /* Adjust the size of the icon as needed */
+    width: 56px; /* Adjust the size of the icon as needed */
+    height: 56px; /* Adjust the size of the icon as needed */
     border-radius: 50%;
 `
 
@@ -29,7 +29,7 @@ const CategoryText = styled.div`
     right: 0;
     font-size: 13px;
     font-weight: bold;
-    margin: 0.2em 0 0;
+    margin: 0.3em 0 0;
 `
 
 interface CategoryProps {
