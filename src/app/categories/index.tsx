@@ -122,7 +122,7 @@ const categoriesData = [
     { icon: 'category-icon2.png', text: 'Restaurant' },
     { icon: 'category-icon3.png', text: 'Real Estate' },
     { icon: 'category-icon5.png', text: 'Shopping & Markets' },
-    { icon: 'category-icon20.png', text: 'Instagram' },
+    { icon: 'category-icon20.png', text: 'Artist' },
     { icon: 'category-icon6.png', text: 'Beauty Salon' },
     { icon: 'category-icon7.png', text: 'Hookah Lounge' },
     { icon: 'category-icon8.png', text: 'Dentist' },
@@ -140,9 +140,10 @@ const categoriesData = [
     { icon: 'category-icon21.png', text: 'Photographer & Videographer' },
     { icon: 'category-icon22.png', text: 'Pets & Animals' },
     { icon: 'category-icon23.png', text: 'Job & Business' },
-    { icon: 'category-icon24.png', text: 'Music & DJ' },
     { icon: 'category-icon25.png', text: 'Immigration' },
-    { icon: 'category-icon26.png', text: 'Tattoo Artist' },
+    { icon: 'category-icon26.png', text: 'Groups & Hike' },
+    { icon: 'category-icon26.png', text: 'Channel' },
+    { icon: 'category-icon26.png', text: 'Lifestyle' },
 ]
 
 const Categories: React.FC = () => {
