@@ -128,9 +128,9 @@ const categoriesData = [
     { icon: 'category-icon8.png', text: 'Dentist' },
     { icon: 'category-icon9.png', text: 'Pharmacy' },
     { icon: 'category-icon11.png', text: 'Daycare & Education' },
-    { icon: 'category-icon12.png', text: 'Lawyer' },
+    { icon: 'category-icon12.png', text: 'Lawyer & Immigration' },
     { icon: 'category-icon13.png', text: 'Cargo & Post' },
-    { icon: 'category-icon14.png', text: 'Designer & Event Planner' },
+    { icon: 'category-icon14.png', text: 'Designer & EventPlanner' },
     { icon: 'category-icon15.png', text: 'Driving School' },
     { icon: 'category-icon16.png', text: 'Renovation & Construction' },
     { icon: 'category-icon17.png', text: 'Sports & Trainers' },
@@ -140,10 +140,9 @@ const categoriesData = [
     { icon: 'category-icon21.png', text: 'Photographer & Videographer' },
     { icon: 'category-icon22.png', text: 'Pets & Animals' },
     { icon: 'category-icon23.png', text: 'Job & Business' },
-    { icon: 'category-icon25.png', text: 'Immigration' },
     { icon: 'category-icon26.png', text: 'Groups & Hike' },
     { icon: 'category-icon26.png', text: 'Channel' },
-    { icon: 'category-icon26.png', text: 'Lifestyle' },
+    { icon: 'category-icon26.png', text: 'Therapist' },
 ]
 
 const Categories: React.FC = () => {
@@ -167,7 +166,8 @@ const Categories: React.FC = () => {
                                 key={data.text}
                                 href={`/categories/${data.text
                                     .toLowerCase()
-                                    .replace(' ', '-')}`}
+                                    .replaceAll(' &', '')
+                                    .replaceAll(' ', '-')}`}
                             >
                                 <Category
                                     key={index}
@@ -193,6 +193,7 @@ const Categories: React.FC = () => {
                             key={data.text}
                             href={`/categories/${data.text
                                 .toLowerCase()
+                                .replace(' &', '')
                                 .replace(' ', '-')}`}
                         >
                             <Category
