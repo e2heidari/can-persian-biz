@@ -121,7 +121,7 @@ const categoriesData = [
     { icon: 'category-icon1.png', text: 'Fast Food' },
     { icon: 'category-icon2.png', text: 'Restaurant' },
     { icon: 'category-icon3.png', text: 'Real Estate' },
-    { icon: 'category-icon5.png', text: 'Shopping & Markets' },
+    { icon: 'icons8-shopaholic-96.png', text: 'Shopping & Markets' },
     { icon: 'category-icon20.png', text: 'Artist' },
     { icon: 'category-icon6.png', text: 'Beauty Salon' },
     { icon: 'category-icon7.png', text: 'Hookah Lounge' },

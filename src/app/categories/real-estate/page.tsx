@@ -38,7 +38,7 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 
-const Artist: React.FC = () => {
+const RealEstate: React.FC = () => {
     const [selectedName, setSelectedName] = useState<string>('')
     const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
     // const [selectedCategory, setSelectedCategory] = useState<string>('Category') // Initial value is 'Settings'
@@ -160,13 +160,11 @@ const Artist: React.FC = () => {
             <Header />
             <TopBox>
                 <Swiper
-                    grabCursor
-                    centeredSlides
+                    grabCursor={true}
+                    centeredSlides={true}
                     slidesPerView={3}
                     spaceBetween={0}
                     effect="coverflow"
-                    loop
-                    style={{}}
                     coverflowEffect={{
                         rotate: 50,
                         stretch: 0,
@@ -362,4 +360,4 @@ const Artist: React.FC = () => {
     )
 }
 
-export default Artist
+export default RealEstate
