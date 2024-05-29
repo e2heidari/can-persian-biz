@@ -137,7 +137,6 @@ const categoriesData = [
     { icon: 'category-icon10.png', text: 'Homemade Food' },
     { icon: 'category-icon4.png', text: 'Accounting & Insurance' },
     { icon: 'icons8-spa-care-96.png', text: 'Health & Beauty' },
-    { icon: 'category-icon21.png', text: 'Photographer & Videographer' },
     { icon: 'category-icon22.png', text: 'Pets & Animals' },
     { icon: 'category-icon23.png', text: 'Job & Business' },
     { icon: 'category-icon26.png', text: 'Groups & Hike' },

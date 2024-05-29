@@ -7,7 +7,7 @@
     },
     {
         "icon": "icons8-interior-design-96.png",
-        "name": "Make up",
+        "name": "Makeup",
         "des": "",
         "slide": "https://i.postimg.cc/66F8J9tr/hakon-sataoen-qyfco1nf-Mtg-unsplash.jpg"
     },
@@ -19,13 +19,25 @@
     },
     {
         "icon": "icons8-omnichannel-96.png",
-        "name": "Video creator",
+        "name": "Creator",
         "des": "",
         "slide": "https://i.postimg.cc/8Ck5BcmS/evgeny-tchebotarev-aiwu-Lj-LPFn-U-unsplash.jpg"
     },
     {
         "icon": "icons8-lipstick-96.png",
         "name": "Music & DJ",
+        "des": "",
+        "slide": "https://i.postimg.cc/JhK81QJw/marcus-p-o-UBjd22g-F6w-unsplash.jpg"
+    },
+    {
+        "icon": "icons8-lipstick-96.png",
+        "name": "Photographer & Videographer",
+        "des": "",
+        "slide": "https://i.postimg.cc/JhK81QJw/marcus-p-o-UBjd22g-F6w-unsplash.jpg"
+    },
+    {
+        "icon": "icons8-lipstick-96.png",
+        "name": "Dance",
         "des": "",
         "slide": "https://i.postimg.cc/JhK81QJw/marcus-p-o-UBjd22g-F6w-unsplash.jpg"
     }
