@@ -122,8 +122,8 @@ export const BusinessesData = styled.div`
     }
 `
 export const BusinessTypeIcon = styled.img`
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     background: #060606;
     border-radius: 6px;
 `
@@ -214,8 +214,8 @@ export const OnClickCategoriesArea = styled.button`
         content: '';
         display: block;
         position: absolute;
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         border-radius: 6px;
         opacity: 0;
         transition: all 0.5s;
@@ -226,8 +226,8 @@ export const OnClickCategoriesArea = styled.button`
         box-shadow: 0 0 0 0 white;
         position: absolute;
         border-radius: 6px;
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         opacity: 1;
         transition: 0s;
     }
