@@ -142,7 +142,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
 
     return (
         <LeftInstComponentWrapper isActive={active === 0}>
-            <Link key={id} href={`https://www.instagram.com/${id}/`}>
+            <a key={id} href={`https://www.instagram.com/${id}/`}>
                 <StyledImage
                     src={getImageUrl(id)}
                     alt={title}
@@ -150,10 +150,8 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                     height={80}
                     imageUrl={getImageUrl(id)} // Pass imageUrl prop directly
                 />
-            </Link>
-            <Link key={title} href={`https://www.instagram.com/${id}/`}>
                 <AccountTitle>{title}</AccountTitle>
-            </Link>
+            </a>
 
             <PostBoxName>post</PostBoxName>
             <PostBoxAmount>{post}</PostBoxAmount>

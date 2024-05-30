@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image, { ImageProps } from 'next/image'
+import Link from 'next/link'
 
 interface StyledImageProps extends ImageProps {
     imageUrl: string
@@ -141,7 +142,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
 
     return (
         <LeftInstComponentWrapper isActive={active === 0}>
-            <a key={id} href={`https://www.instagram.com/${id}/`}>
+            <Link key={id} href={`https://www.instagram.com/${id}/`}>
                 <StyledImage
                     src={getImageUrl(id)}
                     alt={title}
@@ -149,8 +150,10 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                     height={80}
                     imageUrl={getImageUrl(id)} // Pass imageUrl prop directly
                 />
+            </Link>
+            <Link key={title} href={`https://www.instagram.com/${id}/`}>
                 <AccountTitle>{title}</AccountTitle>
-            </a>
+            </Link>
 
             <PostBoxName>post</PostBoxName>
             <PostBoxAmount>{post}</PostBoxAmount>
