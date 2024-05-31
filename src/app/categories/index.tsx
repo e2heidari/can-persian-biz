@@ -26,6 +26,23 @@ const CategoriesBoxContainer = styled.div`
         padding: 5px 5px;
     }
 `
+const SavedItems = styled.div`
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px;
+`
+
+const SavedIcons = styled.img`
+    width: 50px;
+    height: 50px;
+`
+
+const TextSavedItems = styled.div`
+    font-size: 13px;
+    font-weight: bold;
+`
 
 const TextTopBox = styled.div`
     width: 100%;
@@ -142,6 +159,7 @@ const categoriesData = [
     { icon: 'category-icon26.png', text: 'Groups & Hike' },
     { icon: 'category-icon26.png', text: 'Channel' },
     { icon: 'category-icon26.png', text: 'Therapist' },
+    { icon: 'category-icon26.png', text: 'Entertainment & Attraction' },
 ]
 
 const Categories: React.FC = () => {
@@ -156,6 +174,16 @@ const Categories: React.FC = () => {
     return (
         <BackgroundContainer showAllIcons={showAllIcons}>
             <CategoriesBoxContainer>
+                <Link href="/categories/saved-pages">
+                    <SavedItems>
+                        <SavedIcons
+                            src={'/icons8-save-all-96.png'}
+                            alt="SavedIcons"
+                        />
+                        <TextSavedItems>Saved Items</TextSavedItems>
+                    </SavedItems>
+                </Link>
+
                 <TextTopBox>Categories</TextTopBox>
                 <CategoriesContainerMobile>
                     {categoriesData

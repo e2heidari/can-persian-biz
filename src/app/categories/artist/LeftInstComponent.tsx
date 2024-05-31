@@ -18,18 +18,18 @@ const LeftInstComponentWrapper = styled.div<{ isActive: boolean }>`
         255,
         0.4
     ); /* Adjust the last value (alpha) to change the opacity */
-    grid-template-columns: auto 60px 20px 60px 20px 60px 30px;
+    grid-template-columns: auto 25px 5px 60px 20px 60px 20px 60px 30px;
     grid-template-rows: 27px 27px;
     border-radius: 10px;
     margin: 0px;
     width: 100%;
     @media (max-width: 768px) {
-        grid-template-columns: auto 40px 20px 55px 15px;
+        grid-template-columns: auto 20px 5px 40px 20px 55px 10px;
         grid-template-rows: 25px 25px;
     }
 `
 
-const SelectedUrl = styled.a`
+const InstagramUrl = styled.a`
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
@@ -65,18 +65,31 @@ const AccountTitle = styled.p`
     font-size: 16px;
     font-weight: bold;
 `
-
-const PostBoxName = styled.p`
+const SavedIcon = styled.img`
     grid-column-start: 2;
     grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    place-self: center;
+    width: 25px;
+    height: 25px;
+    @media (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+    }
+`
+
+const PostBoxName = styled.p`
+    grid-column-start: 4;
+    grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
     font-size: 16px;
     place-self: center;
 `
 const PostBoxAmount = styled.p`
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
     font-size: 16px;
@@ -85,16 +98,16 @@ const PostBoxAmount = styled.p`
 `
 
 const FollowersBoxName = styled.p`
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-start: 6;
+    grid-column-end: 7;
     grid-row-start: 1;
     grid-row-end: 2;
     font-size: 16px;
     place-self: center;
 `
 const FollowersBoxAmount = styled.p`
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-start: 6;
+    grid-column-end: 7;
     grid-row-start: 2;
     grid-row-end: 3;
     font-size: 16px;
@@ -103,8 +116,8 @@ const FollowersBoxAmount = styled.p`
 `
 
 const FollowingBoxName = styled.p`
-    grid-column-start: 6;
-    grid-column-end: 7;
+    grid-column-start: 8;
+    grid-column-end: 9;
     grid-row-start: 1;
     grid-row-end: 2;
     font-size: 16px;
@@ -114,8 +127,8 @@ const FollowingBoxName = styled.p`
     }
 `
 const FollowingBoxAmount = styled.p`
-    grid-column-start: 6;
-    grid-column-end: 7;
+    grid-column-start: 8;
+    grid-column-end: 9;
     grid-row-start: 2;
     grid-row-end: 3;
     font-size: 16px;
@@ -150,11 +163,11 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
         return `/${id}.jpg` // Change the file extension as per your image format
     }
 
-    // const { savePage } = useSavedPages()
+    const { savePage } = useSavedPages()
 
     return (
         <LeftInstComponentWrapper isActive={active === 0}>
-            <SelectedUrl key={id} href={`https://www.instagram.com/${id}/`}>
+            <InstagramUrl key={id} href={`https://www.instagram.com/${id}/`}>
                 <StyledImage
                     src={getImageUrl(id)}
                     alt={title}
@@ -163,14 +176,12 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                     imageUrl={getImageUrl(id)} // Pass imageUrl prop directly
                 />
                 <AccountTitle>{title}</AccountTitle>
-            </SelectedUrl>
-            {/* <Link key={id} href="/saved-pages">
-                <button
-                    onClick={() => savePage(`https://www.instagram.com/${id}/`)}
-                >
-                    Save this page
-                </button>
-            </Link> */}
+            </InstagramUrl>
+            <SavedIcon
+                src={'/icons8-save-48.png'}
+                alt="SavedIcon"
+                onClick={() => savePage(`https://www.instagram.com/${id}/`)}
+            />
             <PostBoxName>post</PostBoxName>
             <PostBoxAmount>{post}</PostBoxAmount>
             <FollowersBoxName>followers</FollowersBoxName>
