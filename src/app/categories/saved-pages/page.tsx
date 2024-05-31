@@ -1,4 +1,6 @@
 // components/SavedPages.tsx
+'use client'
+
 import React from 'react'
 import useSavedPages from '../hooks/useSavedPages'
 
