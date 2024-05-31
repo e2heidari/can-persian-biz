@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image, { ImageProps } from 'next/image'
+import Link from 'next/link'
+import useSavedPages from '../hooks/useSavedPages'
 
 interface StyledImageProps extends ImageProps {
     imageUrl: string
@@ -16,26 +18,35 @@ const LeftInstComponentWrapper = styled.div<{ isActive: boolean }>`
         255,
         0.4
     ); /* Adjust the last value (alpha) to change the opacity */
-    grid-template-columns: 54px auto 60px 20px 60px 20px 60px 30px;
+    grid-template-columns: auto 60px 20px 60px 20px 60px 30px;
     grid-template-rows: 27px 27px;
     border-radius: 10px;
     margin: 0px;
     width: 100%;
     @media (max-width: 768px) {
-        grid-template-columns: 50px auto 40px 20px 55px 15px;
+        grid-template-columns: auto 40px 20px 55px 15px;
         grid-template-rows: 25px 25px;
     }
 `
 
-const StyledImage = styled(Image)<StyledImageProps>`
-    width: 54px;
-    height: 54px;
+const SelectedUrl = styled.a`
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
     justify-self: stretch;
-    place-self: center;
+    display: grid;
+    grid-template-columns: 54px auto;
+    grid-template-rows: 54px;
+`
+
+const StyledImage = styled(Image)<StyledImageProps>`
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     @media (max-width: 768px) {
         width: 50px;
@@ -46,26 +57,26 @@ const StyledImage = styled(Image)<StyledImageProps>`
 const AccountTitle = styled.p`
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
     justify-self: start;
     align-self: center;
-    margin: 4px;
+    margin: 0px;
     font-size: 16px;
     font-weight: bold;
 `
 
 const PostBoxName = styled.p`
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
     font-size: 16px;
     place-self: center;
 `
 const PostBoxAmount = styled.p`
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
     font-size: 16px;
@@ -74,16 +85,16 @@ const PostBoxAmount = styled.p`
 `
 
 const FollowersBoxName = styled.p`
-    grid-column-start: 5;
-    grid-column-end: 6;
+    grid-column-start: 4;
+    grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
     font-size: 16px;
     place-self: center;
 `
 const FollowersBoxAmount = styled.p`
-    grid-column-start: 5;
-    grid-column-end: 6;
+    grid-column-start: 4;
+    grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
     font-size: 16px;
@@ -92,8 +103,8 @@ const FollowersBoxAmount = styled.p`
 `
 
 const FollowingBoxName = styled.p`
-    grid-column-start: 7;
-    grid-column-end: 8;
+    grid-column-start: 6;
+    grid-column-end: 7;
     grid-row-start: 1;
     grid-row-end: 2;
     font-size: 16px;
@@ -103,8 +114,8 @@ const FollowingBoxName = styled.p`
     }
 `
 const FollowingBoxAmount = styled.p`
-    grid-column-start: 7;
-    grid-column-end: 8;
+    grid-column-start: 6;
+    grid-column-end: 7;
     grid-row-start: 2;
     grid-row-end: 3;
     font-size: 16px;
@@ -139,9 +150,11 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
         return `/${id}.jpg` // Change the file extension as per your image format
     }
 
+    // const { savePage } = useSavedPages()
+
     return (
         <LeftInstComponentWrapper isActive={active === 0}>
-            <a key={id} href={`https://www.instagram.com/${id}/`}>
+            <SelectedUrl key={id} href={`https://www.instagram.com/${id}/`}>
                 <StyledImage
                     src={getImageUrl(id)}
                     alt={title}
@@ -150,8 +163,14 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                     imageUrl={getImageUrl(id)} // Pass imageUrl prop directly
                 />
                 <AccountTitle>{title}</AccountTitle>
-            </a>
-
+            </SelectedUrl>
+            {/* <Link key={id} href="/saved-pages">
+                <button
+                    onClick={() => savePage(`https://www.instagram.com/${id}/`)}
+                >
+                    Save this page
+                </button>
+            </Link> */}
             <PostBoxName>post</PostBoxName>
             <PostBoxAmount>{post}</PostBoxAmount>
             <FollowersBoxName>followers</FollowersBoxName>
