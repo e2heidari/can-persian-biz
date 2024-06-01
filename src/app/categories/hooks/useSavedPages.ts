@@ -1,4 +1,5 @@
-// hooks/useSavedPages.ts
+'use client'
+
 import { useState, useEffect } from 'react'
 
 const useSavedPages = () => {
@@ -21,7 +22,11 @@ const useSavedPages = () => {
         }
     }
 
-    return { savedPages, savePage }
+    const removePage = (url: string) => {
+        setSavedPages(savedPages.filter((page) => page !== url))
+    }
+
+    return { savedPages, savePage, removePage }
 }
 
 export default useSavedPages

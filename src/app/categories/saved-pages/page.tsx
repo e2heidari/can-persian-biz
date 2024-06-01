@@ -1,11 +1,10 @@
 // components/SavedPages.tsx
 'use client'
-
 import React from 'react'
 import useSavedPages from '../hooks/useSavedPages'
 
 const SavedPages: React.FC = () => {
-    const { savedPages } = useSavedPages()
+    const { savedPages, removePage } = useSavedPages()
 
     return (
         <div>
@@ -20,6 +19,7 @@ const SavedPages: React.FC = () => {
                         >
                             {page}
                         </a>
+                        <button onClick={() => removePage(page)}>Remove</button>
                     </li>
                 ))}
             </ul>
