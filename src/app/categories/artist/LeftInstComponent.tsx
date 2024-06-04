@@ -64,7 +64,7 @@ const AccountTitle = styled.p`
     font-size: 16px;
     font-weight: bold;
 `
-const SavedIcon = styled.img`
+const SavedIcon = styled.button`
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -73,8 +73,41 @@ const SavedIcon = styled.img`
     width: 25px;
     height: 25px;
     @media (max-width: 768px) {
+        width: 2px;
+        height: 2px;
+    }
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */
+
+    &:hover {
+        transition-duration: 0.1s;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: relative;
+        width: 2px;
+        height: 2px;
+        border-radius: 6px;
+        opacity: 0;
+        transition: all 0.5s;
+        box-shadow: 0 0 10px 40px white;
+    }
+
+    &:active:after {
+        box-shadow: 0 0 0 0 white;
+        border-radius: 6px;
+        position: relative;
         width: 20px;
         height: 20px;
+        opacity: 1;
+        transition: 0s;
+    }
+
+    &:active {
+        top: 1px;
     }
 `
 
@@ -176,16 +209,18 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                 />
                 <AccountTitle>{title}</AccountTitle>
             </InstagramUrl>
-            <SavedIcon
-                src={'/icons8-save-48.png'}
-                alt="SavedIcon"
-                onClick={() =>
-                    addItem({
-                        url: `https://www.instagram.com/${id}/`,
-                        id: `${id}`,
-                    })
-                }
-            />
+            <SavedIcon>
+                <img
+                    src={'/icons8-save-48.png'}
+                    alt="SavedIcon"
+                    onClick={() =>
+                        addItem({
+                            url: `https://www.instagram.com/${id}/`,
+                            id: `${id}`,
+                        })
+                    }
+                />
+            </SavedIcon>
             <PostBoxName>post</PostBoxName>
             <PostBoxAmount>{post}</PostBoxAmount>
             <FollowersBoxName>followers</FollowersBoxName>
