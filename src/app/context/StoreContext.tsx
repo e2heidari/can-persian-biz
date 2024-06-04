@@ -5,6 +5,11 @@ import React, { createContext, useContext, useState, ReactNode } from 'react'
 interface Item {
     url: string
     id: string
+    // post: string
+    // followers: string
+    // following: string
+    // image: string
+
     // Add more fields as necessary
 }
 
