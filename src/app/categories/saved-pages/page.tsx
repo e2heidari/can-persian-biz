@@ -1,25 +1,20 @@
-// components/SavedPages.tsx
 'use client'
-import React from 'react'
-import useSavedPages from '../hooks/useSavedPages'
+import { NextPage } from 'next'
+import { useStore } from '../../context/StoreContext'
 
-const SavedPages: React.FC = () => {
-    const { savedPages, removePage } = useSavedPages()
+const SavedPage: NextPage = () => {
+    const { savedItems, removeItem } = useStore()
 
     return (
         <div>
-            <h1>Saved Pages</h1>
+            <h1>Saved Items</h1>
             <ul>
-                {savedPages.map((page, index) => (
-                    <li key={index}>
-                        <a
-                            href={page}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {page}
-                        </a>
-                        <button onClick={() => removePage(page)}>Remove</button>
+                {savedItems.map((item) => (
+                    <li key={item.id}>
+                        <a href={item.url}>{item.url}</a>
+                        <button onClick={() => removeItem(item.id)}>
+                            Remove
+                        </button>
                     </li>
                 ))}
             </ul>
@@ -27,4 +22,4 @@ const SavedPages: React.FC = () => {
     )
 }
 
-export default SavedPages
+export default SavedPage

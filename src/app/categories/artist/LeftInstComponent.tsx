@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image, { ImageProps } from 'next/image'
-import useSavedPages from '../hooks/useSavedPages'
+import { useStore } from '../../context/StoreContext'
 
 interface StyledImageProps extends ImageProps {
     imageUrl: string
@@ -162,7 +162,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
         return `/${id}.jpg` // Change the file extension as per your image format
     }
 
-    const { savePage } = useSavedPages()
+    const { addItem } = useStore()
 
     return (
         <LeftInstComponentWrapper isActive={active === 0}>
@@ -179,7 +179,12 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
             <SavedIcon
                 src={'/icons8-save-48.png'}
                 alt="SavedIcon"
-                onClick={() => savePage(`https://www.instagram.com/${id}/`)}
+                onClick={() =>
+                    addItem({
+                        url: `https://www.instagram.com/${id}/`,
+                        id: `${id}`,
+                    })
+                }
             />
             <PostBoxName>post</PostBoxName>
             <PostBoxAmount>{post}</PostBoxAmount>
