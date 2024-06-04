@@ -73,8 +73,8 @@ const SavedIcon = styled.button`
     width: 25px;
     height: 25px;
     @media (max-width: 768px) {
-        width: 2px;
-        height: 2px;
+        width: 20px;
+        height: 20px;
     }
     cursor: pointer;
     transition-duration: 0.4s;
@@ -100,8 +100,8 @@ const SavedIcon = styled.button`
         box-shadow: 0 0 0 0 white;
         border-radius: 6px;
         position: relative;
-        width: 20px;
-        height: 20px;
+        width: 2px;
+        height: 2px;
         opacity: 1;
         transition: 0s;
     }
@@ -217,6 +217,10 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                         addItem({
                             url: `https://www.instagram.com/${id}/`,
                             id: `${id}`,
+                            post: `${post}`,
+                            followers: `${followers}`,
+                            following: `${following}`,
+                            image: `${getImageUrl(id)}`,
                         })
                     }
                 />
