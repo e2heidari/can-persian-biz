@@ -156,10 +156,10 @@ const categoriesData = [
     { icon: 'icons8-spa-care-96.png', text: 'Health & Beauty' },
     { icon: 'category-icon22.png', text: 'Pets & Animals' },
     { icon: 'category-icon23.png', text: 'Job & Business' },
-    { icon: 'category-icon26.png', text: 'Groups & Hike' },
-    { icon: 'category-icon26.png', text: 'Channel' },
-    { icon: 'category-icon26.png', text: 'Therapist' },
-    { icon: 'category-icon26.png', text: 'Entertainment & Attraction' },
+    { icon: 'icons8-friendship-96.png', text: 'Groups & Hike' },
+    { icon: 'icons8-channel-96.png', text: 'Channel & Magazine' },
+    { icon: 'icons8-physical-therapy-96.png', text: 'Therapist' },
+    { icon: 'icons8-tourism-96.png', text: 'Entertainment & Attraction' },
 ]
 
 const Categories: React.FC = () => {

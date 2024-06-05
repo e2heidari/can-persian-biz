@@ -17,7 +17,6 @@ const Categories = styled.button`
 const CategoryIcon = styled.img`
     width: 56px; /* Adjust the size of the icon as needed */
     height: 56px; /* Adjust the size of the icon as needed */
-    border-radius: 50%;
 `
 
 const CategoryText = styled.div`
