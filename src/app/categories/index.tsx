@@ -191,7 +191,7 @@ const Categories: React.FC = () => {
                         .map((data, index) => (
                             <Link
                                 key={data.text}
-                                href={`/categories/${data.text
+                                href={`/categories/data/${data.text
                                     .toLowerCase()
                                     .replaceAll(' &', '')
                                     .replaceAll(' ', '-')}`}
@@ -218,7 +218,7 @@ const Categories: React.FC = () => {
                     {categoriesData.map((data, index) => (
                         <Link
                             key={data.text}
-                            href={`/categories/${data.text
+                            href={`/categories/data/${data.text
                                 .toLowerCase()
                                 .replace(' &', '')
                                 .replace(' ', '-')}`}
