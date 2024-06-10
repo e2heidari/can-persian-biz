@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Header from '../../../components/Header'
-import Image, { ImageProps } from 'next/image'
+import Image from 'next/image'
 import { useStore } from '../../context/StoreContext'
 import RightAdComponent from '../data/RightAdComponent'
 import {
@@ -17,9 +17,6 @@ import {
     AdvertiseTypeIcon,
 } from '../data/styles'
 
-interface StyledImageProps extends ImageProps {
-    imageUrl: string
-}
 interface SavedPageProps {
     active: number
     handleToggle: (index: number) => void
@@ -70,7 +67,7 @@ const InstagramUrl = styled.a`
     grid-template-rows: 54px;
 `
 
-const StyledImage = styled(Image)<StyledImageProps>`
+const StyledImage = styled(Image)`
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
@@ -208,15 +205,9 @@ const SavedPage: React.FC<SavedPageProps> = () => {
 
     const handleToggle = (index: number) => setActive(index)
 
-    const getImageUrl = (id: string) => {
-        // Assuming images are stored in a folder named 'images'
-        return `/${id}.jpg` // Change the file extension as per your image format
-    }
-
     return (
         <PageContainer>
             <Header />
-
             <ContentSection>
                 <Article
                     isActive={active === 1}
@@ -245,11 +236,10 @@ const SavedPage: React.FC<SavedPageProps> = () => {
                                     href={`https://www.instagram.com/${item.id}/`}
                                 >
                                     <StyledImage
-                                        src={getImageUrl(item.id)}
+                                        src={item.image}
                                         alt={item.title}
                                         width={80}
                                         height={80}
-                                        imageUrl={getImageUrl(item.id)} // Pass imageUrl prop directly
                                     />
                                     <AccountTitle>{item.title}</AccountTitle>
                                 </InstagramUrl>
