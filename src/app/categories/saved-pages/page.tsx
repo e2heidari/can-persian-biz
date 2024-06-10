@@ -29,7 +29,7 @@ interface SavedPageProps {
     handleUpSort: () => void
 }
 
-export const PageContainer = styled.div`
+const PageContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
