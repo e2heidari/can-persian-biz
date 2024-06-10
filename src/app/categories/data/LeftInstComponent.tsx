@@ -217,10 +217,11 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                         addItem({
                             url: `https://www.instagram.com/${id}/`,
                             id: `${id}`,
-                            // post: `${post}`,
-                            // followers: `${followers}`,
-                            // following: `${following}`,
-                            // image: `${getImageUrl(id)}`,
+                            post: `${post}`,
+                            title: `${title}`,
+                            followers: `${followers}`,
+                            following: `${following}`,
+                            image: `${getImageUrl(id)}`,
                         })
                     }
                 />

@@ -302,7 +302,6 @@ export const OnClickCategoriesArea = styled.button`
 //     padding: 10px;
 //     margin-bottom: 10px;
 //     font-size: 16px;
-//     font-family: 'Alcubierre', sans-serif;
 //     @media (max-width: 1180px) {
 //         display: none;
 //     }
