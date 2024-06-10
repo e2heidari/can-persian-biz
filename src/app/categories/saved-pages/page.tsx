@@ -237,9 +237,11 @@ const SavedPage: React.FC<SavedPageProps> = () => {
                         </CustomName>
 
                         {savedItems.map((item, index) => (
-                            <LeftInstComponentWrapper isActive={active === 0}>
+                            <LeftInstComponentWrapper
+                                key={index}
+                                isActive={active === 0}
+                            >
                                 <InstagramUrl
-                                    key={index}
                                     href={`https://www.instagram.com/${item.id}/`}
                                 >
                                     <StyledImage
