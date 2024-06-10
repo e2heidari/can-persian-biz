@@ -20,10 +20,6 @@ import {
 interface SavedPageProps {
     active: number
     handleToggle: (index: number) => void
-    selectedName: string
-    iconsVisible: boolean
-    handleDownSort: () => void
-    handleUpSort: () => void
 }
 
 const PageContainer = styled.div`
