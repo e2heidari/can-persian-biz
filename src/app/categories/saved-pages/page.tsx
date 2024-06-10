@@ -17,11 +17,6 @@ import {
     AdvertiseTypeIcon,
 } from '../data/styles'
 
-interface SavedPageProps {
-    active: number
-    handleToggle: (index: number) => void
-}
-
 const PageContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -195,7 +190,7 @@ const FollowingBoxAmount = styled.p`
     }
 `
 
-const SavedPage: React.FC<SavedPageProps> = () => {
+const SavedPages: React.FC = () => {
     const { savedItems, removeItem } = useStore()
     const [active, setActive] = useState(0)
 
@@ -309,4 +304,4 @@ const SavedPage: React.FC<SavedPageProps> = () => {
     )
 }
 
-export default SavedPage
+export default SavedPages
