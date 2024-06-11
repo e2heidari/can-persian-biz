@@ -95,39 +95,6 @@ const DeleteIcon = styled.button`
         width: 20px;
         height: 20px;
     }
-    cursor: pointer;
-    transition-duration: 0.4s;
-    -webkit-transition-duration: 0.4s; /* Safari */
-
-    &:hover {
-        transition-duration: 0.1s;
-    }
-
-    &:after {
-        content: '';
-        display: block;
-        position: relative;
-        width: 2px;
-        height: 2px;
-        border-radius: 6px;
-        opacity: 0;
-        transition: all 0.5s;
-        box-shadow: 0 0 10px 40px white;
-    }
-
-    &:active:after {
-        box-shadow: 0 0 0 0 white;
-        border-radius: 6px;
-        position: relative;
-        width: 2px;
-        height: 2px;
-        opacity: 1;
-        transition: 0s;
-    }
-
-    &:active {
-        top: 1px;
-    }
 `
 
 const PostBoxName = styled.p`

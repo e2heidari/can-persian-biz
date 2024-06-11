@@ -17,13 +17,13 @@ const LeftInstComponentWrapper = styled.div<{ isActive: boolean }>`
         255,
         0.4
     ); /* Adjust the last value (alpha) to change the opacity */
-    grid-template-columns: auto 25px 5px 60px 20px 60px 20px 60px 30px;
+    grid-template-columns: auto 25px 10px 60px 15px 60px 20px 60px 30px;
     grid-template-rows: 27px 27px;
     border-radius: 10px;
     margin: 0px;
     width: 100%;
     @media (max-width: 768px) {
-        grid-template-columns: auto 20px 5px 40px 20px 55px 10px;
+        grid-template-columns: auto 20px 10px 40px 15px 55px 10px;
         grid-template-rows: 25px 25px;
     }
 `
@@ -64,11 +64,20 @@ const AccountTitle = styled.p`
     font-size: 16px;
     font-weight: bold;
 `
+const SavedIconText = styled.p`
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-size: 14px;
+    place-self: center;
+    font-weight: bold;
+`
 const SavedIcon = styled.button`
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 2;
     place-self: center;
     width: 25px;
     height: 25px;
@@ -87,7 +96,7 @@ const SavedIcon = styled.button`
     &:after {
         content: '';
         display: block;
-        position: relative;
+        position: absolute;
         width: 2px;
         height: 2px;
         border-radius: 6px;
@@ -99,7 +108,7 @@ const SavedIcon = styled.button`
     &:active:after {
         box-shadow: 0 0 0 0 white;
         border-radius: 6px;
-        position: relative;
+        position: absolute;
         width: 2px;
         height: 2px;
         opacity: 1;
@@ -111,7 +120,7 @@ const SavedIcon = styled.button`
     }
 `
 
-const PostBoxName = styled.p`
+const PostBox = styled.p`
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 1;
@@ -129,7 +138,7 @@ const PostBoxAmount = styled.p`
     font-weight: bold;
 `
 
-const FollowersBoxName = styled.p`
+const FollowersBox = styled.p`
     grid-column-start: 6;
     grid-column-end: 7;
     grid-row-start: 1;
@@ -147,7 +156,7 @@ const FollowersBoxAmount = styled.p`
     font-weight: bold;
 `
 
-const FollowingBoxName = styled.p`
+const FollowingBox = styled.p`
     grid-column-start: 8;
     grid-column-end: 9;
     grid-row-start: 1;
@@ -226,11 +235,12 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                     }
                 />
             </SavedIcon>
-            <PostBoxName>post</PostBoxName>
+            <SavedIconText>save</SavedIconText>
+            <PostBox>post</PostBox>
             <PostBoxAmount>{post}</PostBoxAmount>
-            <FollowersBoxName>followers</FollowersBoxName>
+            <FollowersBox>followers</FollowersBox>
             <FollowersBoxAmount>{followers}</FollowersBoxAmount>
-            <FollowingBoxName>following</FollowingBoxName>
+            <FollowingBox>following</FollowingBox>
             <FollowingBoxAmount>{following}</FollowingBoxAmount>
         </LeftInstComponentWrapper>
     )
