@@ -197,8 +197,8 @@ const BeautySalon: React.FC = () => {
                                     src={`/${city.icon}`}
                                     alt={city.name}
                                     style={{
-                                        width: '25px',
-                                        height: '25px',
+                                        width: '30px',
+                                        height: '30px',
                                         background: '#060606',
                                         borderRadius: '6px',
                                     }}
