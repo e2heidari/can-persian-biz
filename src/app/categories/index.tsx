@@ -136,7 +136,7 @@ const StyledButton = styled(Button)`
 
 const categoriesData = [
     { icon: 'category-icon1.png', text: 'Fast Food' },
-    { icon: 'category-icon2.png', text: 'Restaurant' },
+    { icon: 'category-icon2.png', text: 'Restaurant & Cafe' },
     { icon: 'category-icon10.png', text: 'Homemade Food' },
     { icon: 'category-icon3.png', text: 'Real Estate' },
     { icon: 'icons8-shopaholic-96.png', text: 'Shopping & Markets' },
