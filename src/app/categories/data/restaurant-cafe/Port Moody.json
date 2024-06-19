@@ -1,5 +1,15 @@
 [
     {
+        "id": "rivasrestaurant",
+        "title": "Rivas Restaurant",
+        "bio": "3180 St.johns street, Port Moody, British Columbia V3H2C7",
+        "post": "46",
+        "followers": "1,400",
+        "following": "13",
+        "image": "https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/330826508_214826504433885_2155645587208315103_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=Cd4ky_VarSYQ7kNvgGc1VBl&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYCp3F6phj2OX5wlOMelD10JYYFkzOUtSv6givI7C4hT-w&oe=66780EBC&_nc_sid=8b3546",
+        "city": "Port Moody"
+    },
+    {
         "id": "cazba.restaurant",
         "title": "Cazba Restaurant",
         "bio": "1103 Davie Street, Vancouver, British Columbia V6E1N2",
@@ -7,6 +17,16 @@
         "followers": "11.7K",
         "following": "0",
         "image": "https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/387772054_1035507987576950_4079131270362816521_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=dVjMtvDj8wIQ7kNvgEatu-d&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYD0lgwAPX2T2BRQ7gJcAQRJPt-GJp-zDmeTTtouRrEXaQ&oe=66713598&_nc_sid=8b3546",
-        "city": "Vancouver"
+        "city": "Port Moody"
+    },
+    {
+        "id": "khaghan_restaurant_coquitlam",
+        "title": "Khaghan Restaurant",
+        "bio": "Vancouver, British Columbia, Coquitlam, British Columbia V3H 2C7",
+        "post": "3",
+        "followers": "77",
+        "following": "11",
+        "image": "https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/444500010_7515817448495780_1142897624564998551_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=GFeCPJKhusQQ7kNvgHHUQe3&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYAA5gRJaOacXBtVuAlnhIOQ2TDeu2R0u1EXtmwti6zrvg&oe=667138B1&_nc_sid=8b3546",
+        "city": "Port Moody"
     }
 ]
