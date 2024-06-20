@@ -181,9 +181,7 @@ const Hookah: React.FC = () => {
                         <StyledSwiperSlide
                             key={index}
                             isMobile={isMobile}
-                            style={{
-                                backgroundImage: `url(${city.slide})`,
-                            }}
+                            pic={city.slide}
                         >
                             <OnClickCategoriesArea
                                 onClick={() =>

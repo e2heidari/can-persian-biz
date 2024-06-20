@@ -181,9 +181,7 @@ const Accounting: React.FC = () => {
                         <StyledSwiperSlide
                             key={index}
                             isMobile={isMobile}
-                            style={{
-                                backgroundImage: `url(${category.slide})`,
-                            }}
+                            pic={category.slide}
                         >
                             <OnClickCategoriesArea
                                 onClick={() =>
