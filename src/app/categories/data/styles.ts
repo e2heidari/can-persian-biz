@@ -44,7 +44,7 @@ export const StyledSwiperSlide = styled(SwiperSlide)<{
     pic: string
 }>`
     position: relative;
-    background: ${(props) => `url(${props.pic})`}
+    background: ${(props) => `url(/${props.pic})`}
     background-position: center;
     object-fit: cover;
     background-repeat: no-repeat;
