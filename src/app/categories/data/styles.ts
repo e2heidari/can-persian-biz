@@ -43,6 +43,7 @@ export const StyledSwiperSlide = styled(SwiperSlide)<{ isMobile: boolean }>`
     position: relative;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     padding: 0 0 3.2vh 0;
     width: 17vw;
     height: ${(props) => (props.isMobile ? '22vh' : '32vh')};
