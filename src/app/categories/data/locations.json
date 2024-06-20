@@ -17,14 +17,6 @@
     },
     {
         "icon": "icons8-address-96.png",
-        "slide": "andrew-ridley-jR4Zf-riEjI-unsplash.jpg",
-        "lat": 49.3286,
-        "lng": -123.1602,
-        "name": "West Vancouver",
-        "description": "A city northwest of Vancouver, known for its upscale neighborhoods and waterfront properties"
-    },
-    {
-        "icon": "icons8-address-96.png",
         "slide": "mateusz-buda-UQ_0STgQpLY-unsplash.jpg",
         "lat": 49.2488,
         "lng": -122.9805,
@@ -33,7 +25,7 @@
     },
     {
         "icon": "icons8-address-96.png",
-        "slide": "vincent-burkhead-LhlxYMfnTF0-unsplash.jpg",
+        "slide": "maarten-deckers-8RU1Ei3KcPw-unsplash.jpg",
         "lat": 49.2849,
         "lng": -122.8678,
         "name": "Port Moody",
@@ -65,7 +57,7 @@
     },
     {
         "icon": "icons8-address-96.png",
-        "slide": "wyxina-tresse-Hw5FjTaKVqw-unsplash.jpg",
+        "slide": "mockup-photos-5nUNdLueQio-unsplash.jpg",
         "lat": 49.1913,
         "lng": -122.849,
         "name": "Surrey",
@@ -78,5 +70,13 @@
         "lng": -122.911,
         "name": "New Westminster",
         "description": "A city east of Vancouver, known for its historic downtown and riverfront"
+    },
+    {
+        "icon": "icons8-address-96.png",
+        "slide": "andrew-ridley-jR4Zf-riEjI-unsplash.jpg",
+        "lat": 49.3286,
+        "lng": -123.1602,
+        "name": "West Vancouver",
+        "description": "A city northwest of Vancouver, known for its upscale neighborhoods and waterfront properties"
     }
 ]
