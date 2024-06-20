@@ -39,10 +39,14 @@ export const TopBox = styled.div`
         width: 100%;
     }
 `
-export const StyledSwiperSlide = styled(SwiperSlide)<{ isMobile: boolean }>`
+export const StyledSwiperSlide = styled(SwiperSlide)<{
+    isMobile: boolean
+    pic: string
+}>`
     position: relative;
+    background: ${(props) => `url(${props.pic})`}
     background-position: center;
-    background-size: cover;
+    object-fit: cover;
     background-repeat: no-repeat;
     padding: 0 0 3.2vh 0;
     width: 17vw;

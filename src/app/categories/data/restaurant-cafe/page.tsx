@@ -166,7 +166,6 @@ const Restaurant: React.FC = () => {
                     spaceBetween={0}
                     effect="coverflow"
                     loop
-                    style={{}}
                     coverflowEffect={{
                         rotate: 50,
                         stretch: 0,
@@ -181,9 +180,7 @@ const Restaurant: React.FC = () => {
                         <StyledSwiperSlide
                             key={index}
                             isMobile={isMobile}
-                            style={{
-                                backgroundImage: `url(${city.slide})`,
-                            }}
+                            pic={city.slide}
                         >
                             <OnClickCategoriesArea
                                 onClick={() =>
