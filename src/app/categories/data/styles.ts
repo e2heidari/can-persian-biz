@@ -59,7 +59,7 @@ export const StyledSwiperSlide = styled(SwiperSlide)<{
 export const CategoryAmount = styled.p`
     font-size: 50px;
     text-align: center;
-    color: #000000;
+    color: white;
 
     @media (max-width: 768px) {
         font-size: 30px;

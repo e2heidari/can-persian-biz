@@ -27,6 +27,7 @@ import {
     AdvertiseTypeIcon,
     AdvertiseData,
     AdContainer,
+    CategoryAmount,
 } from '../styles'
 import locations from '../locations.json'
 import LeftInstComponent from '../LeftInstComponent'
@@ -226,16 +227,10 @@ const Restaurant: React.FC = () => {
                                     )
                                 }
                             >
-                                <span
-                                    style={{
-                                        fontSize: '50px',
-                                        textAlign: 'center',
-                                        color: '#000000',
-                                    }}
-                                >
+                                <CategoryAmount>
                                     {jsonLengths[`${city.name}.json`] || 0}{' '}
                                     Restaurant
-                                </span>
+                                </CategoryAmount>
                                 <img
                                     src={`/${city.icon}`}
                                     alt={city.name}
