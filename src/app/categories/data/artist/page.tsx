@@ -27,6 +27,7 @@ import {
     AdvertiseTypeIcon,
     AdvertiseData,
     AdContainer,
+    CategoryAmount,
 } from '../styles'
 import instCat from './instCat.json'
 import LeftInstComponent from '../LeftInstComponent'
@@ -201,7 +202,6 @@ const Artist: React.FC = () => {
                     spaceBetween={0}
                     effect="coverflow"
                     loop
-                    style={{}}
                     coverflowEffect={{
                         rotate: 50,
                         stretch: 0,
@@ -226,16 +226,10 @@ const Artist: React.FC = () => {
                                     )
                                 }
                             >
-                                <span
-                                    style={{
-                                        fontSize: '50px',
-                                        textAlign: 'center',
-                                        color: '#000000',
-                                    }}
-                                >
+                                <CategoryAmount>
                                     {jsonLengths[`${category.name}.json`] || 0}{' '}
                                     Artist
-                                </span>
+                                </CategoryAmount>
                                 <img
                                     src={`/${category.icon}`}
                                     alt={category.name}

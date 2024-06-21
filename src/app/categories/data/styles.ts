@@ -56,6 +56,16 @@ export const StyledSwiperSlide = styled(SwiperSlide)<{
     flex-direction: column;
     justify-content: flex-end;
 `
+export const CategoryAmount = styled.p`
+    font-size: 50px;
+    text-align: center;
+    color: #000000;
+
+    @media (max-width: 768px) {
+        font-size: 30px;
+    }
+`
+
 export const ContentSection = styled.section`
     display: flex;
     align-items: stretch;
