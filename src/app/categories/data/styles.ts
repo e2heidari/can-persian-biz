@@ -62,7 +62,7 @@ export const CategoryAmount = styled.p`
     color: white;
 
     @media (max-width: 768px) {
-        font-size: 30px;
+        font-size: 18px;
     }
 `
 
