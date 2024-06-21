@@ -38,21 +38,57 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 
+interface JSONLengths {
+    [key: string]: number
+}
+
 const Restaurant: React.FC = () => {
     const [selectedName, setSelectedName] = useState<string>('')
     const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
-    // const [selectedCategory, setSelectedCategory] = useState<string>('Category') // Initial value is 'Settings'
     const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>(
         'icons8-instagram-96.png'
     )
     const [iconsVisible, setIconsVisible] = useState<boolean>(false)
     const [sortAscending, setSortAscending] = useState<boolean>(false)
     const [sortDescending, setSortDescending] = useState<boolean>(false)
+    const [jsonLengths, setJsonLengths] = useState<JSONLengths>({}) // State to hold the lengths of each JSON file
+
+    useEffect(() => {
+        // Fetch the lengths of each JSON file when the page loads
+        const fetchJSONLengths = async () => {
+            const lengths: JSONLengths = {}
+            const jsonFiles = [
+                'Vancouver.json',
+                'Burnaby.json',
+                'Coquitlam.json',
+                'Langley.json',
+                'New Westminster.json',
+                'North Vancouver.json',
+                'Port Coquitlam.json',
+                'Port Moody.json',
+                'Richmond.json',
+                'Surrey.json',
+                'West Vancouver.json',
+            ] // Replace with your actual JSON file names
+
+            for (const file of jsonFiles) {
+                try {
+                    const response = await import(`./${file}`)
+                    lengths[file] = response.default.length
+                } catch (error) {
+                    console.error(`Error fetching length of ${file}:`, error)
+                    lengths[file] = 0
+                }
+            }
+            setJsonLengths(lengths)
+        }
+
+        fetchJSONLengths()
+    }, [])
 
     const handleInstCategoryChange = (selectedOption: string, icon: string) => {
         const instCategoryName = selectedOption
         setSelectedName(instCategoryName)
-        // setSelectedCategory(selectedOption)
         setSelectedCategoryIcon(icon)
         setIconsVisible(true) // Show the icons when a category is selected
     }
@@ -190,6 +226,16 @@ const Restaurant: React.FC = () => {
                                     )
                                 }
                             >
+                                <span
+                                    style={{
+                                        fontSize: '50px',
+                                        textAlign: 'center',
+                                        color: '#000000',
+                                    }}
+                                >
+                                    {jsonLengths[`${city.name}.json`] || 0}{' '}
+                                    Restaurant
+                                </span>
                                 <img
                                     src={`/${city.icon}`}
                                     alt={city.name}
