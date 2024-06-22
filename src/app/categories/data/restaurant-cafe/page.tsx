@@ -70,7 +70,7 @@ const Restaurant: React.FC = () => {
                 'Richmond.json',
                 'Surrey.json',
                 'West Vancouver.json',
-            ] // Replace with your actual JSON file names
+            ]
 
             for (const file of jsonFiles) {
                 try {
@@ -158,7 +158,7 @@ const Restaurant: React.FC = () => {
                     return parseFloat(str.replace('K', '')) * 1000
                 }
                 if (str.includes('M')) {
-                    return parseFloat(str.replace('K', '')) * 1000000
+                    return parseFloat(str.replace('M', '')) * 1000000
                 }
                 return parseFloat(str.replace(',', ''))
             }
@@ -176,7 +176,7 @@ const Restaurant: React.FC = () => {
                     return parseFloat(str.replace('K', '')) * 1000
                 }
                 if (str.includes('M')) {
-                    return parseFloat(str.replace('K', '')) * 1000000
+                    return parseFloat(str.replace('M', '')) * 1000000
                 }
                 return parseFloat(str.replace(',', ''))
             }

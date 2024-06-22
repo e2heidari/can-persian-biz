@@ -121,7 +121,7 @@ const CargoPost: React.FC = () => {
                     return parseFloat(str.replace('K', '')) * 1000
                 }
                 if (str.includes('M')) {
-                    return parseFloat(str.replace('K', '')) * 1000000
+                    return parseFloat(str.replace('M', '')) * 1000000
                 }
                 return parseFloat(str.replace(',', ''))
             }
@@ -139,7 +139,7 @@ const CargoPost: React.FC = () => {
                     return parseFloat(str.replace('K', '')) * 1000
                 }
                 if (str.includes('M')) {
-                    return parseFloat(str.replace('K', '')) * 1000000
+                    return parseFloat(str.replace('M', '')) * 1000000
                 }
                 return parseFloat(str.replace(',', ''))
             }

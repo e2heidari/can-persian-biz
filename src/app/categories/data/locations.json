@@ -78,5 +78,13 @@
         "lng": -123.1602,
         "name": "West Vancouver",
         "description": "A city northwest of Vancouver, known for its upscale neighborhoods and waterfront properties"
+    },
+    {
+        "icon": "icons8-address-96.png",
+        "slide": "mona-eendra-vC8wj_Kphak-unsplash.jpg",
+        "lat": 49.1042,
+        "lng": 122.6604,
+        "name": "Langley",
+        "description": ""
     }
 ]
