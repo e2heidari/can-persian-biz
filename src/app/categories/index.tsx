@@ -42,6 +42,10 @@ const SavedIcons = styled.img`
 const TextSavedItems = styled.div`
     font-size: 13px;
     font-weight: bold;
+    @media (max-width: 768px) {
+        font-size: 13px;
+        font-weight: bold;
+    }
 `
 
 const TextTopBox = styled.div`
