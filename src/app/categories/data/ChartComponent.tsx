@@ -69,7 +69,7 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
                                 },
                                 anchor: 'end',
                                 align: 'start',
-                                offset: -20,
+                                offset: -17,
                             },
                             legend: {
                                 display: false,

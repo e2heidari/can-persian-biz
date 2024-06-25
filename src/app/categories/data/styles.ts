@@ -125,17 +125,17 @@ export const BusinessesData = styled.div`
     overflow: scroll;
     overflow-x: hidden;
     padding: 10px 10px;
+    gap: 1vw;
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 1vw;
     backdrop-filter: blur(4px); /* Add blur effect */
     transition: 0.25s;
     @media (max-width: 768px) {
         width: 100%;
         align-items: center;
         gap: 1vw;
-        padding: 5px 5px;
+        padding: 2.5px 2.5px;
     }
 `
 export const BusinessTypeIcon = styled.img`

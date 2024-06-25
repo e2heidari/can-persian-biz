@@ -38,6 +38,7 @@ import { useMediaQuery } from 'react-responsive'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
+import ChartComponent from '../ChartComponent' // Import the ChartComponent
 
 interface JSONLengths {
     [key: string]: number
@@ -64,7 +65,6 @@ const Artist: React.FC = () => {
                 'Dance.json',
                 'Fashion.json',
                 'Music & DJ.json',
-                'New Westminster.json',
                 'Photographer & Videographer.json',
                 'Tattoo.json',
                 'Makeup.json',
@@ -335,18 +335,28 @@ const Artist: React.FC = () => {
                                 />
                             </SortBox>
                         )}
-                        {instData.map((instMember, index) => (
-                            <LeftInstComponent
-                                active={active}
-                                id={instMember.id}
-                                title={instMember.title}
-                                post={instMember.post}
-                                followers={instMember.followers}
-                                following={instMember.following}
-                                key={index}
-                                image={instMember.image}
+                        {!iconsVisible ? (
+                            <ChartComponent
+                                jsonLengths={jsonLengths}
+                                style={{
+                                    width: '100%',
+                                    height: '50vh',
+                                }}
                             />
-                        ))}
+                        ) : (
+                            instData.map((instMember, index) => (
+                                <LeftInstComponent
+                                    active={active}
+                                    id={instMember.id}
+                                    title={instMember.title}
+                                    post={instMember.post}
+                                    followers={instMember.followers}
+                                    following={instMember.following}
+                                    key={index}
+                                    image={instMember.image}
+                                />
+                            ))
+                        )}
                     </BusinessesData>
                 </Article>
                 <Article

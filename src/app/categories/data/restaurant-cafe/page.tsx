@@ -38,7 +38,7 @@ import { useMediaQuery } from 'react-responsive'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
-import ChartComponent from './ChartComponent' // Import the ChartComponent
+import ChartComponent from '../ChartComponent' // Import the ChartComponent
 
 interface JSONLengths {
     [key: string]: number
@@ -342,8 +342,7 @@ const Restaurant: React.FC = () => {
                                 jsonLengths={jsonLengths}
                                 style={{
                                     width: '100%',
-                                    height: '400px',
-                                    marginBottom: '20px',
+                                    height: '50vh',
                                 }}
                             />
                         ) : (
