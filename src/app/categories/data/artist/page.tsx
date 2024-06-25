@@ -340,7 +340,7 @@ const Artist: React.FC = () => {
                                 jsonLengths={jsonLengths}
                                 style={{
                                     width: '100%',
-                                    height: '50vh',
+                                    height: '45vh',
                                 }}
                             />
                         ) : (
