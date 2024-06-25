@@ -247,7 +247,7 @@ const Restaurant: React.FC = () => {
                                     }}
                                 >
                                     {jsonLengths[`${city.name}.json`] || 0}{' '}
-                                    Restaurant
+                                    Restaurants
                                 </span>
                             </OnClickCategoriesArea>
                         </StyledSwiperSlide>
