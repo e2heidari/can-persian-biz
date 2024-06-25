@@ -226,10 +226,7 @@ const Artist: React.FC = () => {
                                     )
                                 }
                             >
-                                <CategoryAmount>
-                                    {jsonLengths[`${category.name}.json`] || 0}{' '}
-                                    Artist
-                                </CategoryAmount>
+                                <CategoryAmount>{category.name}</CategoryAmount>
                                 <img
                                     src={`/${category.icon}`}
                                     alt={category.name}
@@ -247,7 +244,8 @@ const Artist: React.FC = () => {
                                         color: '#ffffff',
                                     }}
                                 >
-                                    {category.name}
+                                    {jsonLengths[`${category.name}.json`] || 0}{' '}
+                                    Artist
                                 </span>
                             </OnClickCategoriesArea>
                         </StyledSwiperSlide>

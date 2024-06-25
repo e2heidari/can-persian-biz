@@ -57,13 +57,13 @@ export const StyledSwiperSlide = styled(SwiperSlide)<{
     justify-content: flex-end;
 `
 export const CategoryAmount = styled.div`
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     color: black;
 
     @media (max-width: 768px) {
-        font-size: 18px;
+        font-size: 17px;
         font-weight: bold;
     }
 `

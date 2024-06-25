@@ -228,10 +228,7 @@ const Restaurant: React.FC = () => {
                                     )
                                 }
                             >
-                                <CategoryAmount>
-                                    {jsonLengths[`${city.name}.json`] || 0}{' '}
-                                    Restaurant
-                                </CategoryAmount>
+                                <CategoryAmount>{city.name}</CategoryAmount>
                                 <img
                                     src={`/${city.icon}`}
                                     alt={city.name}
@@ -249,7 +246,8 @@ const Restaurant: React.FC = () => {
                                         color: '#ffffff',
                                     }}
                                 >
-                                    {city.name}
+                                    {jsonLengths[`${city.name}.json`] || 0}{' '}
+                                    Restaurant
                                 </span>
                             </OnClickCategoriesArea>
                         </StyledSwiperSlide>
