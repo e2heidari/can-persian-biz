@@ -246,7 +246,7 @@ const Restaurant: React.FC = () => {
                                         color: '#ffffff',
                                     }}
                                 >
-                                    {jsonLengths[`${city.name}.json`] || 0}{' '}
+                                    {jsonLengths[`${city.name}.json`] || 0}
                                     Restaurants
                                 </span>
                             </OnClickCategoriesArea>
