@@ -186,7 +186,7 @@ interface LeftInstComponentProps {
     post: string
     followers: string
     following: string
-    active: number
+    active: boolean
     image: string
 }
 
@@ -207,7 +207,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
     const { addItem } = useStore()
 
     return (
-        <LeftInstComponentWrapper isActive={active === 0}>
+        <LeftInstComponentWrapper isActive={active === false}>
             <InstagramUrl key={id} href={`https://www.instagram.com/${id}/`}>
                 <StyledImage
                     src={getImageUrl(id)}

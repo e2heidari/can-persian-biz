@@ -30,7 +30,7 @@ const StyledImage = styled(Image)<StyledImageProps>`
 interface RightAdComponentProps {
     id: string
     title: string
-    active: number
+    active: boolean
 
     // post: string
     // followers: string
@@ -52,7 +52,7 @@ const RightAdComponent: React.FC<RightAdComponentProps> = ({
     console.log(name)
 
     return (
-        <AdCard isActive={active === 1}>
+        <AdCard isActive={active === true}>
             <StyledImage
                 src={getImageUrl(id)}
                 alt={title}

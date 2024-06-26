@@ -54,6 +54,7 @@ const Restaurant: React.FC = () => {
     const [sortAscending, setSortAscending] = useState<boolean>(false)
     const [sortDescending, setSortDescending] = useState<boolean>(false)
     const [jsonLengths, setJsonLengths] = useState<JSONLengths>({}) // State to hold the lengths of each JSON file
+    const [active, setActive] = useState<boolean>(false)
 
     useEffect(() => {
         // Fetch the lengths of each JSON file when the page loads
@@ -187,11 +188,10 @@ const Restaurant: React.FC = () => {
         })
     }
 
-    const [active, setActive] = useState(0)
-
-    const handleToggle = (index: number) => setActive(index)
+    const handleToggle = (index: boolean) => setActive(index)
 
     const isMobile = useMediaQuery({ maxWidth: 768 })
+    const visibility = active === false ? 'visible' : 'hidden'
 
     return (
         <CategoryPageContainer>
@@ -305,8 +305,8 @@ const Restaurant: React.FC = () => {
             </TopBox>
             <ContentSection>
                 <Article
-                    isActive={active === 1}
-                    onClick={() => handleToggle(0)}
+                    isActive={active === true}
+                    onClick={() => handleToggle(false)}
                 >
                     <BackgroundImage
                         src="/influencerBackground1.jpg"
@@ -318,11 +318,11 @@ const Restaurant: React.FC = () => {
                             src={`/${selectedCategoryIcon}`}
                             alt={selectedName}
                         />
-                        <CustomName isActive={active === 0}>
+                        <CustomName isActive={active === false}>
                             <span>{selectedName}</span>
                         </CustomName>
                         {iconsVisible && (
-                            <SortBox isActive={active === 0}>
+                            <SortBox isActive={active === false}>
                                 <SortDownIcon
                                     src={'/icons8-down-48.png'}
                                     alt="DownArrow"
@@ -339,6 +339,7 @@ const Restaurant: React.FC = () => {
                             <ChartComponent
                                 jsonLengths={jsonLengths}
                                 style={{
+                                    visibility: visibility,
                                     width: '100%',
                                     height: '45vh',
                                 }}
@@ -360,8 +361,8 @@ const Restaurant: React.FC = () => {
                     </BusinessesData>
                 </Article>
                 <Article
-                    isActive={active === 0}
-                    onClick={() => handleToggle(1)}
+                    isActive={active === false}
+                    onClick={() => handleToggle(true)}
                 >
                     <AdvertiseData>
                         <AdContainer>

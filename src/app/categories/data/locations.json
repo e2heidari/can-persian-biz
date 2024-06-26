@@ -1,7 +1,7 @@
 [
     {
         "icon": "icons8-address-96.png",
-        "slide": "marco-tjokro-grEHYPIdqZs-unsplash.jpg",
+        "slide": "luc-tribolet-FQRxB1SimfI-unsplash.jpg",
         "lat": 49.2827,
         "lng": -123.1207,
         "name": "Vancouver",
@@ -71,14 +71,7 @@
         "name": "New Westminster",
         "description": "A city east of Vancouver, known for its historic downtown and riverfront"
     },
-    {
-        "icon": "icons8-address-96.png",
-        "slide": "andrew-ridley-jR4Zf-riEjI-unsplash.jpg",
-        "lat": 49.3286,
-        "lng": -123.1602,
-        "name": "West Vancouver",
-        "description": "A city northwest of Vancouver, known for its upscale neighborhoods and waterfront properties"
-    },
+
     {
         "icon": "icons8-address-96.png",
         "slide": "mona-eendra-vC8wj_Kphak-unsplash.jpg",
@@ -86,5 +79,13 @@
         "lng": 122.6604,
         "name": "Langley",
         "description": ""
+    },
+    {
+        "icon": "icons8-address-96.png",
+        "slide": "andrew-ridley-jR4Zf-riEjI-unsplash.jpg",
+        "lat": 49.3286,
+        "lng": -123.1602,
+        "name": "West Vancouver",
+        "description": "A city northwest of Vancouver, known for its upscale neighborhoods and waterfront properties"
     }
 ]
