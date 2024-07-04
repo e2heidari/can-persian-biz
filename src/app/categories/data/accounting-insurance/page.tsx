@@ -48,6 +48,7 @@ const Accounting: React.FC = () => {
     const [iconsVisible, setIconsVisible] = useState<boolean>(false)
     const [sortAscending, setSortAscending] = useState<boolean>(false)
     const [sortDescending, setSortDescending] = useState<boolean>(false)
+    const [active, setActive] = useState<boolean>(false)
 
     const handleInstCategoryChange = (selectedOption: string, icon: string) => {
         const instCategoryName = selectedOption
@@ -149,11 +150,10 @@ const Accounting: React.FC = () => {
         })
     }
 
-    const [active, setActive] = useState(0)
-
-    const handleToggle = (index: number) => setActive(index)
+    const handleToggle = (index: boolean) => setActive(index)
 
     const isMobile = useMediaQuery({ maxWidth: 768 })
+    const visibility = active === false ? 'visible' : 'hidden'
 
     return (
         <CategoryPageContainer>
@@ -266,8 +266,8 @@ const Accounting: React.FC = () => {
             </TopBox>
             <ContentSection>
                 <Article
-                    isActive={active === 1}
-                    onClick={() => handleToggle(0)}
+                    isActive={active === true}
+                    onClick={() => handleToggle(false)}
                 >
                     <BackgroundImage
                         src="/influencerBackground1.jpg"
@@ -279,11 +279,11 @@ const Accounting: React.FC = () => {
                             src={`/${selectedCategoryIcon}`}
                             alt={selectedName}
                         />
-                        <CustomName isActive={active === 0}>
+                        <CustomName isActive={active === false}>
                             <span>{selectedName}</span>
                         </CustomName>
                         {iconsVisible && (
-                            <SortBox isActive={active === 0}>
+                            <SortBox isActive={active === false}>
                                 <SortDownIcon
                                     src={'/icons8-down-48.png'}
                                     alt="DownArrow"
@@ -311,8 +311,8 @@ const Accounting: React.FC = () => {
                     </BusinessesData>
                 </Article>
                 <Article
-                    isActive={active === 0}
-                    onClick={() => handleToggle(1)}
+                    isActive={active === false}
+                    onClick={() => handleToggle(true)}
                 >
                     <AdvertiseData>
                         <AdContainer>

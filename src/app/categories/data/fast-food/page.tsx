@@ -192,7 +192,6 @@ const FastFood: React.FC = () => {
     const handleToggle = (index: boolean) => setActive(index)
 
     const isMobile = useMediaQuery({ maxWidth: 768 })
-
     const visibility = active === false ? 'visible' : 'hidden'
 
     return (

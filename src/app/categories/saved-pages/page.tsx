@@ -1,9 +1,15 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Header from '../../../components/Header'
 import Image from 'next/image'
-import { useStore } from '../../context/StoreContext'
+import { useRecoilValue, useRecoilState } from 'recoil'
+import {
+    savedItemsState,
+    useRemoveItem,
+    savedActiveState,
+} from '../../context/recoilState'
+
 import RightAdComponent from '../data/RightAdComponent'
 import {
     BackgroundImage,
@@ -28,14 +34,8 @@ const PageContainer = styled.div`
 `
 const LeftInstComponentWrapper = styled.div<{ isActive: boolean }>`
     visibility: ${(props) => (props.isActive ? 'visible' : 'hidden')};
-
     display: grid;
-    background-color: rgba(
-        255,
-        255,
-        255,
-        0.4
-    ); /* Adjust the last value (alpha) to change the opacity */
+    background-color: rgba(255, 255, 255, 0.4);
     grid-template-columns: auto 25px 5px 60px 20px 60px 20px 60px 30px;
     grid-template-rows: 27px 27px;
     border-radius: 10px;
@@ -158,18 +158,19 @@ const FollowingBoxAmount = styled.p`
 `
 
 const SavedPages: React.FC = () => {
-    const { savedItems, removeItem } = useStore()
-    const [active, setActive] = useState(0)
+    const savedItems = useRecoilValue(savedItemsState)
+    const removeItem = useRemoveItem()
+    const [savedActive, setSavedActive] = useRecoilState(savedActiveState)
 
-    const handleToggle = (index: number) => setActive(index)
+    const handleToggle = (index: boolean) => setSavedActive(index)
 
     return (
         <PageContainer>
             <Header />
             <ContentSection>
                 <Article
-                    isActive={active === 1}
-                    onClick={() => handleToggle(0)}
+                    isActive={savedActive === true}
+                    onClick={() => handleToggle(false)}
                 >
                     <BackgroundImage
                         src="/influencerBackground1.jpg"
@@ -181,14 +182,14 @@ const SavedPages: React.FC = () => {
                             src={`/icons8-micro-sd-96.png`}
                             alt="SavedItems"
                         />
-                        <CustomName isActive={active === 0}>
+                        <CustomName isActive={savedActive === false}>
                             <span>Saved Pages</span>
                         </CustomName>
 
                         {savedItems.map((item, index) => (
                             <LeftInstComponentWrapper
                                 key={index}
-                                isActive={active === 0}
+                                isActive={savedActive === false}
                             >
                                 <InstagramUrl
                                     href={`https://www.instagram.com/${item.id}/`}
@@ -201,11 +202,12 @@ const SavedPages: React.FC = () => {
                                     />
                                     <AccountTitle>{item.title}</AccountTitle>
                                 </InstagramUrl>
-                                <DeleteIcon>
+                                <DeleteIcon
+                                    onClick={() => removeItem(() => item.id)}
+                                >
                                     <img
                                         src={'/icons8-cancel-96.png'}
                                         alt="SavedIcon"
-                                        onClick={() => removeItem(item.id)}
                                     />
                                 </DeleteIcon>
                                 <PostBoxName>post</PostBoxName>
@@ -223,8 +225,8 @@ const SavedPages: React.FC = () => {
                     </BusinessesData>
                 </Article>
                 <Article
-                    isActive={active === 0}
-                    onClick={() => handleToggle(1)}
+                    isActive={savedActive === false}
+                    onClick={() => handleToggle(true)}
                 >
                     <AdvertiseData>
                         <AdContainer>
@@ -255,12 +257,9 @@ const SavedPages: React.FC = () => {
                         </AdContainer>
                         {savedItems.map((item, index) => (
                             <RightAdComponent
-                                active={active}
+                                active={savedActive}
                                 id={item.id}
                                 title={item.title}
-                                // post={instMember.post}
-                                // followers={instMember.followers}
-                                // following={instMember.following}
                                 key={index}
                             />
                         ))}

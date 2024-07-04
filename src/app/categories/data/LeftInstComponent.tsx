@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image, { ImageProps } from 'next/image'
-import { useStore } from '../../context/StoreContext'
+import { useAddItem } from '../../context/recoilState'
 
 interface StyledImageProps extends ImageProps {
     imageUrl: string
@@ -9,14 +9,9 @@ interface StyledImageProps extends ImageProps {
 
 const LeftInstComponentWrapper = styled.div<{ isActive: boolean }>`
     visibility: ${(props) => (props.isActive ? 'visible' : 'hidden')};
-
+    padding: 5px;
     display: grid;
-    background-color: rgba(
-        255,
-        255,
-        255,
-        0.4
-    ); /* Adjust the last value (alpha) to change the opacity */
+    background-color: rgba(255, 255, 255, 0.4);
     grid-template-columns: auto 25px 10px 60px 15px 60px 20px 60px 30px;
     grid-template-rows: 27px 27px;
     border-radius: 10px;
@@ -25,6 +20,7 @@ const LeftInstComponentWrapper = styled.div<{ isActive: boolean }>`
     @media (max-width: 768px) {
         grid-template-columns: auto 20px 10px 40px 15px 55px 10px;
         grid-template-rows: 25px 25px;
+        padding: 4px;
     }
 `
 
@@ -64,6 +60,7 @@ const AccountTitle = styled.p`
     font-size: 16px;
     font-weight: bold;
 `
+
 const SavedIconText = styled.p`
     grid-column-start: 2;
     grid-column-end: 3;
@@ -73,6 +70,7 @@ const SavedIconText = styled.p`
     place-self: center;
     font-weight: bold;
 `
+
 const SavedIcon = styled.button`
     grid-column-start: 2;
     grid-column-end: 3;
@@ -87,7 +85,7 @@ const SavedIcon = styled.button`
     }
     cursor: pointer;
     transition-duration: 0.4s;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
 
     &:hover {
         transition-duration: 0.1s;
@@ -128,6 +126,7 @@ const PostBox = styled.p`
     font-size: 16px;
     place-self: center;
 `
+
 const PostBoxAmount = styled.p`
     grid-column-start: 4;
     grid-column-end: 5;
@@ -146,6 +145,7 @@ const FollowersBox = styled.p`
     font-size: 16px;
     place-self: center;
 `
+
 const FollowersBoxAmount = styled.p`
     grid-column-start: 6;
     grid-column-end: 7;
@@ -167,6 +167,7 @@ const FollowingBox = styled.p`
         display: none;
     }
 `
+
 const FollowingBoxAmount = styled.p`
     grid-column-start: 8;
     grid-column-end: 9;
@@ -199,12 +200,9 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
     active,
     image,
 }) => {
-    const getImageUrl = (id: string) => {
-        // Assuming images are stored in a folder named 'images'
-        return `/${id}.jpg` // Change the file extension as per your image format
-    }
+    const getImageUrl = (id: string) => `/${id}.jpg`
 
-    const { addItem } = useStore()
+    const addItem = useAddItem()
 
     return (
         <LeftInstComponentWrapper isActive={active === false}>
@@ -214,7 +212,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                     alt={title}
                     width={80}
                     height={80}
-                    imageUrl={getImageUrl(id)} // Pass imageUrl prop directly
+                    imageUrl={getImageUrl(id)}
                 />
                 <AccountTitle>{title}</AccountTitle>
             </InstagramUrl>
@@ -231,7 +229,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                             followers: `${followers}`,
                             following: `${following}`,
                             image: `${getImageUrl(id)}`,
-                        })
+                        } as any)
                     }
                 />
             </SavedIcon>
