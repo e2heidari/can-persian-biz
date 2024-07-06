@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image, { ImageProps } from 'next/image'
-import { useAddItem } from '../../context/recoilState'
+import { useAddItem } from './hooks/useCustomRecoilHooks'
 
 interface StyledImageProps extends ImageProps {
     imageUrl: string

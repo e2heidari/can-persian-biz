@@ -4,11 +4,8 @@ import styled from 'styled-components'
 import Header from '../../../components/Header'
 import Image from 'next/image'
 import { useRecoilValue, useRecoilState } from 'recoil'
-import {
-    savedItemsState,
-    useRemoveItem,
-    savedActiveState,
-} from '../../context/recoilState'
+import { savedItemsState, savedActiveState } from '../data/hooks/recoilState'
+import { useRemoveItem } from '../data/hooks/useCustomRecoilHooks'
 
 import RightAdComponent from '../data/RightAdComponent'
 import {

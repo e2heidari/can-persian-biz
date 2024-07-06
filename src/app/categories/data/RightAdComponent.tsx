@@ -49,7 +49,6 @@ const RightAdComponent: React.FC<RightAdComponentProps> = ({
         // Assuming images are stored in a folder named 'images'
         return `/${name}.jpg` // Change the file extension as per your image format
     }
-    console.log(name)
 
     return (
         <AdCard isActive={active === true}>

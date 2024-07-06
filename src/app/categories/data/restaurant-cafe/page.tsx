@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
 import {
@@ -7,15 +7,7 @@ import {
     ContentSection,
     Article,
     BusinessesData,
-    // NearMeButton,
-    // RightBox,
     TopBox,
-    // TextBox,
-    // DropdownWrapper,
-    // DropdownButton,
-    // DropdownContent,
-    // DropdownMenu,
-    // DropdownMenuItem,
     CategoryPageContainer,
     OnClickCategoriesArea,
     BusinessTypeIcon,
@@ -38,23 +30,32 @@ import { useMediaQuery } from 'react-responsive'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
-import ChartComponent from '../ChartComponent' // Import the ChartComponent
-
+import ChartComponent from '../ChartComponent'
+import {
+    useSelectedName,
+    useInstData,
+    useSelectedCategoryIcon,
+    useIconsVisible,
+    useSortAscending,
+    useSortDescending,
+    useJsonLengths,
+    useActive,
+} from '../hooks/useCustomRecoilHooks'
+import { Item } from '../hooks/recoilState'
 interface JSONLengths {
     [key: string]: number
 }
 
 const Restaurant: React.FC = () => {
-    const [selectedName, setSelectedName] = useState<string>('')
-    const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
-    const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>(
-        'icons8-instagram-96.png'
-    )
-    const [iconsVisible, setIconsVisible] = useState<boolean>(false)
-    const [sortAscending, setSortAscending] = useState<boolean>(false)
-    const [sortDescending, setSortDescending] = useState<boolean>(false)
-    const [jsonLengths, setJsonLengths] = useState<JSONLengths>({}) // State to hold the lengths of each JSON file
-    const [active, setActive] = useState<boolean>(false)
+    const [selectedName, setSelectedName] = useSelectedName()
+    const [selectedCategoryIcon, setSelectedCategoryIcon] =
+        useSelectedCategoryIcon()
+    const [iconsVisible, setIconsVisible] = useIconsVisible()
+    const [instData, setInstData] = useInstData()
+    const [sortAscending, setSortAscending] = useSortAscending()
+    const [sortDescending, setSortDescending] = useSortDescending()
+    const [jsonLengths, setJsonLengths] = useJsonLengths()
+    const [active, setActive] = useActive()
 
     useEffect(() => {
         // Fetch the lengths of each JSON file when the page loads
@@ -89,13 +90,6 @@ const Restaurant: React.FC = () => {
         fetchJSONLengths()
     }, [])
 
-    const handleInstCategoryChange = (selectedOption: string, icon: string) => {
-        const instCategoryName = selectedOption
-        setSelectedName(instCategoryName)
-        setSelectedCategoryIcon(icon)
-        setIconsVisible(true) // Show the icons when a category is selected
-    }
-
     useEffect(() => {
         const fetchData = async () => {
             if (!selectedName) {
@@ -113,6 +107,13 @@ const Restaurant: React.FC = () => {
         }
         fetchData()
     }, [selectedName])
+
+    const handleInstCategoryChange = (selectedOption: string, icon: string) => {
+        const instCategoryName = selectedOption
+        setSelectedName(instCategoryName)
+        setSelectedCategoryIcon(icon)
+        setIconsVisible(true)
+    }
 
     const handleDownSort = () => {
         setInstData([])
@@ -152,8 +153,9 @@ const Restaurant: React.FC = () => {
         fetchData()
     }, [sortDescending])
 
-    const sortAscendingData = (data: any[]) => {
-        return data.sort((a, b) => {
+    const sortAscendingData = (data: Item[]) => {
+        const dataCopy = [...data]
+        return dataCopy.sort((a, b) => {
             // Function to handle numbers followed by "K"
             const convertToNumber = (str: string) => {
                 if (str.includes('K')) {
@@ -170,8 +172,9 @@ const Restaurant: React.FC = () => {
         })
     }
 
-    const sortDescendingData = (data: any[]) => {
-        return data.sort((a, b) => {
+    const sortDescendingData = (data: Item[]) => {
+        const dataCopy = [...data]
+        return dataCopy.sort((a, b) => {
             // Function to handle numbers followed by "K"
             const convertToNumber = (str: string) => {
                 if (str.includes('K')) {
@@ -211,7 +214,7 @@ const Restaurant: React.FC = () => {
                         modifier: 1,
                         slideShadows: true,
                     }}
-                    pagination={{ clickable: true }} // Enable pagination with clickable bullets
+                    pagination={{ clickable: true }}
                     modules={[EffectCoverflow, Pagination]}
                 >
                     {locations.map((city, index) => (
@@ -253,55 +256,6 @@ const Restaurant: React.FC = () => {
                         </StyledSwiperSlide>
                     ))}
                 </Swiper>
-
-                {/* <TextBox>Choose your category</TextBox> */}
-                {/* <DropdownWrapper>
-                        <DropdownContent>
-                            <span
-                                className="material-symbols-outlined"
-                                style={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                }}
-                            >
-                                <img
-                                    src={`/${selectedCategoryIcon}`}
-                                    style={{
-                                        height: '38px',
-                                        width: '38px',
-                                        background: 'white',
-                                        borderRadius: '6px',
-                                        marginRight: '5px', // Add some margin between the image and text
-                                    }}
-                                />{' '}
-                                {selectedCategory}
-                            </span>
-
-                            <span className="material-symbols-outlined">
-                                <img src="/icons8-down-button-50.png" />
-                            </span>
-                        </DropdownContent>
-                        <DropdownButton type="button"></DropdownButton>
-                        <DropdownMenu>
-                            {instCat.map((category, index) => (
-                                <DropdownMenuItem
-                                    key={index}
-                                    onClick={() =>
-                                        handleInstCategoryChange(
-                                            category.name,
-                                            category.icon
-                                        )
-                                    }
-                                >
-                                    <span className="material-symbols-outlined">
-                                        <img src={`/${category.icon}`} />
-                                    </span>
-                                    <p>{category.name}</p>
-                                </DropdownMenuItem>
-                            ))}
-                        </DropdownMenu>
-                    </DropdownWrapper> */}
-                {/* <NearMeButton>Search</NearMeButton> */}
             </TopBox>
             <ContentSection>
                 <Article
@@ -396,9 +350,6 @@ const Restaurant: React.FC = () => {
                                 active={active}
                                 id={instMember.id}
                                 title={instMember.title}
-                                // post={instMember.post}
-                                // followers={instMember.followers}
-                                // following={instMember.following}
                                 key={index}
                             />
                         ))}
