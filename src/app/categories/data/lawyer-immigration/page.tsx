@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
 import {
@@ -7,15 +7,7 @@ import {
     ContentSection,
     Article,
     BusinessesData,
-    // NearMeButton,
-    // RightBox,
     TopBox,
-    // TextBox,
-    // DropdownWrapper,
-    // DropdownButton,
-    // DropdownContent,
-    // DropdownMenu,
-    // DropdownMenuItem,
     CategoryPageContainer,
     OnClickCategoriesArea,
     BusinessTypeIcon,
@@ -27,6 +19,7 @@ import {
     AdvertiseTypeIcon,
     AdvertiseData,
     AdContainer,
+    CategoryAmount,
 } from '../styles'
 import instCat from './instCat.json'
 import LeftInstComponent from '../LeftInstComponent'
@@ -37,25 +30,53 @@ import { useMediaQuery } from 'react-responsive'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
+import ChartComponent from '../ChartComponent'
+import {
+    useSelectedName,
+    useInstData,
+    useSelectedCategoryIcon,
+    useIconsVisible,
+    useSortAscending,
+    useSortDescending,
+    useJsonLengths,
+    useActive,
+} from '../hooks/useCustomRecoilHooks'
+import { sortAscendingData, sortDescendingData } from '../sortFunctions'
+interface JSONLengths {
+    [key: string]: number
+}
 
-const Lawyer: React.FC = () => {
-    const [selectedName, setSelectedName] = useState<string>('')
-    const [instData, setInstData] = useState<any[]>([]) // State to hold the data from the selected JSON file
-    // const [selectedCategory, setSelectedCategory] = useState<string>('Category') // Initial value is 'Settings'
-    const [selectedCategoryIcon, setSelectedCategoryIcon] = useState<string>(
-        'icons8-instagram-96.png'
-    )
-    const [iconsVisible, setIconsVisible] = useState<boolean>(false)
-    const [sortAscending, setSortAscending] = useState<boolean>(false)
-    const [sortDescending, setSortDescending] = useState<boolean>(false)
+const LawyerImmigration: React.FC = () => {
+    const [selectedName, setSelectedName] = useSelectedName()
+    const [selectedCategoryIcon, setSelectedCategoryIcon] =
+        useSelectedCategoryIcon()
+    const [iconsVisible, setIconsVisible] = useIconsVisible()
+    const [instData, setInstData] = useInstData()
+    const [sortAscending, setSortAscending] = useSortAscending()
+    const [sortDescending, setSortDescending] = useSortDescending()
+    const [jsonLengths, setJsonLengths] = useJsonLengths()
+    const [active, setActive] = useActive()
 
-    const handleInstCategoryChange = (selectedOption: string, icon: string) => {
-        const instCategoryName = selectedOption
-        setSelectedName(instCategoryName)
-        // setSelectedCategory(selectedOption)
-        setSelectedCategoryIcon(icon)
-        setIconsVisible(true) // Show the icons when a category is selected
-    }
+    useEffect(() => {
+        // Fetch the lengths of each JSON file when the page loads
+        const fetchJSONLengths = async () => {
+            const lengths: JSONLengths = {}
+            const jsonFiles = ['Creator.json', 'Dance.json', 'Fashion.json'] // Replace with your actual JSON file names
+
+            for (const file of jsonFiles) {
+                try {
+                    const response = await import(`./${file}`)
+                    lengths[file] = response.default.length
+                } catch (error) {
+                    console.error(`Error fetching length of ${file}:`, error)
+                    lengths[file] = 0
+                }
+            }
+            setJsonLengths(lengths)
+        }
+
+        fetchJSONLengths()
+    }, [])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -74,6 +95,13 @@ const Lawyer: React.FC = () => {
         }
         fetchData()
     }, [selectedName])
+
+    const handleInstCategoryChange = (selectedOption: string, icon: string) => {
+        const instCategoryName = selectedOption
+        setSelectedName(instCategoryName)
+        setSelectedCategoryIcon(icon)
+        setIconsVisible(true)
+    }
 
     const handleDownSort = () => {
         setInstData([])
@@ -113,47 +141,10 @@ const Lawyer: React.FC = () => {
         fetchData()
     }, [sortDescending])
 
-    const sortAscendingData = (data: any[]) => {
-        return data.sort((a, b) => {
-            // Function to handle numbers followed by "K"
-            const convertToNumber = (str: string) => {
-                if (str.includes('K')) {
-                    return parseFloat(str.replace('K', '')) * 1000
-                }
-                if (str.includes('M')) {
-                    return parseFloat(str.replace('M', '')) * 1000000
-                }
-                return parseFloat(str.replace(',', ''))
-            }
-            const followersA = convertToNumber(a.followers)
-            const followersB = convertToNumber(b.followers)
-            return followersB - followersA // Sort descending
-        })
-    }
-
-    const sortDescendingData = (data: any[]) => {
-        return data.sort((a, b) => {
-            // Function to handle numbers followed by "K"
-            const convertToNumber = (str: string) => {
-                if (str.includes('K')) {
-                    return parseFloat(str.replace('K', '')) * 1000
-                }
-                if (str.includes('M')) {
-                    return parseFloat(str.replace('M', '')) * 1000000
-                }
-                return parseFloat(str.replace(',', ''))
-            }
-            const followersA = convertToNumber(a.followers)
-            const followersB = convertToNumber(b.followers)
-            return followersA - followersB // Sort descending
-        })
-    }
-
-    const [active, setActive] = useState(0)
-
-    const handleToggle = (index: number) => setActive(index)
+    const handleToggle = (index: boolean) => setActive(index)
 
     const isMobile = useMediaQuery({ maxWidth: 768 })
+    const visibility = active === false ? 'visible' : 'hidden'
 
     return (
         <CategoryPageContainer>
@@ -166,7 +157,6 @@ const Lawyer: React.FC = () => {
                     spaceBetween={0}
                     effect="coverflow"
                     loop
-                    style={{}}
                     coverflowEffect={{
                         rotate: 50,
                         stretch: 0,
@@ -174,26 +164,27 @@ const Lawyer: React.FC = () => {
                         modifier: 1,
                         slideShadows: true,
                     }}
-                    pagination={{ clickable: true }} // Enable pagination with clickable bullets
+                    pagination={{ clickable: true }}
                     modules={[EffectCoverflow, Pagination]}
                 >
-                    {instCat.map((category, index) => (
+                    {instCat.map((city, index) => (
                         <StyledSwiperSlide
                             key={index}
                             isMobile={isMobile}
-                            pic={category.slide}
+                            pic={city.slide}
                         >
                             <OnClickCategoriesArea
                                 onClick={() =>
                                     handleInstCategoryChange(
-                                        category.name,
-                                        category.icon
+                                        city.name,
+                                        city.icon
                                     )
                                 }
                             >
+                                <CategoryAmount>{city.name}</CategoryAmount>
                                 <img
-                                    src={`/${category.icon}`}
-                                    alt={category.name}
+                                    src={`/${city.icon}`}
+                                    alt={city.name}
                                     style={{
                                         width: '25px',
                                         height: '25px',
@@ -208,66 +199,18 @@ const Lawyer: React.FC = () => {
                                         color: '#ffffff',
                                     }}
                                 >
-                                    {category.name}
+                                    {jsonLengths[`${city.name}.json`] || 0}
+                                    Restaurants
                                 </span>
                             </OnClickCategoriesArea>
                         </StyledSwiperSlide>
                     ))}
                 </Swiper>
-
-                {/* <TextBox>Choose your category</TextBox> */}
-                {/* <DropdownWrapper>
-                        <DropdownContent>
-                            <span
-                                className="material-symbols-outlined"
-                                style={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                }}
-                            >
-                                <img
-                                    src={`/${selectedCategoryIcon}`}
-                                    style={{
-                                        height: '38px',
-                                        width: '38px',
-                                        background: 'white',
-                                        borderRadius: '6px',
-                                        marginRight: '5px', // Add some margin between the image and text
-                                    }}
-                                />{' '}
-                                {selectedCategory}
-                            </span>
-
-                            <span className="material-symbols-outlined">
-                                <img src="/icons8-down-button-50.png" />
-                            </span>
-                        </DropdownContent>
-                        <DropdownButton type="button"></DropdownButton>
-                        <DropdownMenu>
-                            {instCat.map((category, index) => (
-                                <DropdownMenuItem
-                                    key={index}
-                                    onClick={() =>
-                                        handleInstCategoryChange(
-                                            category.name,
-                                            category.icon
-                                        )
-                                    }
-                                >
-                                    <span className="material-symbols-outlined">
-                                        <img src={`/${category.icon}`} />
-                                    </span>
-                                    <p>{category.name}</p>
-                                </DropdownMenuItem>
-                            ))}
-                        </DropdownMenu>
-                    </DropdownWrapper> */}
-                {/* <NearMeButton>Search</NearMeButton> */}
             </TopBox>
             <ContentSection>
                 <Article
-                    isActive={active === 1}
-                    onClick={() => handleToggle(0)}
+                    isActive={active === true}
+                    onClick={() => handleToggle(false)}
                 >
                     <BackgroundImage
                         src="/influencerBackground1.jpg"
@@ -279,11 +222,11 @@ const Lawyer: React.FC = () => {
                             src={`/${selectedCategoryIcon}`}
                             alt={selectedName}
                         />
-                        <CustomName isActive={active === 0}>
+                        <CustomName isActive={active === false}>
                             <span>{selectedName}</span>
                         </CustomName>
                         {iconsVisible && (
-                            <SortBox isActive={active === 0}>
+                            <SortBox isActive={active === false}>
                                 <SortDownIcon
                                     src={'/icons8-down-48.png'}
                                     alt="DownArrow"
@@ -296,23 +239,34 @@ const Lawyer: React.FC = () => {
                                 />
                             </SortBox>
                         )}
-                        {instData.map((instMember, index) => (
-                            <LeftInstComponent
-                                active={active}
-                                id={instMember.id}
-                                title={instMember.title}
-                                post={instMember.post}
-                                followers={instMember.followers}
-                                following={instMember.following}
-                                key={index}
-                                image={instMember.image}
+                        {!iconsVisible ? (
+                            <ChartComponent
+                                jsonLengths={jsonLengths}
+                                style={{
+                                    visibility: visibility,
+                                    width: '100%',
+                                    height: '45vh',
+                                }}
                             />
-                        ))}
+                        ) : (
+                            instData.map((instMember, index) => (
+                                <LeftInstComponent
+                                    active={active}
+                                    id={instMember.id}
+                                    title={instMember.title}
+                                    post={instMember.post}
+                                    followers={instMember.followers}
+                                    following={instMember.following}
+                                    key={index}
+                                    image={instMember.image}
+                                />
+                            ))
+                        )}
                     </BusinessesData>
                 </Article>
                 <Article
-                    isActive={active === 0}
-                    onClick={() => handleToggle(1)}
+                    isActive={active === false}
+                    onClick={() => handleToggle(true)}
                 >
                     <AdvertiseData>
                         <AdContainer>
@@ -346,9 +300,6 @@ const Lawyer: React.FC = () => {
                                 active={active}
                                 id={instMember.id}
                                 title={instMember.title}
-                                // post={instMember.post}
-                                // followers={instMember.followers}
-                                // following={instMember.following}
                                 key={index}
                             />
                         ))}
@@ -360,4 +311,4 @@ const Lawyer: React.FC = () => {
     )
 }
 
-export default Lawyer
+export default LawyerImmigration

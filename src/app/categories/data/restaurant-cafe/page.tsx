@@ -41,7 +41,7 @@ import {
     useJsonLengths,
     useActive,
 } from '../hooks/useCustomRecoilHooks'
-import { Item } from '../hooks/recoilState'
+import { sortAscendingData, sortDescendingData } from '../sortFunctions'
 interface JSONLengths {
     [key: string]: number
 }
@@ -152,44 +152,6 @@ const Restaurant: React.FC = () => {
 
         fetchData()
     }, [sortDescending])
-
-    const sortAscendingData = (data: Item[]) => {
-        const dataCopy = [...data]
-        return dataCopy.sort((a, b) => {
-            // Function to handle numbers followed by "K"
-            const convertToNumber = (str: string) => {
-                if (str.includes('K')) {
-                    return parseFloat(str.replace('K', '')) * 1000
-                }
-                if (str.includes('M')) {
-                    return parseFloat(str.replace('M', '')) * 1000000
-                }
-                return parseFloat(str.replace(',', ''))
-            }
-            const followersA = convertToNumber(a.followers)
-            const followersB = convertToNumber(b.followers)
-            return followersB - followersA // Sort descending
-        })
-    }
-
-    const sortDescendingData = (data: Item[]) => {
-        const dataCopy = [...data]
-        return dataCopy.sort((a, b) => {
-            // Function to handle numbers followed by "K"
-            const convertToNumber = (str: string) => {
-                if (str.includes('K')) {
-                    return parseFloat(str.replace('K', '')) * 1000
-                }
-                if (str.includes('M')) {
-                    return parseFloat(str.replace('M', '')) * 1000000
-                }
-                return parseFloat(str.replace(',', ''))
-            }
-            const followersA = convertToNumber(a.followers)
-            const followersB = convertToNumber(b.followers)
-            return followersA - followersB // Sort descending
-        })
-    }
 
     const handleToggle = (index: boolean) => setActive(index)
 
