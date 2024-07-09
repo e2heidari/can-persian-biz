@@ -61,7 +61,14 @@ const RenovationConstruction: React.FC = () => {
         // Fetch the lengths of each JSON file when the page loads
         const fetchJSONLengths = async () => {
             const lengths: JSONLengths = {}
-            const jsonFiles = ['Renovation.json', 'Dance.json', 'Fashion.json'] // Replace with your actual JSON file names
+            const jsonFiles = [
+                'Renovation.json',
+                'Cleaning.json',
+                'Electrician.json',
+                'Gas Fitter.json',
+                'Painter.json',
+                'Plumber.json',
+            ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
                 try {
