@@ -41,7 +41,7 @@
     },
     {
         "id": "kolbeh_restaurant",
-        "title": "🇨🇦Kolbeh Restaurant",
+        "title": "Kolbeh Restaurant",
         "bio": "731 Lonsdale Ave, North Vancouver, British Columbia",
         "post": "43",
         "followers": "7,030",
@@ -60,16 +60,8 @@
         "city": "North Vancouver"
     },
     {
-        "id": "Farsi Food",
-        "title": "غذای فارسی",
-        "post": "0",
-        "followers": "0",
-        "following": "0",
-        "city": "North Vancouver"
-    },
-    {
         "id": "akbarjoojeh_vancouver",
-        "title": "AkbarJoojeh Restaurant",
+        "title": "AkbarJoojeh",
         "post": "228",
         "followers": "29.3K",
         "following": "3",
@@ -106,7 +98,7 @@
     },
     {
         "id": "gilanehgrillhouse",
-        "title": "Gilaneh Grill | رستوران گيلانه",
+        "title": "رستوران گيلانه",
         "bio": "222 pemberton, North Vancouver, British Columbia V7m2r5",
         "post": "1,338",
         "followers": "15.7K",
