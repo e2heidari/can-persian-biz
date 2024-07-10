@@ -21,7 +21,7 @@ import {
     AdContainer,
     CategoryAmount,
 } from '../styles'
-import instCat from './instCat.json'
+import locations from '../locations.json'
 import LeftInstComponent from '../LeftInstComponent'
 import RightAdComponent from '../RightAdComponent'
 import { Swiper } from 'swiper/react'
@@ -46,7 +46,7 @@ interface JSONLengths {
     [key: string]: number
 }
 
-const RealEstate: React.FC = () => {
+const CafeBakery: React.FC = () => {
     const [selectedName, setSelectedName] = useSelectedName()
     const [selectedCategoryIcon, setSelectedCategoryIcon] =
         useSelectedCategoryIcon()
@@ -62,10 +62,18 @@ const RealEstate: React.FC = () => {
         const fetchJSONLengths = async () => {
             const lengths: JSONLengths = {}
             const jsonFiles = [
-                'Mortgage Broker.json',
-                'Realtor.json',
-                'Rental.json',
-            ] // Replace with your actual JSON file names
+                'Vancouver.json',
+                'Burnaby.json',
+                'Coquitlam.json',
+                'Langley.json',
+                'New Westminster.json',
+                'North Vancouver.json',
+                'Port Coquitlam.json',
+                'Port Moody.json',
+                'Richmond.json',
+                'Surrey.json',
+                'West Vancouver.json',
+            ]
 
             for (const file of jsonFiles) {
                 try {
@@ -171,7 +179,7 @@ const RealEstate: React.FC = () => {
                     pagination={{ clickable: true }}
                     modules={[EffectCoverflow, Pagination]}
                 >
-                    {instCat.map((city, index) => (
+                    {locations.map((city, index) => (
                         <StyledSwiperSlide
                             key={index}
                             isMobile={isMobile}
@@ -204,7 +212,7 @@ const RealEstate: React.FC = () => {
                                     }}
                                 >
                                     {jsonLengths[`${city.name}.json`] || 0}
-                                    Agent
+                                    Cafe & Bakery
                                 </span>
                             </OnClickCategoriesArea>
                         </StyledSwiperSlide>
@@ -315,4 +323,4 @@ const RealEstate: React.FC = () => {
     )
 }
 
-export default RealEstate
+export default CafeBakery

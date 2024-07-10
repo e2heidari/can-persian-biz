@@ -140,8 +140,9 @@ const StyledButton = styled(Button)`
 
 const categoriesData = [
     { icon: 'category-icon1.png', text: 'Fast Food' },
-    { icon: 'category-icon2.png', text: 'Restaurant & Cafe' },
+    { icon: 'category-icon2.png', text: 'Restaurant' },
     { icon: 'category-icon10.png', text: 'Homemade Food' },
+    { icon: 'icons8-cake-96.png', text: 'Cafe & Bakery' },
     { icon: 'category-icon7.png', text: 'Hookah Lounge' },
 
     { icon: 'category-icon3.png', text: 'Real Estate' },
@@ -166,9 +167,8 @@ const categoriesData = [
     { icon: 'category-icon22.png', text: 'Pets & Animals' },
     { icon: 'category-icon13.png', text: 'Cargo & Post' },
 
-    { icon: 'icons8-friendship-96.png', text: 'Groups & Hike' },
     { icon: 'icons8-channel-96.png', text: 'Channel & Magazine' },
-    { icon: 'icons8-tourism-96.png', text: 'Entertainment & Attraction' },
+    { icon: 'icons8-tourism-96.png', text: 'Entertainment & Holiday' },
     { icon: 'category-icon20.png', text: 'Artist' },
 ]
 

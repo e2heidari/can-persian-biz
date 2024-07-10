@@ -117,36 +117,3 @@ export const sortOrderState = atom<'asc' | 'desc' | null>({
     key: 'sortOrderState',
     default: null,
 })
-
-// Selector to sort the data based on sort order
-export const sortedInstDataState = selector({
-    key: 'sortedInstDataState',
-    get: ({ get }) => {
-        const sortOrder = get(sortOrderState)
-        const instData = get(instDataState)
-
-        const convertToNumber = (str: string) => {
-            if (str.includes('K')) {
-                return parseFloat(str.replace('K', '')) * 1000
-            }
-            if (str.includes('M')) {
-                return parseFloat(str.replace('M', '')) * 1000000
-            }
-            return parseFloat(str.replace(',', ''))
-        }
-
-        if (sortOrder === 'asc') {
-            return [...instData].sort(
-                (a, b) =>
-                    convertToNumber(a.followers) - convertToNumber(b.followers)
-            )
-        }
-        if (sortOrder === 'desc') {
-            return [...instData].sort(
-                (a, b) =>
-                    convertToNumber(b.followers) - convertToNumber(a.followers)
-            )
-        }
-        return instData
-    },
-})

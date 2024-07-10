@@ -208,7 +208,7 @@ const Artist: React.FC = () => {
                                     }}
                                 >
                                     {jsonLengths[`${city.name}.json`] || 0}
-                                    Restaurants
+                                    people
                                 </span>
                             </OnClickCategoriesArea>
                         </StyledSwiperSlide>
