@@ -61,10 +61,7 @@ const Entertainment: React.FC = () => {
         // Fetch the lengths of each JSON file when the page loads
         const fetchJSONLengths = async () => {
             const lengths: JSONLengths = {}
-            const jsonFiles = [
-                'Entertainment & Attraction.json',
-                'Vancouver Groups.json',
-            ] // Replace with your actual JSON file names
+            const jsonFiles = ['Group & Hike.json', 'Discover Vancouver.json'] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
                 try {
