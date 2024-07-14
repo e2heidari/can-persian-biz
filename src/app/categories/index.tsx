@@ -151,11 +151,11 @@ const categoriesData = [
     { icon: 'icons8-shopaholic-96.png', text: 'Shopping & Markets' },
     { icon: 'category-icon6.png', text: 'Beauty Salon' },
     { icon: 'icons8-spa-care-96.png', text: 'Health & Beauty' },
-    { icon: 'category-icon17.png', text: 'Sports & Trainers' },
+    { icon: 'category-icon17.png', text: 'Teacher & Trainers' },
 
     { icon: 'category-icon8.png', text: 'Dentist' },
     { icon: 'category-icon9.png', text: 'Pharmacy' },
-    { icon: 'icons8-physical-therapy-96.png', text: 'Therapist' },
+    { icon: 'icons8-physical-therapy-96.png', text: 'Medical & Health' },
 
     { icon: 'category-icon12.png', text: 'Lawyer & Immigration' },
     { icon: 'category-icon4.png', text: 'Accounting & Insurance' },
