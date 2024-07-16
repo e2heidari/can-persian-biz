@@ -1,7 +1,7 @@
 [
     {
         "icon": "icons8-shop-96.png",
-        "name": "Market",
+        "name": "Clothing",
         "des": "",
         "slide": "https://i.postimg.cc/66F8J9tr/hakon-sataoen-qyfco1nf-Mtg-unsplash.jpg"
     },
@@ -25,13 +25,7 @@
     },
     {
         "icon": "icons8-shop-location-96.png",
-        "name": "Shop",
-        "des": "",
-        "slide": "https://i.postimg.cc/JhK81QJw/marcus-p-o-UBjd22g-F6w-unsplash.jpg"
-    },
-    {
-        "icon": "icons8-birthday-cake-96.png",
-        "name": "Bakery",
+        "name": "Art",
         "des": "",
         "slide": "https://i.postimg.cc/JhK81QJw/marcus-p-o-UBjd22g-F6w-unsplash.jpg"
     }

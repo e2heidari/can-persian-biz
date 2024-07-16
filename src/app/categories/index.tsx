@@ -141,14 +141,15 @@ const StyledButton = styled(Button)`
 const categoriesData = [
     { icon: 'category-icon1.png', text: 'Fast Food' },
     { icon: 'category-icon2.png', text: 'Restaurant' },
-    { icon: 'category-icon10.png', text: 'Homemade Food' },
+    { icon: 'category-icon10.png', text: 'Catering' },
     { icon: 'icons8-cake-96.png', text: 'Cafe & Bakery' },
     { icon: 'category-icon7.png', text: 'Hookah Lounge' },
 
     { icon: 'category-icon3.png', text: 'Real Estate' },
     { icon: 'category-icon16.png', text: 'Renovation & Construction' },
 
-    { icon: 'icons8-shopaholic-96.png', text: 'Shopping & Markets' },
+    { icon: 'icons8-shopaholic-96.png', text: 'Shopping' },
+    { icon: 'icons8-market-96.png', text: 'Market' },
     { icon: 'category-icon6.png', text: 'Beauty Salon' },
     { icon: 'icons8-spa-care-96.png', text: 'Health & Beauty' },
     { icon: 'category-icon17.png', text: 'Teacher & Trainers' },
