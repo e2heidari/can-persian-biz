@@ -161,6 +161,7 @@ const categoriesData = [
     { icon: 'category-icon12.png', text: 'Lawyer & Immigration' },
     { icon: 'category-icon4.png', text: 'Accounting & Insurance' },
     { icon: 'category-icon23.png', text: 'Job & Business' },
+    { icon: 'icons8-exchange-96.png', text: 'Exchange' },
 
     { icon: 'category-icon14.png', text: 'Designer & EventPlanner' },
     { icon: 'category-icon11.png', text: 'Daycare & Education' },
