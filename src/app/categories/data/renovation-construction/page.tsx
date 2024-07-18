@@ -68,6 +68,7 @@ const RenovationConstruction: React.FC = () => {
                 'Gas Fitter.json',
                 'Painter.json',
                 'Plumber.json',
+                'Landscaping.json',
             ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {

@@ -61,7 +61,12 @@ const SportTrainers: React.FC = () => {
         // Fetch the lengths of each JSON file when the page loads
         const fetchJSONLengths = async () => {
             const lengths: JSONLengths = {}
-            const jsonFiles = ['English Teacher.json', 'Sport Trainer.json'] // Replace with your actual JSON file names
+            const jsonFiles = [
+                'English Teacher.json',
+                'Sport Trainer.json',
+                'IT Teacher.json',
+                'Art Teacher.json',
+            ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
                 try {

@@ -62,11 +62,11 @@ const ShoppingMarkets: React.FC = () => {
         const fetchJSONLengths = async () => {
             const lengths: JSONLengths = {}
             const jsonFiles = [
+                'Art.json',
                 'Car & Dealership.json',
+                'Clothing.json',
                 'Jewelry.json',
-                'Market.json',
                 'Online shopping.json',
-                'Shop.json',
             ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {

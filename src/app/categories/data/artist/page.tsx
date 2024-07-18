@@ -62,6 +62,7 @@ const Artist: React.FC = () => {
         const fetchJSONLengths = async () => {
             const lengths: JSONLengths = {}
             const jsonFiles = [
+                'Art.json',
                 'Creator.json',
                 'Dance.json',
                 'Fashion.json',
