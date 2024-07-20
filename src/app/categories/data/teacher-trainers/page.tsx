@@ -66,6 +66,7 @@ const SportTrainers: React.FC = () => {
                 'Sport Trainer.json',
                 'IT Teacher.json',
                 'Art Teacher.json',
+                'Music Teacher.json',
             ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
