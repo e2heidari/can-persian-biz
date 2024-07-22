@@ -60,7 +60,7 @@ export const CategoryAmount = styled.div`
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    color: black;
+    color: white;
 
     @media (max-width: 768px) {
         font-size: 18px;
