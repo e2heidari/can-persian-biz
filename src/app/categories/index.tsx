@@ -158,7 +158,7 @@ const categoriesData = [
     { icon: 'category-icon9.png', text: 'Pharmacy' },
     { icon: 'icons8-physical-therapy-96.png', text: 'Medical & Health' },
 
-    { icon: 'category-icon12.png', text: 'Lawyer & Immigration' },
+    { icon: 'category-icon12.png', text: 'Immigration & Lawyer' },
     { icon: 'category-icon4.png', text: 'Accounting & Insurance' },
     { icon: 'category-icon23.png', text: 'Job & Business' },
     { icon: 'icons8-exchange-96.png', text: 'Exchange' },
@@ -166,7 +166,7 @@ const categoriesData = [
     { icon: 'category-icon14.png', text: 'Designer & EventPlanner' },
     { icon: 'category-icon11.png', text: 'Daycare & Education' },
     { icon: 'category-icon15.png', text: 'Driving School' },
-    { icon: 'category-icon22.png', text: 'Pets & Animals' },
+    { icon: 'category-icon22.png', text: 'Pets' },
     { icon: 'category-icon13.png', text: 'Cargo & Post' },
 
     { icon: 'icons8-channel-96.png', text: 'Channel & Magazine' },
