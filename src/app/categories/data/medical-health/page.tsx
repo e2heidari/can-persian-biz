@@ -66,6 +66,7 @@ const Therapist: React.FC = () => {
                 'Chiropractor.json',
                 'Mental Health.json',
                 'Psychotherapist.json',
+                'Family Therapy.json',
             ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
