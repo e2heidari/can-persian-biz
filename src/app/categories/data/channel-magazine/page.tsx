@@ -65,6 +65,7 @@ const ChannelMagazine: React.FC = () => {
                 'Channel.json',
                 'Magazine.json',
                 'Event Channel.json',
+                'Radio.json',
             ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
