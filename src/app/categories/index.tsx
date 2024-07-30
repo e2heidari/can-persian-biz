@@ -67,11 +67,11 @@ const CategoriesContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin: 30px auto;
-    padding: 0 12%;
+    padding: 0 12vw;
     justify-content: center; /* Center the boxes horizontally */
     align-items: center;
     @media (max-width: 1024px) {
-        padding: 0 12%;
+        padding: 0 5vw;
     }
 
     @media (max-width: 768px) {
@@ -89,7 +89,7 @@ const CategoriesContainerMobile = styled.div`
         align-items: center;
         height: auto;
         margin: 30px auto;
-        padding: 0 5%;
+        padding: 0 2vw;
     }
 `
 // const CategoriesIcons = styled.div`
