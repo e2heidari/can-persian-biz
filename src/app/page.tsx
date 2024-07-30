@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import styled from 'styled-components'
-import Header from '../components/Header'
 import SearchBox from '../components/section1/SearchBox'
 import Footer from '../components/Footer'
 import { Element } from 'react-scroll'
@@ -16,7 +15,6 @@ const MainContainer = styled.div`
 const IndexPage = () => {
     return (
         <MainContainer>
-            <Header />
             <Element name="section1">
                 <SearchBox />
             </Element>

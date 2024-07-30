@@ -33,7 +33,7 @@ const Footer = () => {
     return (
         <FooterContainer>
             <FooterText>
-                © {new Date().getFullYear()} PerNet All rights reserved. |{' '}
+                © {new Date().getFullYear()} Forum All rights reserved. |{' '}
                 <FooterLink href="/privacy-policy">Privacy Policy</FooterLink> |{' '}
                 <FooterLink href="/terms-of-service">
                     Terms of Service
