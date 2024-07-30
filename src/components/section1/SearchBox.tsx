@@ -33,7 +33,7 @@ const StickyHeader = styled.div<{ isScrolled: boolean }>`
     align-items: center;
     padding: 2px 20px;
     background-color: ${({ isScrolled }) =>
-        isScrolled ? 'white' : 'transparent'};
+        isScrolled ? 'rgba(158, 158, 158, 0.5)' : 'transparent'};
     transition: background-color 0.3s ease-in-out;
     z-index: 10;
     box-shadow: ${({ isScrolled }) =>
