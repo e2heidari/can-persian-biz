@@ -61,7 +61,11 @@ const LawyerImmigration: React.FC = () => {
         // Fetch the lengths of each JSON file when the page loads
         const fetchJSONLengths = async () => {
             const lengths: JSONLengths = {}
-            const jsonFiles = ['Immigration.json', 'Lawyer.json'] // Replace with your actual JSON file names
+            const jsonFiles = [
+                'Immigration.json',
+                'Lawyer.json',
+                'Notary Public.json',
+            ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
                 try {

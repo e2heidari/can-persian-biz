@@ -22,5 +22,11 @@
         "name": "Radio",
         "des": "",
         "slide": "rachel-coyne-U7HLzMO4SIY-unsplash.jpg"
+    },
+    {
+        "icon": "icons8-interior-design-96.png",
+        "name": "Book",
+        "des": "",
+        "slide": "rachel-coyne-U7HLzMO4SIY-unsplash.jpg"
     }
 ]
