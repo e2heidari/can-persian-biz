@@ -61,7 +61,11 @@ const Designer: React.FC = () => {
         // Fetch the lengths of each JSON file when the page loads
         const fetchJSONLengths = async () => {
             const lengths: JSONLengths = {}
-            const jsonFiles = ['Event Planner.json', 'Interior Designer.json'] // Replace with your actual JSON file names
+            const jsonFiles = [
+                'Event Planner.json',
+                'Interior Designer.json',
+                'Interior Decoration.json',
+            ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
                 try {
