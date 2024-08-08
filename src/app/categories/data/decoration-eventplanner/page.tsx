@@ -46,7 +46,7 @@ interface JSONLengths {
     [key: string]: number
 }
 
-const Designer: React.FC = () => {
+const Decoration: React.FC = () => {
     const [selectedName, setSelectedName] = useSelectedName()
     const [selectedCategoryIcon, setSelectedCategoryIcon] =
         useSelectedCategoryIcon()
@@ -63,8 +63,8 @@ const Designer: React.FC = () => {
             const lengths: JSONLengths = {}
             const jsonFiles = [
                 'Event Planner.json',
-                'Interior Designer.json',
-                'Interior Decoration.json',
+                'Florist.json',
+                'Rental Decoration.json',
             ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
@@ -315,4 +315,4 @@ const Designer: React.FC = () => {
     )
 }
 
-export default Designer
+export default Decoration
