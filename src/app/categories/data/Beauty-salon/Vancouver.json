@@ -1,5 +1,11 @@
 [
     {
+        "id": "lafemme.bcbeauty",
+        "title": "La Femme Beauty & Academy",
+        "post": "238",
+        "followers": "266"
+    },
+    {
         "id": "vancouvhair",
         "title": "Maryam Azar",
         "bio": "Your daily dose of hair 🤎\nBlondes, Balayage, Extensions\n\n431 Davie St, Vancouver, BC V6B 2G2📍Yaletown\nDM me to book your appointment 604-3075112",
@@ -46,5 +52,11 @@
         "title": "Vancouver Hair Extensions",
         "post": "664",
         "followers": "10K"
+    },
+    {
+        "id": "axishair",
+        "title": "Vancouver Hair Salon",
+        "post": "2,182",
+        "followers": "20.3K"
     }
 ]

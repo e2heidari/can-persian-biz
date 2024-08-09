@@ -68,6 +68,7 @@ const ShoppingMarkets: React.FC = () => {
                 'Jewelry.json',
                 'Online shopping.json',
                 'Decoration.json',
+                'Gift Shop.json',
             ] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
