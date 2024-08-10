@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import styled from 'styled-components'
-import Header from '../../../components/Header'
+import Header from './../../components/Header'
 import Image from 'next/image'
 import { useRecoilValue, useRecoilState } from 'recoil'
 import { savedItemsState, savedActiveState } from '../data/hooks/recoilState'
