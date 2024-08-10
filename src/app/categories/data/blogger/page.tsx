@@ -46,7 +46,7 @@ interface JSONLengths {
     [key: string]: number
 }
 
-const RenovationConstruction: React.FC = () => {
+const Blogger: React.FC = () => {
     const [selectedName, setSelectedName] = useSelectedName()
     const [selectedCategoryIcon, setSelectedCategoryIcon] =
         useSelectedCategoryIcon()
@@ -61,19 +61,7 @@ const RenovationConstruction: React.FC = () => {
         // Fetch the lengths of each JSON file when the page loads
         const fetchJSONLengths = async () => {
             const lengths: JSONLengths = {}
-            const jsonFiles = [
-                'Renovation.json',
-                'Cleaning.json',
-                'Electrician.json',
-                'Gas Fitter.json',
-                'Painter.json',
-                'Plumber.json',
-                'Landscaping.json',
-                'Glass & Mirror.json',
-                'Interior Designer.json',
-                'Metal Fabricator.json',
-                'Cabinet & Countertop.json',
-            ] // Replace with your actual JSON file names
+            const jsonFiles = ['Creator.json', 'Dance.json'] // Replace with your actual JSON file names
 
             for (const file of jsonFiles) {
                 try {
@@ -323,4 +311,4 @@ const RenovationConstruction: React.FC = () => {
     )
 }
 
-export default RenovationConstruction
+export default Blogger

@@ -163,7 +163,7 @@ const categoriesData = [
     { icon: 'category-icon23.png', text: 'Job & Business' },
     { icon: 'icons8-exchange-96.png', text: 'Exchange' },
 
-    { icon: 'category-icon14.png', text: 'Decoration & EventPlanner' },
+    { icon: 'icons8-festival-96.png', text: 'Decoration & EventPlanner' },
     { icon: 'category-icon11.png', text: 'Daycare & Education' },
     { icon: 'category-icon15.png', text: 'Driving School' },
     { icon: 'category-icon22.png', text: 'Pets' },
@@ -172,6 +172,7 @@ const categoriesData = [
     { icon: 'icons8-channel-96.png', text: 'Channel & Magazine' },
     { icon: 'icons8-tourism-96.png', text: 'Entertainment & Holiday' },
     { icon: 'category-icon20.png', text: 'Artist' },
+    { icon: 'icons8-blogger-96.png', text: 'Blogger' },
 ]
 
 const Categories: React.FC = () => {
