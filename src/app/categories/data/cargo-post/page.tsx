@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect } from 'react'
+import Image from 'next/image'
 import Header from './../../../components/Header'
 import Footer from './../../../components/Footer'
 import {
@@ -182,12 +183,12 @@ const CargoPost: React.FC = () => {
                                 }
                             >
                                 <CategoryAmount>{city.name}</CategoryAmount>
-                                <img
+                                <Image
                                     src={`/${city.icon}`}
                                     alt={city.name}
+                                    width={25}
+                                    height={25}
                                     style={{
-                                        width: '25px',
-                                        height: '25px',
                                         background: '#060606',
                                         borderRadius: '6px',
                                     }}
