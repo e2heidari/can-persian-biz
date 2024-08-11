@@ -217,7 +217,7 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                 <AccountTitle>{title}</AccountTitle>
             </InstagramUrl>
             <SavedIcon>
-                <img
+                <Image
                     src={'/icons8-save-48.png'}
                     alt="SavedIcon"
                     onClick={() =>
