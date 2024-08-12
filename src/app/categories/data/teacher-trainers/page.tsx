@@ -84,7 +84,7 @@ const SportTrainers: React.FC = () => {
         }
 
         fetchJSONLengths()
-    }, [])
+    }, [setJsonLengths])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -102,7 +102,7 @@ const SportTrainers: React.FC = () => {
             }
         }
         fetchData()
-    }, [selectedName])
+    }, [selectedName, setInstData])
 
     const handleInstCategoryChange = (selectedOption: string, icon: string) => {
         const instCategoryName = selectedOption
@@ -128,7 +128,7 @@ const SportTrainers: React.FC = () => {
         }
 
         fetchData()
-    }, [sortAscending])
+    }, [sortAscending, selectedName, setInstData])
 
     const handleUpSort = () => {
         setInstData([])
@@ -147,7 +147,7 @@ const SportTrainers: React.FC = () => {
         }
 
         fetchData()
-    }, [sortDescending])
+    }, [sortDescending, selectedName, setInstData])
 
     const handleToggle = (index: boolean) => setActive(index)
 

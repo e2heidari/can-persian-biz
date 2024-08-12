@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import { Element } from 'react-scroll'
 
 const BulletinBoxContainer = styled.section`
     width: 100%;
@@ -88,29 +89,31 @@ const BulletinBoxComponent: React.FC = () => {
     }, [])
 
     return (
-        <BulletinBoxContainer>
-            <BulletinBox>
-                <BulletinIconContainer>
-                    <BulletinIcon src="/bulletin-icon1.png" alt="Icon 1" />
-                </BulletinIconContainer>
-                <BulletinText>MANY WAYS</BulletinText>
-                <BulletinBottomBox>TO GROW YOUR BUSINESS</BulletinBottomBox>
-            </BulletinBox>
-            <BulletinBox>
-                <BulletinIconContainer>
-                    <BulletinIcon src="/bulletin-icon2.png" alt="Icon 2" />
-                </BulletinIconContainer>
-                <BulletinText>200 THOUSAND</BulletinText>
-                <BulletinBottomBox>CONSUMERS</BulletinBottomBox>
-            </BulletinBox>
-            <BulletinBox>
-                <BulletinIconContainer>
-                    <BulletinIcon src="/bulletin-icon3.png" alt="Icon 3" />
-                </BulletinIconContainer>
-                <BulletinText>4 THOUSAND</BulletinText>
-                <BulletinBottomBox>MERCHANTS</BulletinBottomBox>
-            </BulletinBox>
-        </BulletinBoxContainer>
+        <Element name="section3">
+            <BulletinBoxContainer>
+                <BulletinBox>
+                    <BulletinIconContainer>
+                        <BulletinIcon src="/bulletin-icon1.png" alt="Icon 1" />
+                    </BulletinIconContainer>
+                    <BulletinText>MANY WAYS</BulletinText>
+                    <BulletinBottomBox>TO GROW YOUR BUSINESS</BulletinBottomBox>
+                </BulletinBox>
+                <BulletinBox>
+                    <BulletinIconContainer>
+                        <BulletinIcon src="/bulletin-icon2.png" alt="Icon 2" />
+                    </BulletinIconContainer>
+                    <BulletinText>200 THOUSAND</BulletinText>
+                    <BulletinBottomBox>CONSUMERS</BulletinBottomBox>
+                </BulletinBox>
+                <BulletinBox>
+                    <BulletinIconContainer>
+                        <BulletinIcon src="/bulletin-icon3.png" alt="Icon 3" />
+                    </BulletinIconContainer>
+                    <BulletinText>4 THOUSAND</BulletinText>
+                    <BulletinBottomBox>MERCHANTS</BulletinBottomBox>
+                </BulletinBox>
+            </BulletinBoxContainer>
+        </Element>
     )
 }
 

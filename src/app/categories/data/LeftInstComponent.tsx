@@ -220,6 +220,8 @@ const LeftInstComponent: React.FC<LeftInstComponentProps> = ({
                 <Image
                     src={'/icons8-save-48.png'}
                     alt="SavedIcon"
+                    height={48}
+                    width={48}
                     onClick={() =>
                         addItem({
                             url: `https://www.instagram.com/${id}/`,

@@ -89,7 +89,7 @@ const HookahLounge: React.FC = () => {
         }
 
         fetchJSONLengths()
-    }, [])
+    }, [setJsonLengths])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -107,7 +107,7 @@ const HookahLounge: React.FC = () => {
             }
         }
         fetchData()
-    }, [selectedName])
+    }, [selectedName, setInstData])
 
     const handleInstCategoryChange = (selectedOption: string, icon: string) => {
         const instCategoryName = selectedOption

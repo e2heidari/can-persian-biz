@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Button } from 'antd'
 import Category from './Category'
 import Link from 'next/link'
+import { Element } from 'react-scroll'
 
 const BackgroundContainer = styled.div`
     background-color: white;
@@ -47,6 +48,7 @@ const TextSavedItems = styled.div`
         font-size: 13px;
         font-weight: bold;
     }
+    color: black;
 `
 
 const TextTopBox = styled.div`
@@ -186,29 +188,57 @@ const Categories: React.FC = () => {
     }
 
     return (
-        <BackgroundContainer showAllIcons={showAllIcons}>
-            <CategoriesBoxContainer>
-                <Link href="/categories/saved-pages">
-                    <SavedItems>
-                        <SavedIcons
-                            src={'/icons8-save-all-96.png'}
-                            alt="SavedIcons"
-                        />
-                        <TextSavedItems>Saved Items</TextSavedItems>
-                    </SavedItems>
-                </Link>
+        <Element name="section2">
+            <BackgroundContainer showAllIcons={showAllIcons}>
+                <CategoriesBoxContainer>
+                    <Link href="/categories/saved-pages">
+                        <SavedItems>
+                            <SavedIcons
+                                src={'/icons8-save-all-96.png'}
+                                alt="SavedIcons"
+                            />
+                            <TextSavedItems>Saved Items</TextSavedItems>
+                        </SavedItems>
+                    </Link>
 
-                <TextTopBox>Categories</TextTopBox>
-                <CategoriesContainerMobile>
-                    {categoriesData
-                        .slice(0, showAllIcons ? categoriesData.length : 6)
-                        .map((data, index) => (
+                    <TextTopBox>Categories</TextTopBox>
+                    <CategoriesContainerMobile>
+                        {categoriesData
+                            .slice(0, showAllIcons ? categoriesData.length : 6)
+                            .map((data, index) => (
+                                <Link
+                                    key={data.text}
+                                    href={`/categories/data/${data.text
+                                        .toLowerCase()
+                                        .replaceAll(' &', '')
+                                        .replaceAll(' ', '-')}`}
+                                >
+                                    <Category
+                                        key={index}
+                                        index={index}
+                                        icon={data.icon}
+                                        text={data.text}
+                                    />
+                                </Link>
+                            ))}
+                    </CategoriesContainerMobile>
+                    <MoreButtonContainer>
+                        <StyledButton
+                            type="primary"
+                            size="large"
+                            onClick={handleMoreClick}
+                        >
+                            {moreButtonText}
+                        </StyledButton>
+                    </MoreButtonContainer>
+                    <CategoriesContainer>
+                        {categoriesData.map((data, index) => (
                             <Link
                                 key={data.text}
                                 href={`/categories/data/${data.text
                                     .toLowerCase()
-                                    .replaceAll(' &', '')
-                                    .replaceAll(' ', '-')}`}
+                                    .replace(' &', '')
+                                    .replace(' ', '-')}`}
                             >
                                 <Category
                                     key={index}
@@ -218,36 +248,10 @@ const Categories: React.FC = () => {
                                 />
                             </Link>
                         ))}
-                </CategoriesContainerMobile>
-                <MoreButtonContainer>
-                    <StyledButton
-                        type="primary"
-                        size="large"
-                        onClick={handleMoreClick}
-                    >
-                        {moreButtonText}
-                    </StyledButton>
-                </MoreButtonContainer>
-                <CategoriesContainer>
-                    {categoriesData.map((data, index) => (
-                        <Link
-                            key={data.text}
-                            href={`/categories/data/${data.text
-                                .toLowerCase()
-                                .replace(' &', '')
-                                .replace(' ', '-')}`}
-                        >
-                            <Category
-                                key={index}
-                                index={index}
-                                icon={data.icon}
-                                text={data.text}
-                            />
-                        </Link>
-                    ))}
-                </CategoriesContainer>
-            </CategoriesBoxContainer>
-        </BackgroundContainer>
+                    </CategoriesContainer>
+                </CategoriesBoxContainer>
+            </BackgroundContainer>
+        </Element>
     )
 }
 

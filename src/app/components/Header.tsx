@@ -12,9 +12,9 @@ const HeaderContainer = styled.header`
     justify-content: space-between;
     padding: 0 2vw;
 
-    // @media (max-width: 768px) {
-    //     padding: 0px 8px;
-    // }
+    @media (max-width: 768px) {
+        padding: 0px 8px;
+    }
 `
 
 const LogoBox = styled.div`
@@ -46,7 +46,7 @@ const SignUpBox = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 12.8px;
-    cursor: pointer; /* Add a pointer cursor to indicate clickability */
+    cursor: pointer;
 `
 
 const LogInBox = styled.div`
@@ -57,7 +57,7 @@ const LogInBox = styled.div`
     justify-content: center;
     font-size: 12.8px;
     color: black;
-    cursor: pointer; /* Add a pointer cursor to indicate clickability */
+    cursor: pointer;
 `
 
 const Header = () => {

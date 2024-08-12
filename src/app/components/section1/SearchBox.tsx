@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import SearchBar from './SearchBar'
 import Image from 'next/image'
+import { Element } from 'react-scroll'
 
 const SearchBoxContainer = styled.section`
     position: relative;
@@ -119,27 +120,34 @@ const SearchBox = () => {
     }, [])
 
     return (
-        <SearchBoxContainer>
-            <BackgroundImage
-                src="/sharon-pittaway-iMdsjoiftZo-unsplash.jpg"
-                alt="Search Background"
-                layout="fill"
-            />
-            <StickyHeader isScrolled={isScrolled}>
-                <ForumTitle>
-                    Forum
-                    <img src="/logo.png" alt="Forum Icon" />
-                </ForumTitle>
-            </StickyHeader>
-            <SearchBarWrapper>
-                <SearchBar />
-            </SearchBarWrapper>
-            {/* <BottomText>
+        <Element name="section1">
+            <SearchBoxContainer>
+                <BackgroundImage
+                    src="/sharon-pittaway-iMdsjoiftZo-unsplash.jpg"
+                    alt="Search Background"
+                    layout="fill"
+                />
+                <StickyHeader isScrolled={isScrolled}>
+                    <ForumTitle>
+                        Forum
+                        <Image
+                            src="/logo.png"
+                            alt="Forum Icon"
+                            width={25}
+                            height={25}
+                        />
+                    </ForumTitle>
+                </StickyHeader>
+                <SearchBarWrapper>
+                    <SearchBar />
+                </SearchBarWrapper>
+                {/* <BottomText>
                 <p>Persians in Vancouver</p>
                 <p>Let's get it warmer together</p>
             </BottomText> */}
-            <Divider />
-        </SearchBoxContainer>
+                <Divider />
+            </SearchBoxContainer>
+        </Element>
     )
 }
 
