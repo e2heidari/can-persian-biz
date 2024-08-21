@@ -1,0 +1,106 @@
+[
+    {
+        "id": "accounting-insurance",
+        "name": "Accounting & Insurance",
+        "image": "icons8-accounting-96.png",
+        "subcategory": [
+            {
+                "id": "accounting",
+                "icon": "icons8-general-ledger-96.png",
+                "name": "Accountant",
+                "des": "Fashion influencers garner engagement by showing people how to dress and influenceing their wardrobe. Influencers show the products they purchase from brands, post reviews about the clothes they like, and often become trendsetters with their fashion choices and personal style.",
+                "slide": "jakub-zerdzicki-90oiU5NfTfI-unsplash.jpg",
+                "items": [
+                    {
+                        "id": "lonsdale.accounting",
+                        "title": "Accounting & Tax Services",
+                        "post": "37",
+                        "followers": "576",
+                        "instagramId": "lonsdale.accounting"
+                    }
+                ]
+            },
+            {
+                "id": "insurance",
+                "icon": "icons8-circled-umbrella-96.png",
+                "name": "Insurance",
+                "des": "",
+                "slide": "mehdi-mirzaie-G2j6asJEdhs-unsplash.jpg",
+                "items": [
+                    {
+                        "id": "matintirehdast_insurance",
+                        "title": "Matine Tireh Dast",
+                        "post": "90",
+                        "followers": "3,640",
+                        "instagramId": "matintirehdast_insurance"
+                    },
+                    {
+                        "id": "vancouver_insurance_agent",
+                        "title": "Ahmad Tajdini",
+                        "post": "357",
+                        "followers": "2,591",
+                        "instagramId": "vancouver_insurance_agent"
+                    },
+                    {
+                        "id": "know.insurance.bc",
+                        "title": "Mehdi Mehdizadeh",
+                        "post": "64",
+                        "followers": "3,379",
+                        "instagramId": "know.insurance.bc"
+                    },
+                    {
+                        "id": "barackashtari",
+                        "title": "BARACK ASHTARI",
+                        "post": "240",
+                        "followers": "4,315",
+                        "instagramId": "barackashtari"
+                    },
+                    {
+                        "id": "peimanjavdan",
+                        "title": "Peiman Javdan",
+                        "post": "142",
+                        "followers": "4,502",
+                        "instagramId": "peimanjavdan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "artist",
+        "name": "Artist",
+        "image": "icons8-accounting-96.png",
+        "subcategory": [
+            {
+                "id": "art",
+                "icon": "icons8-general-ledger-96.png",
+                "name": "Art",
+                "des": "",
+                "slide": "jakub-zerdzicki-90oiU5NfTfI-unsplash.jpg",
+                "items": [
+                    {
+                        "id": "pariya.art.gallery",
+                        "title": "Pariya Hasanlou‌",
+                        "post": "91",
+                        "followers": "4,739",
+                        "instagramId": "pariya.art.gallery"
+                    },
+                    {
+                        "id": "layla_fathi",
+                        "title": "Leila Fathi‌",
+                        "post": "829",
+                        "followers": "6,401",
+                        "instagramId": "layla_fathi"
+                    },
+                    {
+                        "id": "neginjvh",
+                        "title": "Neginjvh💎",
+                        "post": "244",
+                        "followers": "6,120",
+                        "instagramId": "neginjvh"
+                    }
+                ]
+            }
+        ]
+    }
+]
