@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "id": "mahalleh_currency",
+        "title": "Mahalleh Currency Exchange",
+        "post": "72",
+        "followers": "235"
+    },
+    {
+        "id": "danielexchange",
+        "title": "Daniel Currency Exchange",
+        "post": "106",
+        "followers": "341"
+    }
+]

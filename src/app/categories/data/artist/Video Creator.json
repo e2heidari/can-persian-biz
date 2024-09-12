@@ -115,5 +115,29 @@
         "title": "Moe Bayat",
         "post": "1",
         "followers": "5,316"
+    },
+    {
+        "id": "arash_sarafrazi",
+        "title": "Arash Sarafrazi",
+        "post": "20",
+        "followers": "2,457"
+    },
+    {
+        "id": "pezhmanhadavi",
+        "title": "Pezhman Hadavi",
+        "post": "519",
+        "followers": "3,096"
+    },
+    {
+        "id": "d.dronez",
+        "title": "𝗗𝗔𝗡𝗜𝗘𝗟",
+        "post": "70",
+        "followers": "3,080"
+    },
+    {
+        "id": "eede.ca",
+        "title": "EEDE Studio",
+        "post": "103",
+        "followers": "1,975"
     }
 ]

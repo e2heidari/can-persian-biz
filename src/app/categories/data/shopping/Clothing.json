@@ -22,5 +22,29 @@
         "title": "Arisan Boutique",
         "post": "93",
         "followers": "1,542"
+    },
+    {
+        "id": "sheydagallery_vancouver",
+        "title": "Sheyda Ahi",
+        "post": "241",
+        "followers": "5,323"
+    },
+    {
+        "id": "magna_creativestudio",
+        "title": "Magna studio",
+        "post": "108",
+        "followers": "911"
+    },
+    {
+        "id": "fairys_thread",
+        "title": "FAIRY’S THREAD",
+        "post": "148",
+        "followers": "3,247"
+    },
+    {
+        "id": "mivinna",
+        "title": "Mivinna",
+        "post": "218",
+        "followers": "1,270"
     }
 ]
