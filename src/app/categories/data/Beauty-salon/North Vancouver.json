@@ -10,5 +10,17 @@
         "title": "Kids Hair Salon",
         "post": "89",
         "followers": "1,011"
+    },
+    {
+        "id": "westviewhairsalon",
+        "title": "Westview Hair Salon",
+        "post": "787",
+        "followers": "388"
+    },
+    {
+        "id": "beauty_diamond.skin",
+        "title": "Skincare BeautyDiamond",
+        "post": "231",
+        "followers": "6,184"
     }
 ]
