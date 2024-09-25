@@ -74,5 +74,17 @@
         "title": "GloGen Beauty Clinic",
         "post": "167",
         "followers": "688"
+    },
+    {
+        "id": "nuderma.laser.clinic",
+        "title": "NuDerma Laser Clinic",
+        "post": "389",
+        "followers": "11.3K"
+    },
+    {
+        "id": "bona_aesthetic_lounge",
+        "title": "Bona Aesthetic",
+        "post": "75",
+        "followers": "517"
     }
 ]
