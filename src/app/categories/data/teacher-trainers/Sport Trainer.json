@@ -1,11 +1,5 @@
 [
     {
-        "id": "sahrasports",
-        "title": "Sahra Sports",
-        "post": "123",
-        "followers": "493"
-    },
-    {
         "id": "yogawithsamane",
         "title": "Samaneh Asgharzadeh",
         "post": "277",
@@ -124,5 +118,29 @@
         "title": "Arman Daftari Besheli",
         "post": "88",
         "followers": "28.4K"
+    },
+    {
+        "id": "reza_kheibari",
+        "title": "Reza Kheibari",
+        "post": "377",
+        "followers": "19.5K"
+    },
+    {
+        "id": "elifit.canada",
+        "title": "Elnaz Imani",
+        "post": "173",
+        "followers": "693"
+    },
+    {
+        "id": "salamati_aramesh_tai_chi",
+        "title": "Fariba Eshratabadi",
+        "post": "52",
+        "followers": "657"
+    },
+    {
+        "id": "proshat.yoga",
+        "title": "Proshat | Yoga",
+        "post": "145",
+        "followers": "1,855"
     }
 ]

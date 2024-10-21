@@ -96,12 +96,6 @@
         "followers": "889"
     },
     {
-        "id": "royal_beauty.club",
-        "title": "Rolash_beauty",
-        "post": "212",
-        "followers": "6,068"
-    },
-    {
         "id": "mahyarkhoda",
         "title": "Mahyar Khoda",
         "post": "182",
@@ -124,5 +118,28 @@
         "title": "Shiva Fatahi",
         "post": "833",
         "followers": "7,310"
+    },
+    {
+        "id": "monaaalll",
+        "title": "Mona Allahyari",
+        "post": "114",
+        "followers": "2,315"
+    },
+    {
+        "id": "fatanehnailart",
+        "title": "FATANEH NAIL",
+        "post": "180",
+        "followers": "1,462"
+    },
+    {
+        "id": "vivaaastudio",
+        "title": "Farnia",
+        "post": "540",
+        "followers": "1,984"
+    },
+    {
+        "id": "mahta_eyelashvancouver",
+        "title": "eyelash extensions",
+        "followers": "1,377"
     }
 ]

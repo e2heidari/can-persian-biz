@@ -2,6 +2,19 @@ import styled, { css } from 'styled-components'
 import Image from 'next/image'
 import { SwiperSlide } from 'swiper/react'
 
+export const ContentSection = styled.section`
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    cursor: pointer;
+    width: 100%;
+
+    @media (max-width: 1180px) {
+        gap: 2px;
+        padding: 0;
+    }
+`
+
 export const BackgroundImage = styled(Image)<{ isActive?: boolean }>`
     position: relative;
     top: 0;
@@ -69,18 +82,6 @@ export const CategoryAmount = styled.div`
     }
 `
 
-export const ContentSection = styled.section`
-    display: flex;
-    align-items: stretch;
-    gap: 10px;
-    cursor: pointer;
-    width: 100%;
-
-    @media (max-width: 1180px) {
-        gap: 2px;
-        padding: 0;
-    }
-`
 export const Article = styled.article<{ isActive: boolean }>`
     position: relative;
     overflow-y: auto;
