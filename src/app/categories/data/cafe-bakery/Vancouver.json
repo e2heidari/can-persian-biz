@@ -39,5 +39,50 @@
         "id": "lilybakery.ca",
         "title": "Lily Bakery",
         "followers": "57"
+    },
+    {
+        "id": "houseofcake.ca",
+        "title": "houseofcake",
+        "followers": "1,831"
+    },
+    {
+        "id": "cremedelacreme.kids",
+        "title": "Creme De La Creme",
+        "followers": "1,546"
+    },
+    {
+        "id": "cremedelacreme.wedding",
+        "title": "Creme De La Creme",
+        "followers": "52"
+    },
+    {
+        "id": "suzianacake",
+        "title": "SuzianaCake",
+        "followers": "1,839"
+    },
+    {
+        "id": "torsh_o_shirin_vancouver",
+        "title": "Torsh&Shirin",
+        "followers": "1,066"
+    },
+    {
+        "id": "cheesecake.aalaa",
+        "title": "aalaa cheesecake",
+        "followers": "680"
+    },
+    {
+        "id": "kitchen.enjoyment",
+        "title": "Shabnam Tavakoli",
+        "followers": "771"
+    },
+    {
+        "id": "yasi.m.cake",
+        "title": "Yasaman Mosahebi",
+        "followers": "2,093"
+    },
+    {
+        "id": "sweetbellyconfectionery",
+        "title": "Sweet Belly",
+        "followers": "462"
     }
 ]
