@@ -1,5 +1,10 @@
 [
     {
+        "id": "soldbysahars",
+        "title": "Sahar",
+        "followers": "424"
+    },
+    {
         "id": "mansourregroup",
         "title": "MANSOUR GROUP",
         "bio": "Award-winning real estate group. Realtors supporting clients and businesses through real estate since 2005. Sutton West Coast Realty.",
@@ -662,5 +667,55 @@
         "id": "vancity.realestate",
         "title": "Farid Hosseini",
         "followers": "3,368"
+    },
+    {
+        "id": "kevin.sojoodi",
+        "title": "Kevin Sojoodi",
+        "followers": "2,677"
+    },
+    {
+        "id": "buywithbahareh",
+        "title": "Bahareh Ghanbari",
+        "followers": "3,045"
+    },
+    {
+        "id": "farahmandhomes",
+        "title": "Soheil Farahmand",
+        "followers": "2,692"
+    },
+    {
+        "id": "amir.hazavei",
+        "title": "𝐀𝐌𝐈𝐑 𝐇𝐀𝐙𝐀𝐕𝐄𝐈",
+        "followers": "2,179"
+    },
+    {
+        "id": "soldbyjila",
+        "title": "Jila Rezai",
+        "followers": "3,423"
+    },
+    {
+        "id": "mani_ayoughi",
+        "title": "Mani Ayoughi",
+        "followers": "97.9K"
+    },
+    {
+        "id": "sogolhomes",
+        "title": "Sogol Malek",
+        "followers": "15.8K"
+    },
+    {
+        "id": "soldbyalmasi",
+        "title": "Sina Almasi",
+        "followers": "2,910"
+    },
+    {
+        "id": "pouya.ghomi",
+        "title": "Pouya Ghomi",
+        "followers": "9,309"
+    },
+    {
+        "id": "shamimaazimii",
+        "title": "SHAMIM AZIMI",
+        "followers": "10.2K"
     }
 ]
