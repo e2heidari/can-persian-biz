@@ -15,5 +15,45 @@
         "id": "healthysmile_",
         "title": "Healthy Smile Dental Hygiene",
         "followers": "400"
+    },
+    {
+        "id": "keydentallab",
+        "title": "Key Dental Laboratory",
+        "followers": "121"
+    },
+    {
+        "id": "burnabydentistorthodontist",
+        "title": "Burnaby Dentist & Orthodontist",
+        "followers": "684"
+    },
+    {
+        "id": "dentistinburnaby",
+        "title": "Carleton Square Dental Centre",
+        "followers": "142"
+    },
+    {
+        "id": "madisondentalstudio",
+        "title": "Madison Dental Studio",
+        "followers": "316"
+    },
+    {
+        "id": "simply.wellness.dental.burnaby",
+        "title": "Simply Wellness Dental",
+        "followers": "1,143"
+    },
+    {
+        "id": "dentistsatmetrotown",
+        "title": "Dentists At Metrotown",
+        "followers": "500"
+    },
+    {
+        "id": "dr.mehrnoushazimi",
+        "title": "Dr.Mehrnoush Azimi",
+        "followers": "840"
+    },
+    {
+        "id": "Burnabysquaredental",
+        "title": "BurnabySquareDental",
+        "followers": "464"
     }
 ]

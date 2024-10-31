@@ -54,5 +54,20 @@
         "id": "axiom.dental",
         "title": "Axiom Dental",
         "followers": "61"
+    },
+    {
+        "id": "lonsdaledental",
+        "title": "Lonsdale Dental Centre",
+        "followers": "226"
+    },
+    {
+        "id": "lynnvalleydental",
+        "title": "Lynn Valley Dental Centre",
+        "followers": "200"
+    },
+    {
+        "id": "smilesorthodontics_yvr",
+        "title": "Smiles Orthodontics",
+        "followers": "1,160"
     }
 ]

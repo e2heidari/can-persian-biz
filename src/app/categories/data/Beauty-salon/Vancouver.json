@@ -186,5 +186,55 @@
         "id": "beautygallery.vancouver",
         "title": "Beauty Gallery",
         "followers": "3,463"
+    },
+    {
+        "id": "deer_nail_club",
+        "title": "Deer Nail",
+        "followers": "205"
+    },
+    {
+        "id": "pushitupbrows",
+        "title": "PUSH IT UP BROWS",
+        "followers": "9,059"
+    },
+    {
+        "id": "mina.haircolorbc",
+        "title": "haircolor",
+        "followers": "2,427"
+    },
+    {
+        "id": "microblading_yasminn",
+        "title": "Yasamin",
+        "followers": "5,027"
+    },
+    {
+        "id": "hair.bysama",
+        "title": "Sama",
+        "followers": "443"
+    },
+    {
+        "id": "saba.moha.beauty",
+        "title": "Saba Mohajerpoor",
+        "followers": "10.5K"
+    },
+    {
+        "id": "sevil.nail",
+        "title": "Sevil Nail",
+        "followers": "10.9K"
+    },
+    {
+        "id": "hairbynooshin",
+        "title": "Hair by Nooshin",
+        "followers": "426"
+    },
+    {
+        "id": "elnail_vancouver",
+        "title": "Elnaz Fard",
+        "followers": "423"
+    },
+    {
+        "id": "hairbyfarzam",
+        "title": "Farzam",
+        "followers": "949"
     }
 ]
