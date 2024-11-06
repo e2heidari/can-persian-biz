@@ -12,64 +12,16 @@
         "followers": "455"
     },
     {
-        "id": "thenewmarketingera",
-        "title": "TNME GROUP",
-        "post": "13",
-        "followers": "1,196"
-    },
-    {
-        "id": "nima__attar",
-        "title": "Nima Attar",
-        "post": "246",
-        "followers": "17.8K"
-    },
-    {
-        "id": "mossi.gharbaghi",
-        "title": "Mossi Gh",
-        "post": "53",
-        "followers": "1,961"
-    },
-    {
         "id": "sina_ian",
         "title": "Sina Ghadirian",
         "post": "178",
         "followers": "48.6K"
     },
     {
-        "id": "me.and.you.vancouver",
-        "title": "𝐌𝐞 & 𝐘𝐨𝐮 𝐆𝐫𝐨𝐮𝐩",
-        "post": "56",
-        "followers": "10K"
-    },
-    {
-        "id": "digifantastic",
-        "title": "Digifantastic",
-        "post": "15",
-        "followers": "7,950"
-    },
-    {
-        "id": "busines_vancouver",
-        "title": "Business Vancouver",
-        "post": "36",
-        "followers": "9,868"
-    },
-    {
         "id": "raana.emaad",
         "title": "Raana Emad",
         "post": "16",
         "followers": "767"
-    },
-    {
-        "id": "vancouver_finance",
-        "title": "Ehsan Moafi",
-        "post": "40",
-        "followers": "1,047"
-    },
-    {
-        "id": "parisapajooh.finance",
-        "title": "Parisa",
-        "post": "57",
-        "followers": "2,137"
     },
     {
         "id": "alexwest.canada",
@@ -84,15 +36,14 @@
         "followers": "3,479"
     },
     {
-        "id": "moji.gharbaghi",
-        "title": "Moji Gharbaghi",
-        "post": "38",
-        "followers": "2,350"
-    },
-    {
         "id": "drstress.ca",
         "title": "DrStress Group",
         "post": "879",
         "followers": "12K"
+    },
+    {
+        "id": "samiraparsa.education",
+        "title": "Dr Samira Parsa",
+        "followers": "11.2K"
     }
 ]

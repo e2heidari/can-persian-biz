@@ -27,5 +27,15 @@
         "id": "sivanexchange",
         "title": "Sivan Exchange",
         "followers": "1,112"
+    },
+    {
+        "id": "lemonexchange",
+        "title": "Lemon Exchange",
+        "followers": "159"
+    },
+    {
+        "id": "monex1west",
+        "title": "Monex 1 West",
+        "followers": "411"
     }
 ]

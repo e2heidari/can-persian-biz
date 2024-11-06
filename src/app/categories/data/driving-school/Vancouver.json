@@ -10,8 +10,23 @@
         "city": "Vancouver"
     },
     {
-        "id": "drivecan_driving_school",
-        "title": "Drive Can",
-        "followers": "98"
+        "id": "urban_driving_school",
+        "title": "Urban Drivings",
+        "followers": "145"
+    },
+    {
+        "id": "atlasdrivingschool_",
+        "title": "Atlas Driving School",
+        "followers": "2,935"
+    },
+    {
+        "id": "schoolzonedriving",
+        "title": "Rebeka Faramarzy",
+        "followers": "4,406"
+    },
+    {
+        "id": "reza_faramarzy2023",
+        "title": "Reza Faramarzy",
+        "followers": "268"
     }
 ]
