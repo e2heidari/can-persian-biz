@@ -84,5 +84,25 @@
         "id": "sweetbellyconfectionery",
         "title": "Sweet Belly",
         "followers": "462"
+    },
+    {
+        "id": "sweet.bouquet.van",
+        "title": "Sweet Bouquet",
+        "followers": "2,365"
+    },
+    {
+        "id": "kajpastry.ca",
+        "title": "KAJ Pastry & Bakery",
+        "followers": "1,562"
+    },
+    {
+        "id": "midya_tasty_offers",
+        "title": "Cake & Sweets by Midya",
+        "followers": "1,110"
+    },
+    {
+        "id": "bisoubakehouse",
+        "title": "Bisou Bakehouse",
+        "followers": "38.2K"
     }
 ]
