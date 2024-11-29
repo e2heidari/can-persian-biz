@@ -5,104 +5,15 @@
         "post": "348",
         "followers": "3,854"
     },
-    {
-        "id": "shamim.sweetland",
-        "title": "Shamim / cake decorator",
-        "post": "520",
-        "followers": "4,259"
-    },
-    {
-        "id": "parvin.parnaan",
-        "title": "Parvin Asgari",
-        "post": "302",
-        "followers": "180K"
-    },
-    {
-        "id": "rira_pastry",
-        "title": "RiRa pastry",
-        "post": "130",
-        "followers": "3,384"
-    },
-    {
-        "id": "sweetcoocake",
-        "title": "Sweet Cookie And Cake",
-        "post": "273",
-        "followers": "795"
-    },
-    {
-        "id": "paris.cakehouse",
-        "title": "Parisa AK.",
-        "post": "107",
-        "followers": "599"
-    },
-    {
-        "id": "lilybakery.ca",
-        "title": "Lily Bakery",
-        "followers": "57"
-    },
-    {
-        "id": "houseofcake.ca",
-        "title": "houseofcake",
-        "followers": "1,831"
-    },
-    {
-        "id": "cremedelacreme.kids",
-        "title": "Creme De La Creme",
-        "followers": "1,546"
-    },
-    {
-        "id": "cremedelacreme.wedding",
-        "title": "Creme De La Creme",
-        "followers": "52"
-    },
-    {
-        "id": "suzianacake",
-        "title": "SuzianaCake",
-        "followers": "1,839"
-    },
-    {
-        "id": "torsh_o_shirin_vancouver",
-        "title": "Torsh&Shirin",
-        "followers": "1,066"
-    },
-    {
-        "id": "cheesecake.aalaa",
-        "title": "aalaa cheesecake",
-        "followers": "680"
-    },
-    {
-        "id": "kitchen.enjoyment",
-        "title": "Shabnam Tavakoli",
-        "followers": "771"
-    },
-    {
-        "id": "yasi.m.cake",
-        "title": "Yasaman Mosahebi",
-        "followers": "2,093"
-    },
-    {
-        "id": "sweetbellyconfectionery",
-        "title": "Sweet Belly",
-        "followers": "462"
-    },
-    {
-        "id": "sweet.bouquet.van",
-        "title": "Sweet Bouquet",
-        "followers": "2,365"
-    },
-    {
-        "id": "kajpastry.ca",
-        "title": "KAJ Pastry & Bakery",
-        "followers": "1,562"
-    },
-    {
-        "id": "midya_tasty_offers",
-        "title": "Cake & Sweets by Midya",
-        "followers": "1,110"
-    },
+
     {
         "id": "bisoubakehouse",
         "title": "Bisou Bakehouse",
         "followers": "38.2K"
+    },
+    {
+        "id": "ravis_.cafe",
+        "title": "Ravis Cafe",
+        "followers": "715"
     }
 ]

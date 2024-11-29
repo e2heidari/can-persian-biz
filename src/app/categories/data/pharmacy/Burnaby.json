@@ -4,5 +4,10 @@
         "title": "Gilmore Pharmacy",
         "post": "19",
         "followers": "289"
+    },
+    {
+        "id": "brentwoodrx",
+        "title": "Brentwood Pharmacy",
+        "followers": "308"
     }
 ]

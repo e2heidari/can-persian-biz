@@ -1,11 +1,5 @@
 [
     {
-        "id": "vancobiz.ca",
-        "title": "Vanco Biz",
-        "post": "211",
-        "followers": "7,021"
-    },
-    {
         "id": "nima_nova17",
         "title": "NIMA ROSTAMZADEH | کار در سراسر کانادا",
         "post": "1,008",
@@ -65,5 +59,10 @@
         "id": "mondial.community",
         "title": "Visa Mondial Community",
         "followers": "20.9K"
+    },
+    {
+        "id": "brighttpath",
+        "title": "Bright Path by Mahi",
+        "followers": "1,526"
     }
 ]

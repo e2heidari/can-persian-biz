@@ -218,5 +218,30 @@
         "id": "redmoonltd.ca",
         "title": "Red Moon",
         "followers": "210"
+    },
+    {
+        "id": "brightnest.construction",
+        "title": "Brightnest Construction Ltd",
+        "followers": "301"
+    },
+    {
+        "id": "anahita_interiordesign",
+        "title": "Anahita Design & Build",
+        "followers": "2,293"
+    },
+    {
+        "id": "buildya",
+        "title": "Buildya",
+        "followers": "5,512"
+    },
+    {
+        "id": "renocondesign",
+        "title": "Interior Design Studio",
+        "followers": "5,288"
+    },
+    {
+        "id": "nashcustomhomes",
+        "title": "Nash Custom Homes",
+        "followers": "6,447"
     }
 ]

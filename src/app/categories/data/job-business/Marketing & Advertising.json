@@ -148,6 +148,12 @@
         "followers": "1,312"
     },
     {
+        "id": "vancobiz.ca",
+        "title": "Vanco Biz",
+        "post": "211",
+        "followers": "7,021"
+    },
+    {
         "id": "lyf_marketing",
         "title": "LYF Real Estate Marketing",
         "followers": "9,766"
@@ -172,5 +178,15 @@
         "id": "5ahel",
         "title": "Sahel ساحل",
         "followers": "1,981"
+    },
+    {
+        "id": "vividbeautymedia",
+        "title": "Vivid beauty",
+        "followers": "91"
+    },
+    {
+        "id": "adoragency.ca",
+        "title": "ADOR Creative Studio",
+        "followers": "522"
     }
 ]

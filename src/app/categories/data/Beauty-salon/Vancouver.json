@@ -67,6 +67,11 @@
         "followers": "4,834"
     },
     {
+        "id": "niloo_makeup",
+        "title": "Niloo beauty",
+        "followers": "6,740"
+    },
+    {
         "id": "phi_sona.jalali",
         "title": "Sona Jalali",
         "post": "156",
@@ -256,5 +261,20 @@
         "id": "hairby.shabnam",
         "title": "Makeup by Shabnam",
         "followers": "9,195"
+    },
+    {
+        "id": "neginail_beauty",
+        "title": "Negin",
+        "followers": "1,010"
+    },
+    {
+        "id": "glambysarrah",
+        "title": "Sarah",
+        "followers": "1,943"
+    },
+    {
+        "id": "hestory.barbershop",
+        "title": "HESTORY BARBER SHOP",
+        "followers": "2,619"
     }
 ]

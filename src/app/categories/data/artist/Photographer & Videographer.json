@@ -69,6 +69,11 @@
         "followers": "2,457"
     },
     {
+        "id": "capilano_photography",
+        "title": "Ali Haghighatjoo",
+        "followers": "1,424"
+    },
+    {
         "id": "mershool",
         "title": "Mershool | Photographer",
         "post": "129",
@@ -490,5 +495,10 @@
         "id": "roozbeh_peykari",
         "title": "ROOZBEH PEYKARI",
         "followers": "2,405"
+    },
+    {
+        "id": "ershadphotography",
+        "title": "Ershad Photography",
+        "followers": "403"
     }
 ]
