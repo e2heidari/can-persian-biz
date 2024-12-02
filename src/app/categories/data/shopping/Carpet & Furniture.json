@@ -41,5 +41,40 @@
         "id": "mercatohome",
         "title": "Mercato Home",
         "followers": "137"
+    },
+    {
+        "id": "ggtgroup.ca",
+        "title": "Tara Tajdari",
+        "followers": "169"
+    },
+    {
+        "id": "pazyrykrug",
+        "title": "Pazyryk",
+        "followers": "115"
+    },
+    {
+        "id": "shirazrug",
+        "title": "Shiraz Rug",
+        "followers": "66"
+    },
+    {
+        "id": "westcoastrugs",
+        "title": "West Coast Rugs",
+        "followers": "414"
+    },
+    {
+        "id": "araratcarpet",
+        "title": "ARARAT ORIENTAL RUG GALLERY",
+        "followers": "112"
+    },
+    {
+        "id": "goldenrug",
+        "title": "Golden Rug",
+        "followers": "112"
+    },
+    {
+        "id": "karma.home_ca",
+        "title": "Karma Home",
+        "followers": "640"
     }
 ]

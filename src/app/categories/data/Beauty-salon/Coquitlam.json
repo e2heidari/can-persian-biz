@@ -41,5 +41,25 @@
         "id": "farzad_barber_no1",
         "title": "Farzad barber",
         "followers": "137"
+    },
+    {
+        "id": "fahim_hair_beauty",
+        "title": "Fahimeh Heidari",
+        "followers": "102"
+    },
+    {
+        "id": "marjan.lash.lift",
+        "title": "Marjan fooladi",
+        "followers": "401"
+    },
+    {
+        "id": "hair_by_marjan",
+        "title": "Wedding Hairstylist",
+        "followers": "96"
+    },
+    {
+        "id": "marjansbeautyacademy",
+        "title": "Marjan Banisadeghian",
+        "followers": "570"
     }
 ]

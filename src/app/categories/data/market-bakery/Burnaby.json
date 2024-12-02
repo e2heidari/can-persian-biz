@@ -3,5 +3,15 @@
         "id": "shop.ayoubs",
         "title": "Ayoub’s Dried Fruits and Nuts",
         "followers": "8,940"
+    },
+    {
+        "id": "persiafoods",
+        "title": "Persia Foods",
+        "followers": "2,880"
+    },
+    {
+        "id": "wheatclusterbakery",
+        "title": "Wheat Cluster Pita",
+        "followers": "169"
     }
 ]

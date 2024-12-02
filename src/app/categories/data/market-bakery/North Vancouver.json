@@ -47,8 +47,19 @@
         "followers": "1,419"
     },
     {
+        "id": "dipcodelights",
+        "title": "Dip Co. Delights",
+        "post": "118",
+        "followers": "4,793"
+    },
+    {
         "id": "shop.ayoubs",
         "title": "Ayoub’s Dried Fruits and Nuts",
         "followers": "8,940"
+    },
+    {
+        "id": "persiafoods",
+        "title": "Persia Foods",
+        "followers": "2,880"
     }
 ]

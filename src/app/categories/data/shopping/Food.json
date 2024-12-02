@@ -13,5 +13,20 @@
         "id": "vancouverhoneycafe",
         "title": "Vancouver Honey Cafe",
         "followers": "739"
+    },
+    {
+        "id": "getcyrus.canada",
+        "title": "Cyrus Canada",
+        "followers": "36"
+    },
+    {
+        "id": "noosh.gin",
+        "title": "Noosh Gin",
+        "followers": "189"
+    },
+    {
+        "id": "periskafoods.wholsale",
+        "title": "Periska Foods",
+        "followers": "177"
     }
 ]
