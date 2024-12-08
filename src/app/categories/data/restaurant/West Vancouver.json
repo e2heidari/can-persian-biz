@@ -17,5 +17,10 @@
         "followers": "802",
         "following": "11",
         "city": "West Vancouver"
+    },
+    {
+        "id": "restaurantcindys",
+        "title": "Breakfast & Brunch Restaurant",
+        "followers": "242"
     }
 ]
