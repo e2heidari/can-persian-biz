@@ -33,27 +33,33 @@ const transformData = (oldData: any[], fileName: string) => {
     const categoryId = cleanCategoryName(fileName) // Get category ID from filename
     const categoryName = fileName // Use the same name for category
 
-    return oldData.map((item) => ({
-        id: item.id, // Use the "id" from the old data
-        name: item.title, // Use the "title" from the old data as name
-        socialMedia: {
-            instagram: {
-                id: item.id, // Use "id" as Instagram ID
-                name: item.title, // Use "title" as Instagram name
-                followers: parseInt(item.followers.replace(/,/g, ''), 10), // Remove commas and convert to number
-                posts: parseInt(item.post, 10), // Convert "posts" to number
-                businessFollowers: 0, // Set businessFollowers to 0 for now
+    const transformedData = []
+
+    for (const item of oldData) {
+        transformedData.push({
+            id: item.id, // Use the "id" from the old data
+            name: item.title, // Use the "title" from the old data as name
+            socialMedia: {
+                instagram: {
+                    id: item.id, // Use "id" as Instagram ID
+                    name: item.title, // Use "title" as Instagram name
+                    followers: parseInt(item.followers.replace(/,/g, ''), 10), // Remove commas and convert to number
+                    posts: parseInt(item.post, 10), // Convert "posts" to number
+                    businessFollowers: 0, // Set businessFollowers to 0 for now
+                },
             },
-        },
-        category: {
-            id: categoryId, // Use cleaned category ID
-            name: categoryName, // Use cleaned category name
-        },
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        serviceLocations: [],
-        tags: [],
-    }))
+            category: {
+                id: categoryId, // Use cleaned category ID
+                name: categoryName, // Use cleaned category name
+            },
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            serviceLocations: [],
+            tags: [],
+        })
+    }
+
+    return transformedData
 }
 
 // Save the transformed data to a new JSON file
