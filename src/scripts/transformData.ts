@@ -28,12 +28,12 @@ const cleanCategoryName = (categoryName: string) => {
         .replace(/ & /g, '-') // Replace "&" with hyphen
 }
 
-// Transform the old data to the new structure
+// Transform the old data to the new structure using for loop
 const transformData = (oldData: any[], fileName: string) => {
     const categoryId = cleanCategoryName(fileName) // Get category ID from filename
     const categoryName = fileName // Use the same name for category
 
-    const transformedData = []
+    const transformedData = [] // Initialize an empty array for transformed data
 
     for (const item of oldData) {
         transformedData.push({
