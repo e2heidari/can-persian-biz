@@ -218,5 +218,25 @@
         "id": "itaniz.marketing",
         "title": "ITANIZ",
         "followers": "450"
+    },
+    {
+        "id": "dezin.marketing",
+        "title": "Dezin Marketing",
+        "followers": "188"
+    },
+    {
+        "id": "jamdip.art",
+        "title": "Jamdip",
+        "followers": "2,270"
+    },
+    {
+        "id": "clubart.ca",
+        "title": "Clubart",
+        "followers": "650"
+    },
+    {
+        "id": "perseustudio",
+        "title": "Perseus Creative Studio",
+        "followers": "402"
     }
 ]
