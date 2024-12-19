@@ -30,20 +30,23 @@
         "followers": "521K"
     },
     {
-        "id": "lingemy.school",
+        "id": "lingemy.learn",
         "title": "Lingemy Language School",
-        "post": "0",
-        "followers": "69.9K"
+        "followers": "68.9K"
     },
     {
         "id": "baran_abadian",
         "title": "Baran Abadian",
-        "post": "408",
         "followers": "861"
     },
     {
         "id": "leila.tellz",
         "title": "Leila Ghodrat",
         "followers": "89.9K"
+    },
+    {
+        "id": "jamaloddinjamali",
+        "title": "Jamaloddin Jamali",
+        "followers": "1,223"
     }
 ]
