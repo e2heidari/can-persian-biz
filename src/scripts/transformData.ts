@@ -1,6 +1,5 @@
-import fs from 'fs'
-import path from 'path'
-
+const fs = require('fs')
+const path = require('path')
 // Function to read data from a JSON file
 const readDataFromFile = (filePath: string) => {
     const rawData = fs.readFileSync(filePath, 'utf-8')
@@ -11,13 +10,13 @@ const readDataFromFile = (filePath: string) => {
 const oldData1 = readDataFromFile(
     path.join(
         __dirname,
-        'src/app/categories/data/accounting-insurance/Accountant.json'
+        '../app/categories/data/accounting-insurance/Accountant.json'
     )
 )
 const oldData2 = readDataFromFile(
     path.join(
         __dirname,
-        'src/app/categories/data/accounting-insurance/Financial.json'
+        '../app/categories/data/accounting-insurance/Financial.json'
     )
 )
 
