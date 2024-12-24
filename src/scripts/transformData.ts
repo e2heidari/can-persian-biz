@@ -29,7 +29,7 @@ const cleanCategoryName = (categoryName: string) => {
 
 // Transform the old data to the new structure using for loop
 const transformData = (oldData: any[], fileName: string) => {
-    const categoryId = cleanCategoryName(fileName) // Get category ID from filename
+    const categoryId = cleanCategoryName(fileName).toLowerCase() // Get category ID from filename
     const categoryName = fileName // Use the same name for category
 
     const transformedData = [] // Initialize an empty array for transformed data
@@ -42,7 +42,7 @@ const transformData = (oldData: any[], fileName: string) => {
                 instagram: {
                     id: item.id, // Use "id" as Instagram ID
                     name: item.title, // Use "title" as Instagram name
-                    followers: parseInt(item.followers.replace(/,/g, ''), 10), // Remove commas and convert to number
+                    followers: item.followers, // Remove commas and convert to number
                     posts: parseInt(item.post, 10), // Convert "posts" to number
                     businessFollowers: 0, // Set businessFollowers to 0 for now
                 },

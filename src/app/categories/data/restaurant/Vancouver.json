@@ -158,5 +158,15 @@
         "id": "topschef.yvr",
         "title": "Tops Chef",
         "followers": "195"
+    },
+    {
+        "id": "chefronrestaurant",
+        "title": "Chef Ron Restaurant",
+        "followers": "4,138"
+    },
+    {
+        "id": "chef.lamzy",
+        "title": "CHEF LAMZY",
+        "followers": "774"
     }
 ]
