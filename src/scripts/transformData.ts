@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+
 // Function to read data from a JSON file
 const readDataFromFile = (filePath: string) => {
     const rawData = fs.readFileSync(filePath, 'utf-8')
@@ -19,6 +20,17 @@ const oldData2 = readDataFromFile(
         '../app/categories/data/accounting-insurance/Financial.json'
     )
 )
+const oldData3 = readDataFromFile(
+    path.join(
+        __dirname,
+        '../app/categories/data/accounting-insurance/Insurance.json'
+    )
+)
+
+// Reading the image data JSON file
+const imageData = readDataFromFile(
+    path.join(__dirname, '../app/categories/data/images.json')
+)
 
 // Function to clean category name (replace spaces and "&" with hyphens)
 const cleanCategoryName = (categoryName: string) => {
@@ -27,7 +39,7 @@ const cleanCategoryName = (categoryName: string) => {
         .replace(/ & /g, '-') // Replace "&" with hyphen
 }
 
-// Transform the old data to the new structure using for loop
+// Transform the old data to the new structure using a for loop
 const transformData = (oldData: any[], fileName: string) => {
     const categoryId = cleanCategoryName(fileName).toLowerCase() // Get category ID from filename
     const categoryName = fileName // Use the same name for category
@@ -35,6 +47,11 @@ const transformData = (oldData: any[], fileName: string) => {
     const transformedData = [] // Initialize an empty array for transformed data
 
     for (const item of oldData) {
+        // Find the corresponding image data based on item.id
+        const image = imageData.find(
+            (img: any) => img.filename === `${item.id}.jpg`
+        )
+
         transformedData.push({
             id: item.id, // Use the "id" from the old data
             name: item.title, // Use the "title" from the old data as name
@@ -42,9 +59,26 @@ const transformData = (oldData: any[], fileName: string) => {
                 instagram: {
                     id: item.id, // Use "id" as Instagram ID
                     name: item.title, // Use "title" as Instagram name
-                    followers: item.followers, // Remove commas and convert to number
-                    posts: parseInt(item.post, 10), // Convert "posts" to number
-                    businessFollowers: 0, // Set businessFollowers to 0 for now
+                    followers: (() => {
+                        const followersStr = item.followers
+                            .replace(',', '')
+                            .toUpperCase()
+                        if (followersStr.includes('K')) {
+                            return (
+                                parseFloat(followersStr.replace('K', '')) * 1000
+                            )
+                        } else if (followersStr.includes('M')) {
+                            return (
+                                parseFloat(followersStr.replace('M', '')) *
+                                1000000
+                            )
+                        } else {
+                            return parseFloat(followersStr)
+                        }
+                    })(),
+                    businessFollowersId: [], // Set businessFollowers to empty for now
+                    isVerified: false,
+                    imageId: image ? image.id : null, // Add imageId if a matching image is found
                 },
             },
             category: {
@@ -71,6 +105,7 @@ const saveToFile = (data: any[]) => {
 // Call the transformData function for each old data file
 const transformedData1 = transformData(oldData1, 'Accountant')
 const transformedData2 = transformData(oldData2, 'Financial')
+const transformedData3 = transformData(oldData3, 'Insurance')
 
 // Save the transformed data
-saveToFile([...transformedData1, ...transformedData2])
+saveToFile([...transformedData1, ...transformedData2, ...transformedData3])
