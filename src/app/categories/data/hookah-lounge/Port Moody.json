@@ -1,1 +1,22 @@
-[]
+[
+    {
+        "id": "paradizteahouse",
+        "title": "Paradiz",
+        "followers": "1,020"
+    },
+    {
+        "id": "darvish_lounge",
+        "title": "Darvish Lounge",
+        "followers": "1,870"
+    },
+    {
+        "id": "midnight_cafe_hookah_lounge",
+        "title": "Midnight Cafe Hookah Lounge",
+        "followers": "1,300"
+    },
+    {
+        "id": "blooportmoodylounge",
+        "title": "Bloo Lounge",
+        "followers": "1,218"
+    }
+]

@@ -1,1 +1,73 @@
-[]
+[
+    {
+        "id": "edgedental",
+        "title": "Dr Sally Rassamanesh",
+        "post": "63",
+        "followers": "372"
+    },
+    {
+        "id": "drsoroush",
+        "title": "Dr. Soroush Liaghat",
+        "post": "172",
+        "followers": "5,554"
+    },
+    {
+        "id": "skylinevancitydentist",
+        "title": "Dr.Sepehr Rahmany",
+        "post": "293",
+        "followers": "1,436"
+    },
+    {
+        "id": "dr.mana.mirfendereski",
+        "title": "Dr. Mana Mirfendereski",
+        "post": "72",
+        "followers": "624"
+    },
+    {
+        "id": "twolions.dentistry",
+        "title": "Two Lions Dentistry",
+        "post": "7",
+        "followers": "5,074"
+    },
+    {
+        "id": "lonsdale_dentist",
+        "title": "Dr Farhad Goshtasby",
+        "post": "122",
+        "followers": "543"
+    },
+    {
+        "id": "iqdentalnorthvancouver",
+        "title": "IQ Dental",
+        "followers": "611"
+    },
+    {
+        "id": "northshorepediatricdentistry",
+        "title": "North Shore Ped Dentistry",
+        "followers": "773"
+    },
+    {
+        "id": "brightersmile.ca",
+        "title": "Dr F Goshtasby",
+        "followers": "959"
+    },
+    {
+        "id": "axiom.dental",
+        "title": "Axiom Dental",
+        "followers": "61"
+    },
+    {
+        "id": "lonsdaledental",
+        "title": "Lonsdale Dental Centre",
+        "followers": "226"
+    },
+    {
+        "id": "lynnvalleydental",
+        "title": "Lynn Valley Dental Centre",
+        "followers": "200"
+    },
+    {
+        "id": "smilesorthodontics_yvr",
+        "title": "Smiles Orthodontics",
+        "followers": "1,160"
+    }
+]

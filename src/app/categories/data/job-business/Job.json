@@ -1,15 +1,9 @@
 [
     {
-        "id": "vancobiz.ca",
-        "title": "Vanco Biz",
-        "post": "211",
-        "followers": "7,021"
-    },
-    {
-        "id": "mrjobcanada",
+        "id": "nima_nova17",
         "title": "NIMA ROSTAMZADEH | کار در سراسر کانادا",
         "post": "1,008",
-        "followers": "132K"
+        "followers": "129K"
     },
     {
         "id": "malihehx",
@@ -28,5 +22,57 @@
         "title": "Shabnam",
         "post": "88",
         "followers": "20.8K"
+    },
+    {
+        "id": "coachingwithmona",
+        "title": "Mona Chehre",
+        "post": "116",
+        "followers": "5,097"
+    },
+    {
+        "id": "resumeservices.ca",
+        "title": "Farid Gharavizad",
+        "post": "513",
+        "followers": "100K"
+    },
+    {
+        "id": "charsoogroup",
+        "title": "گروه چارسو",
+        "followers": "28.8K"
+    },
+    {
+        "id": "shinil.academy",
+        "title": "Shinil Academy",
+        "followers": "34.5K"
+    },
+    {
+        "id": "avahrx",
+        "title": "مدير منابع انساني و مشاور شغلي",
+        "followers": "83.3K"
+    },
+    {
+        "id": "fanavaran_ca",
+        "title": "Fanavaran",
+        "followers": "15K"
+    },
+    {
+        "id": "mondial.community",
+        "title": "Visa Mondial Community",
+        "followers": "20.9K"
+    },
+    {
+        "id": "brighttpath",
+        "title": "Bright Path by Mahi",
+        "followers": "1,526"
+    },
+    {
+        "id": "aminzamanirad",
+        "title": "Amin Rad",
+        "followers": "21.4K"
+    },
+    {
+        "id": "hamrah.vancouver",
+        "title": "Hamrah",
+        "followers": "139"
     }
 ]

@@ -1,1 +1,24 @@
-[]
+[
+    {
+        "id": "theoneskinclinic",
+        "title": "The One Skin Clinic",
+        "post": "271",
+        "followers": "3,106"
+    },
+    {
+        "id": "goliclinic",
+        "title": "Goli Clinic",
+        "post": "180",
+        "followers": "1,428"
+    },
+    {
+        "id": "orchidskincareburnaby",
+        "title": "Orchidskincareburnaby",
+        "followers": "2,550"
+    },
+    {
+        "id": "saba.beauty.bar",
+        "title": "Saba Beauty Bar",
+        "followers": "823"
+    }
+]

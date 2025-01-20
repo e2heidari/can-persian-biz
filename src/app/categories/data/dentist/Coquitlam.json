@@ -1,1 +1,33 @@
-[]
+[
+    {
+        "id": "aran_orthodontics",
+        "title": "DR. REZA ARAN",
+        "post": "277",
+        "followers": "755"
+    },
+    {
+        "id": "tricitydentalcenter",
+        "title": "Tri City Dental Centre",
+        "followers": "485"
+    },
+    {
+        "id": "tricitiesdentalspecialists",
+        "title": "Drs. Narani",
+        "followers": "130"
+    },
+    {
+        "id": "saba.dentallab",
+        "title": "Saba Dental Lab",
+        "followers": "768"
+    },
+    {
+        "id": "brookmeredentalgroup",
+        "title": "Brookmere Dental Group",
+        "followers": "147"
+    },
+    {
+        "id": "lafargedental",
+        "title": "Lafarge Dental",
+        "followers": "98"
+    }
+]

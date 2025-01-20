@@ -34,5 +34,38 @@
         "title": "MoneyWay Financial Group",
         "post": "285",
         "followers": "583"
+    },
+    {
+        "id": "sarafi.parse",
+        "title": "صرافی پارسه",
+        "post": "218",
+        "followers": "1240"
+    },
+    {
+        "id": "nianationscurrency",
+        "title": "NIA NATIONS CURRENCY EXCHANGE",
+        "post": "258",
+        "followers": "735"
+    },
+    {
+        "id": "monex1currency",
+        "title": "صرافی مانکس1",
+        "post": "446",
+        "followers": "3,146"
+    },
+    {
+        "id": "nami.exchange",
+        "title": "𝐍𝐚𝐦𝐢 𝐄𝐱𝐜𝐡𝐚𝐧𝐠𝐞",
+        "followers": "232"
+    },
+    {
+        "id": "sarafi_rasam",
+        "title": "Rasam Exchange",
+        "followers": "390"
+    },
+    {
+        "id": "sarafy_hafez",
+        "title": "صرافی حافظ",
+        "followers": "23.3K"
     }
 ]

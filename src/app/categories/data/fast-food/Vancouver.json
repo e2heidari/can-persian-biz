@@ -4,5 +4,31 @@
         "title": "Papas Gourmet",
         "post": "236",
         "followers": "8,298"
+    },
+    {
+        "id": "popinacanteen",
+        "title": "Popina Canteen",
+        "post": "874",
+        "followers": "9,320"
+    },
+    {
+        "id": "inandoutdonairbc",
+        "title": "In and Out Donair",
+        "followers": "217"
+    },
+    {
+        "id": "911pizzas",
+        "title": "911PIZZA",
+        "followers": "743"
+    },
+    {
+        "id": "911pizzadowntown",
+        "title": "911Pizza Downtown",
+        "followers": "1,336"
+    },
+    {
+        "id": "thefirewoodcafe",
+        "title": "The Firewood Cafe",
+        "followers": "1,362"
     }
 ]

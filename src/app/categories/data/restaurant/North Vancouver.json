@@ -157,5 +157,20 @@
         "followers": "1,501",
         "following": "10",
         "city": "North Vancouver"
+    },
+    {
+        "id": "romaitalianristorante",
+        "title": "Roma Italian Ristorante",
+        "followers": "1,195"
+    },
+    {
+        "id": "abadan.ca",
+        "title": "Abadan Restaurant",
+        "followers": "3,420"
+    },
+    {
+        "id": "alberellopizzeria",
+        "title": "Alberello Pizzeria",
+        "followers": "354"
     }
 ]
